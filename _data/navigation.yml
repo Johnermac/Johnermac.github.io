@@ -1,0 +1,27 @@
+# main links
+main:  
+  - title: "Posts"
+    url: /
+  - title: "Menu"
+    url: /menu
+  - title: "About"
+    url: /about
+
+# menu links
+menu:
+  - title: Notes
+    children:
+      - title: "eJPT"
+        url: /certs/ejpt/
+      - title: "──────────────"    
+        #url: ""   
+      - title: "eCPPTv2"
+        url: /certs/ecppt/
+        children:
+      - title: "- System Security" 
+        url: /certs/ecppt/systemsecurity/
+
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
