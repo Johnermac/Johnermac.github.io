@@ -7,7 +7,7 @@ header:
   overlay_filter: 0.5  
 ribbon: DarkSlateBlue
 excerpt: "eCPPTv2"
-description: "INE Security’s eCPPT is the only certification for professional-level Penetration testers that evaluates your ability to attack your target and provide thorough professional documentation and recommendations."
+description: "Scans, Information Gathering, vulnerabilities and more"
 categories:
   - certs
   - ecppt

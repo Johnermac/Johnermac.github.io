@@ -22,6 +22,8 @@ menu:
         url: /certs/ecppt/systemsecurity/
       - title: "- Network Security" 
         url: /certs/ecppt/networksecurity/
+      - title: "- Powershell" 
+        url: /certs/ecppt/powershell/
 
   # - title: "Sample Collections"
   #   url: /collection-archive/
