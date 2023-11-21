@@ -7,7 +7,7 @@ header:
   overlay_filter: 0.5  
 ribbon: DarkSlateBlue
 excerpt: "eCPPTv2"
-description: "Powershell helps us reduce our footprint and evade defense mechanisms while conducting post-exploitation tasks."
+description: "Learn to reduce your footprint and evade defense mechanisms"
 categories:
   - certs
   - ecppt

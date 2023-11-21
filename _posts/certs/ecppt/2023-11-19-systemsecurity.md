@@ -7,7 +7,7 @@ header:
   overlay_filter: 0.5  
 ribbon: DarkSlateBlue
 excerpt: "eCPPTv2"
-description: "Low level stuff"
+description: "Low level stuff - Do not panic!"
 categories:
   - certs
   - ecppt

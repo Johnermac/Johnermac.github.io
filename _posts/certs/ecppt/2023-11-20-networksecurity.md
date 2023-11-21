@@ -7,7 +7,7 @@ header:
   overlay_filter: 0.5  
 ribbon: DarkSlateBlue
 excerpt: "eCPPTv2"
-description: "Scans, Information Gathering, vulnerabilities and more"
+description: "Scans, Information Gathering, Vulnerabilities and more"
 categories:
   - certs
   - ecppt
