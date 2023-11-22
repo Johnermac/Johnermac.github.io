@@ -24,10 +24,12 @@ menu:
         url: /certs/ecppt/networksecurity/
       - title: "- Powershell" 
         url: /certs/ecppt/powershell/
-      - title: "- Linux" 
+      - title: "- Linux Security" 
         url: /certs/ecppt/linux/
-      - title: "- Web App" 
+      - title: "- Web App Security" 
         url: /certs/ecppt/webapp/
+      - title: "- Wi-Fi Pentest" 
+        url: /certs/ecppt/wifi/
 
   # - title: "Sample Collections"
   #   url: /collection-archive/
