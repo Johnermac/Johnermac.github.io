@@ -30,7 +30,10 @@ menu:
         url: /certs/ecppt/webapp/
       - title: "- Wi-Fi Pentest" 
         url: /certs/ecppt/wifi/
-
+      - title: "- Metasploit & Ruby" 
+        url: /certs/ecppt/ruby/
+      - title: "──────────────"
+      
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
