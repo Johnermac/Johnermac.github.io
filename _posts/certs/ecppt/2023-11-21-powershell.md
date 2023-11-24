@@ -2,7 +2,7 @@
 title: "3 - Powershell"
 classes: single
 header:  
-  teaser: "/assets/images/posts/2023-11-19-ecppt/ecppt-teaser.jpg"
+  teaser: "/assets/images/posts/2023-11-19-ecppt/ecppt-teaser4.jpg"
   overlay_image: "/assets/images/main/header6.jpg"
   overlay_filter: 0.5  
 ribbon: DarkSlateBlue

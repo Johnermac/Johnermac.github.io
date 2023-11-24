@@ -2,7 +2,7 @@
 title: "2 - Network Security"
 classes: single
 header:  
-  teaser: "/assets/images/posts/2023-11-19-ecppt/ecppt-teaser.jpg"
+  teaser: "/assets/images/posts/2023-11-19-ecppt/ecppt-teaser3.jpg"
   overlay_image: "/assets/images/main/header3.jpg"
   overlay_filter: 0.5  
 ribbon: DarkSlateBlue
