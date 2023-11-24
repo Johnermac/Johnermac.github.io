@@ -3,7 +3,7 @@ title: "3 - Powershell"
 classes: single
 header:  
   teaser: "/assets/images/posts/2023-11-19-ecppt/ecppt-teaser.jpg"
-  overlay_image: "/assets/images/main/menu.jpg"
+  overlay_image: "/assets/images/main/header6.jpg"
   overlay_filter: 0.5  
 ribbon: DarkSlateBlue
 excerpt: "eCPPTv2"
