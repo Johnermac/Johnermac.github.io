@@ -37,4 +37,6 @@ menu:
         url: /certs/pnpt/
       - title: "- Practical Ethical Hacker" 
         url: /certs/pnpt/peh/
+      - title: "- OSINT" 
+        url: /certs/pnpt/osint/
       
