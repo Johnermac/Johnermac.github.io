@@ -39,4 +39,6 @@ menu:
         url: /certs/pnpt/peh/
       - title: "- OSINT" 
         url: /certs/pnpt/osint/
+      - title: "- External Pentest Playbook" 
+        url: /certs/pnpt/pentestexternal/
       
