@@ -9,11 +9,13 @@ ribbon: DarkSlateBlue
 excerpt: "eCPPTv2"
 description: "Learn to reduce your footprint and evade defense mechanisms"
 categories:
-  - certs
+  - notes
   - ecppt
 tags:
   - begginer
   - pentest
+  - windows
+  - powershell
 toc: true
 ---
 

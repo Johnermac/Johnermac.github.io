@@ -9,11 +9,13 @@ ribbon: Firebrick
 excerpt: "Unleashing Power: A Dive into Linux Privilege Escalation"
 description: "Exploring Linux Privesc Techniques: Kernel Exploits, SUDO, SUID, Scheduled Tasks, NFS Root Squashing and More"
 categories:
-  - certs
+  - notes
   - pnpt
 tags:
   - begginer
   - pentest
+  - linux
+  - privesc
 toc: true
 ---
 

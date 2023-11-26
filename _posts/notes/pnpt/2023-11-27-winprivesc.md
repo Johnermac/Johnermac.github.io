@@ -9,11 +9,13 @@ ribbon: Firebrick
 excerpt: "Elevate and Conquer: Windows Privilege Escalation Strategies."
 description: "Navigating Windows Privesc Techniques: Kernel Exploits, Impersonation, Registry, DLL Hijacking and More "
 categories:
-  - certs
+  - notes
   - pnpt
 tags:
   - begginer
   - pentest
+  - windows
+  - privesc
 toc: true
 ---
 

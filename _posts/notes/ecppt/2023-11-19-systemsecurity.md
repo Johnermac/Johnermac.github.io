@@ -9,11 +9,13 @@ ribbon: DarkSlateBlue
 excerpt: "eCPPTv2"
 description: "Low level stuff - Do not panic!"
 categories:
-  - certs
+  - notes
   - ecppt
 tags:
   - begginer
   - pentest
+  - lowlevel
+  - bof
 toc: true
 ---
 

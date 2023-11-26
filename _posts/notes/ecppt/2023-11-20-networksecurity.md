@@ -9,11 +9,14 @@ ribbon: DarkSlateBlue
 excerpt: "eCPPTv2"
 description: "Scans, Information Gathering, Vulnerabilities and more"
 categories:
-  - certs
+  - notes
   - ecppt
 tags:
   - begginer
   - pentest
+  - recon
+  - internal
+  - osint
 toc: true
 ---
 

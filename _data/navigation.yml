@@ -12,38 +12,38 @@ menu:
   - title: Notes
     children:
       - title: "eJPT"
-        url: /certs/ejpt/
+        url: /notes/ejpt/
       - title: "────────────────"      
       - title: "eCPPTv2"
-        url: /certs/ecppt/        
+        url: /notes/ecppt/        
       - title: "- System Security" 
-        url: /certs/ecppt/systemsecurity/
+        url: /notes/ecppt/systemsecurity/
       - title: "- Network Security" 
-        url: /certs/ecppt/networksecurity/
+        url: /notes/ecppt/networksecurity/
       - title: "- Powershell" 
-        url: /certs/ecppt/powershell/
+        url: /notes/ecppt/powershell/
       - title: "- Linux Security" 
-        url: /certs/ecppt/linux/
+        url: /notes/ecppt/linux/
       - title: "- Web App Security" 
-        url: /certs/ecppt/webapp/
+        url: /notes/ecppt/webapp/
       - title: "- Wi-Fi Pentest" 
-        url: /certs/ecppt/wifi/
+        url: /notes/ecppt/wifi/
       - title: "- Metasploit & Ruby" 
-        url: /certs/ecppt/ruby/
+        url: /notes/ecppt/ruby/
       - title: "────────────────"
       - title: "PNPT" 
-        url: /certs/pnpt/
+        url: /notes/pnpt/
       - title: "- Practical Ethical Hacker" 
-        url: /certs/pnpt/peh/
+        url: /notes/pnpt/peh/
       - title: "- OSINT" 
-        url: /certs/pnpt/osint/
+        url: /notes/pnpt/osint/
       - title: "- External Pentest Playbook" 
-        url: /certs/pnpt/pentestexternal/
+        url: /notes/pnpt/pentestexternal/
       - title: "- Linux Privesc" 
-        url: /certs/pnpt/linuxprivesc/
+        url: /notes/pnpt/linuxprivesc/
       - title: "- Windows Privesc" 
-        url: /certs/pnpt/winprivesc/  
+        url: /notes/pnpt/winprivesc/  
       - title: "- Movement, Pivoting and Persistence" 
-        url: /certs/pnpt/wpivoting/
+        url: /notes/pnpt/wpivoting/
       - title: "────────────────"
       

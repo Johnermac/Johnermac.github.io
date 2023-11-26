@@ -9,11 +9,14 @@ ribbon: Firebrick
 excerpt: "Lateral Movement, Pivoting and Persistence using the C2 Covenant and Metasploit"
 description: "Lateral Movement, Pivoting and Persistence using the C2 Covenant and Metasploit"
 categories:
-  - certs
+  - notes
   - pnpt
 tags:
   - begginer
   - pentest
+  - pivot
+  - c2
+  - AD
 toc: true
 ---
 
