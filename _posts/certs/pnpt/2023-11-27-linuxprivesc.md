@@ -5,6 +5,7 @@ header:
   teaser: /assets/images/posts/pnpt/pnpt-teaser6.jpg
   overlay_image: /assets/images/main/header2.jpg
   overlay_filter: 0.5
+ribbon: Firebrick
 excerpt: "Unleashing Power: A Dive into Linux Privilege Escalation"
 description: "Exploring Linux Privesc Techniques: Kernel Exploits, SUDO, SUID, Scheduled Tasks, NFS Root Squashing and More"
 categories:

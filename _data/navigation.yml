@@ -13,11 +13,9 @@ menu:
     children:
       - title: "eJPT"
         url: /certs/ejpt/
-      - title: "──────────────"    
-        #url: ""   
+      - title: "────────────────"      
       - title: "eCPPTv2"
-        url: /certs/ecppt/
-        children:
+        url: /certs/ecppt/        
       - title: "- System Security" 
         url: /certs/ecppt/systemsecurity/
       - title: "- Network Security" 
@@ -32,7 +30,7 @@ menu:
         url: /certs/ecppt/wifi/
       - title: "- Metasploit & Ruby" 
         url: /certs/ecppt/ruby/
-      - title: "──────────────"
+      - title: "────────────────"
       - title: "PNPT" 
         url: /certs/pnpt/
       - title: "- Practical Ethical Hacker" 
@@ -41,4 +39,11 @@ menu:
         url: /certs/pnpt/osint/
       - title: "- External Pentest Playbook" 
         url: /certs/pnpt/pentestexternal/
+      - title: "- Linux Privesc" 
+        url: /certs/pnpt/linuxprivesc/
+      - title: "- Windows Privesc" 
+        url: /certs/pnpt/winprivesc/  
+      - title: "- Movement, Pivoting and Persistence" 
+        url: /certs/pnpt/wpivoting/
+      - title: "────────────────"
       
