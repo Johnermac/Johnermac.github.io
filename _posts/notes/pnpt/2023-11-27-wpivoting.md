@@ -64,8 +64,6 @@ Natnetwork: Secure
 Password123!
 ```
 
-
-
 ## Machines Config
 
 ### DC config
