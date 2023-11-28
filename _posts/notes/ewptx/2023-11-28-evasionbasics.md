@@ -473,4 +473,3 @@ echo ($_^"<").($_^">;").($_^"/"); #XOR magic > 'GET'
 ```
 
 > hackvertor.co.uk - It has 2 options to encode PHP into non-alphanumeric code.
-
