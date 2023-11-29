@@ -52,7 +52,11 @@ menu:
         url: /notes/ewptx/encoding/
       - title: "- Evasion Basics" 
         url: /notes/ewptx/evasionbasics/
-      - title: "- XSS (coming soon)" 
+      - title: "- Cross-site scripting (XSS)" 
         url: /notes/ewptx/xss/
-      - title: "- XSS Filter Evasion (coming soon)" 
+      - title: "- XSS Filter Evasion" 
         url: /notes/ewptx/xssfilter/
+      - title: "- CSRF (coming soon)" 
+        url: /notes/ewptx/csrf/
+      - title: "- HTML5 (coming soon)" 
+        url: /notes/ewptx/html5/
