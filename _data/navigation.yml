@@ -56,7 +56,11 @@ menu:
         url: /notes/ewptx/xss/
       - title: "- XSS Filter Evasion" 
         url: /notes/ewptx/xssfilter/
-      - title: "- CSRF (coming soon)" 
+      - title: "- Cross-site request forgery (CSRF)" 
         url: /notes/ewptx/csrf/
-      - title: "- HTML5 (coming soon)" 
+      - title: "- HTML5" 
         url: /notes/ewptx/html5/
+      - title: "- SQL Injection (coming soon)" 
+        url: /notes/ewptx/sqli/
+      - title: "- SQLI Filter Evasion (coming soon)" 
+        url: /notes/ewptx/sqlievasion/
