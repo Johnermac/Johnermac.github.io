@@ -60,7 +60,11 @@ menu:
         url: /notes/ewptx/csrf/
       - title: "- HTML5" 
         url: /notes/ewptx/html5/
-      - title: "- SQL Injection (coming soon)" 
+      - title: "- SQL Injection" 
         url: /notes/ewptx/sqli/
-      - title: "- SQLI Filter Evasion (coming soon)" 
+      - title: "- SQLI Filter Evasion" 
         url: /notes/ewptx/sqlievasion/
+      - title: "- XML Attacks (coming soon)" 
+        url: /notes/ewptx/xmlattacks/
+      - title: "- Attacking Serialization (coming soon)" 
+        url: /notes/ewptx/attackingserialization/
