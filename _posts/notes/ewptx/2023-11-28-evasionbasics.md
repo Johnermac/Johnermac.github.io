@@ -133,9 +133,14 @@ In the userinfo subcomponent, Unicode is allowed, therefore, it does not need ot
 
 > not all browser support this obfuscation technique. Firefox and Opera show alert messages.
 
+![Alt text](/assets/images/posts/ewptx/46.png){: .align-center}
+
+![Alt text](/assets/images/posts/ewptx/45.png){: .align-center}
 
 ### Obfuscating with Host
 Internet names are translated to IP addresses. But there are other ways to represent the same **number**, such as: *Dword*, *Octal*, *Hexadecimal*.
+
+![Alt text](/assets/images/posts/ewptx/47.png){: .align-center}
 
 #### Dword - google.com
 Double Word is known as Integer IP. IP is translated to an equivalent 16bit number.
@@ -205,6 +210,7 @@ Examples: number zero **0**:
 | -""    | -[ ]    | ![ ]+!{ }  |
 | -+-+"" | -+-+[ ] | ![ ]+!!"" |
 
+![Alt text](/assets/images/posts/ewptx/48.png){: .align-center}
 
 ### String
 How to generate custom strings. For example if we wanna generate the **alert** string, we need to generate each character separately and then put them together.
@@ -242,6 +248,7 @@ Based on this technique:
 
 → https://github.com/aemkei/jsfuck/blob/master/jsfuck.js
 
+![Alt text](/assets/images/posts/ewptx/49.png){: .align-center}
 
 ### JavaScript Compressing
 To make JavaScript run faster, developers often use tools that compile JavaScript into more compact and higher performing code.
@@ -341,6 +348,9 @@ In PHP there are four different ways in which its possible to specify a string l
 # single quotes ' ' = variable and escape sequences For special chars are not expanded
 # double quotes " " - they are expanded
 ```
+
+![Alt text](/assets/images/posts/ewptx/50.png){: .align-center}
+
 
 ### Escapes
 ```php
