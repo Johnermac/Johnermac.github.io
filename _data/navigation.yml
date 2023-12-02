@@ -64,7 +64,11 @@ menu:
         url: /notes/ewptx/sqli/
       - title: "- SQLI Filter Evasion" 
         url: /notes/ewptx/sqlievasion/
-      - title: "- XML Attacks (coming soon)" 
+      - title: "- XML Attacks" 
         url: /notes/ewptx/xmlattacks/
-      - title: "- Attacking Serialization (coming soon)" 
-        url: /notes/ewptx/attackingserialization/
+      - title: "- Attacking Serialization" 
+        url: /notes/ewptx/zattackingserialization/
+      - title: "- Server Side Attacks (coming soon)" 
+        url: /notes/ewptx/serverside/
+      - title: "- Attacking Crypto (coming soon)" 
+        url: /notes/ewptx/crypto/
