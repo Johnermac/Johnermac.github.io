@@ -460,7 +460,7 @@ and everything inside the mount gonna be run by root, so we can take advantage o
 
 From kali:
 ```bash
-shoumount -e <target ip>
+showmount -e <target ip>
 
 mkdir /tmp/mountme
 mount -o rw,vers=2 <target ip>:/tmp /tmp/mountme

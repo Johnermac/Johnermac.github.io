@@ -68,7 +68,9 @@ menu:
         url: /notes/ewptx/xmlattacks/
       - title: "- Attacking Serialization" 
         url: /notes/ewptx/zattackingserialization/
-      - title: "- Server Side Attacks (coming soon)" 
+      - title: "- Server Side Attacks" 
         url: /notes/ewptx/serverside/
       - title: "- Attacking Crypto (coming soon)" 
         url: /notes/ewptx/crypto/
+      - title: "- Authentication & SSO (coming soon)" 
+        url: /notes/ewptx/authentication&sso/
