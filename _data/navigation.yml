@@ -70,7 +70,9 @@ menu:
         url: /notes/ewptx/zattackingserialization/
       - title: "- Server Side Attacks" 
         url: /notes/ewptx/serverside/
-      - title: "- Attacking Crypto (coming soon)" 
+      - title: "- Attacking Crypto" 
         url: /notes/ewptx/crypto/
       - title: "- Authentication & SSO (coming soon)" 
-        url: /notes/ewptx/authentication&sso/
+        url: /notes/ewptx/authenticationsso/
+      - title: "- APIs & Cloud Apps (coming soon)" 
+        url: /notes/ewptx/apiscloud/
