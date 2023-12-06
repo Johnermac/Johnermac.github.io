@@ -74,7 +74,10 @@ menu:
         url: /notes/ewptx/crypto/
       - title: "- Authentication & SSO" 
         url: /notes/ewptx/authenticationsso/
-      - title: "- APIs & Cloud Apps (coming soon)" 
+      - title: "- APIs & Cloud Apps" 
         url: /notes/ewptx/apiscloud/
       - title: "- Attacking LDAP (coming soon)" 
         url: /notes/ewptx/ldap/
+      - title: "────────────────"
+      - title: "CRTP or CRTO next?"
+        url: /notes/thankgod-ewptx-is-over/
