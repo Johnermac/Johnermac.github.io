@@ -76,7 +76,7 @@ menu:
         url: /notes/ewptx/authenticationsso/
       - title: "- APIs & Cloud Apps" 
         url: /notes/ewptx/apiscloud/
-      - title: "- Attacking LDAP (coming soon)" 
+      - title: "- Attacking LDAP" 
         url: /notes/ewptx/ldap/
       - title: "────────────────"
       - title: "CRTP or CRTO next?"
