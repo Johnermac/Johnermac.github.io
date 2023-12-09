@@ -79,5 +79,6 @@ menu:
       - title: "- Attacking LDAP" 
         url: /notes/ewptx/ldap/
       - title: "────────────────"
-      - title: "CRTP or CRTO next?"
-        url: /notes/thankgod-ewptx-is-over/
+      - title: "Active Directory Exploitation"
+      - title: "- Powershell"
+        url: /notes/adx/powershell/
