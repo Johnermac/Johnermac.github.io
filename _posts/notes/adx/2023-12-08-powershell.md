@@ -195,6 +195,7 @@ Write-Host "---------"}
 ```
 
 > 805306369 - enumerar todas as contas de usuario
+
 > 805306368 - enumerar todas as maquinas de usuario
 
 ```powershell
