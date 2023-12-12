@@ -82,3 +82,5 @@ menu:
       - title: "Active Directory Exploitation"
       - title: "- Powershell"
         url: /notes/adx/powershell/
+      - title: "- Bloodhound"
+        url: /notes/adx/bloodhound/      
