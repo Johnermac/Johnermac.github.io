@@ -15,7 +15,7 @@ menu:
         url: /notes/ejpt/
       - title: "────────────────"      
       - title: "eCPPTv2"
-        url: /notes/ecppt/        
+        url: /review/ecppt/        
       - title: "- System Security" 
         url: /notes/ecppt/systemsecurity/
       - title: "- Network Security" 
@@ -32,7 +32,7 @@ menu:
         url: /notes/ecppt/ruby/
       - title: "────────────────"
       - title: "PNPT" 
-        url: /notes/pnpt/
+        url: /review/pnpt/
       - title: "- Practical Ethical Hacker" 
         url: /notes/pnpt/peh/
       - title: "- OSINT" 
@@ -47,7 +47,7 @@ menu:
         url: /notes/pnpt/wpivoting/
       - title: "────────────────"
       - title: "eWPTXv2" 
-        url: /notes/eewptx/
+        url: /review/eewptx/
       - title: "- Encoding & Filtering" 
         url: /notes/ewptx/encoding/
       - title: "- Evasion Basics" 
@@ -89,5 +89,9 @@ menu:
       - title: "- Lateral Movement"
         url: /notes/adx/zlateralmov/  
       - title: "────────────────"
-      - title: "CRTP (coming soon)"
-        url: /notes/crtp/review/
+      - title: "CRTP"
+        url: /review/crtp/
+      - title: "- AD Enumeration"
+        url: /notes/crtp/enum/
+      - title: "- Local Privesc (coming soon)"
+        url: /notes/crtp/localprivesc/
