@@ -93,5 +93,7 @@ menu:
         url: /review/crtp/
       - title: "- AD Enumeration"
         url: /notes/crtp/enum/
-      - title: "- Local Privesc (coming soon)"
-        url: /notes/crtp/localprivesc/
+      - title: "- Local Privesc"
+        url: /notes/crtp/winprivesc/
+      - title: "- Lateral Movement (coming soon)"
+        url: /notes/crtp/latmov/
