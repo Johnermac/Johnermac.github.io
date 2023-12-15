@@ -3,7 +3,7 @@ title: "2 - Win Privesc"
 classes: single
 header:  
   teaser: /assets/images/posts/crtp/crtp-teaser3.jpg
-  overlay_image: /assets/images/main/header21jpg
+  overlay_image: /assets/images/main/header1.jpg
   overlay_filter: 0.5
 ribbon: Firebrick
 excerpt: "Unquoted Paths and Modifiable Services"
