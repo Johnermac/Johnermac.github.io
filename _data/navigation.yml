@@ -95,5 +95,8 @@ menu:
         url: /notes/crtp/enum/
       - title: "- Local Privesc"
         url: /notes/crtp/winprivesc/
-      - title: "- Lateral Movement (coming soon)"
+      - title: "- Lateral Movement"
         url: /notes/crtp/latmov/
+      - title: "- Offensive .NET (coming soon)"
+        url: /notes/crtp/offdotnet/
+      
