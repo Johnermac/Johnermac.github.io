@@ -18,6 +18,7 @@ tags:
 toc: true
 ---
 
+
 # Win Privesc - Local
 
 > The material of CRTP about Local Privesc is not great
