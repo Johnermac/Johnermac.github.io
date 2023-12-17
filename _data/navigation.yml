@@ -97,6 +97,8 @@ menu:
         url: /notes/crtp/winprivesc/
       - title: "- Lateral Movement"
         url: /notes/crtp/latmov/
-      - title: "- Offensive .NET (coming soon)"
+      - title: "- Offensive .NET"
         url: /notes/crtp/offdotnet/
+      - title: "- Domain Dominance (coming soon)"
+        url: /notes/crtp/domdom/
       
