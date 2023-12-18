@@ -99,6 +99,8 @@ menu:
         url: /notes/crtp/latmov/
       - title: "- Offensive .NET"
         url: /notes/crtp/offdotnet/
-      - title: "- Domain Dominance (coming soon)"
+      - title: "- AD Persistence"
         url: /notes/crtp/domdom/
+      - title: "- AD Privesc (coming soon)"
+        url: /notes/crtp/domprivesc/
       
