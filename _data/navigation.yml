@@ -12,7 +12,7 @@ menu:
   - title: Notes
     children:
       - title: "eJPT"
-        url: /notes/ejpt/ejpt/
+        url: /notes/ejpt/
       - title: "────────────────"      
       - title: "eCPPTv2"
         url: /review/ecppt/        
