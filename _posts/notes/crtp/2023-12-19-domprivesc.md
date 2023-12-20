@@ -75,7 +75,7 @@ Learning Objective 14
 
 
 
-# Targeted Kerberoasting - AS-REPs
+## Targeted Kerberoasting - AS-REPs
 
 - If a user's UserAccountControl settings have **Do not require Kerberos preauthentication** enabled i.e. Kerberos preauth is disabled, its possible to grab user's crackable AS-REP and brute-force it offline
 - With sufficient rights (**GenericWrite or GenericAll**), Kerberos preauth can be forced disabled as well
@@ -119,7 +119,7 @@ john.exe --wordlist=C:\AD\Tools\kerberoast\10k-worst-pass.txt C:\AD\Tools\asreph
 ```
 
 
-# Targeted Kerberoasting - Set SPN
+## Targeted Kerberoasting - Set SPN
 
 - With enough rights (**GenericAll/GenericWrite**), a target user's SPN can be set to anything (unique in the domain)
 - We can then request TGS without special privileges. The TGS can then be **Kerberoasted**.
