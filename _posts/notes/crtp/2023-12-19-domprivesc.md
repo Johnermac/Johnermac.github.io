@@ -195,7 +195,7 @@ There are two types of Kerberos Delegation:
 
 
 
-# Privesc - Uncounstrained Delegation
+## Privesc - Uncounstrained Delegation
 
 ![Alt text](/assets/images/posts/crtp/17.png){: .align-center}
 
@@ -236,7 +236,7 @@ Invoke-Mimikatz -Command '"kerberos::ptt C:\Users\appadmin\Documents\user1\[0;2c
 ```
 
 
-## Printer Bug
+### Printer Bug
 
 - How do we trick a high privilege user to connect to a machine with Unconstrained Delegation? The Printer Bug!
 - A feature of MS-RPRN which allows any domain user (Authenticated User) can force any machine (**running the Spooler service**) to connect to second a machine of the domain user's choice.
@@ -305,7 +305,7 @@ Learning Objective 15
 
 
 
-# Contrained Delegation
+## Contrained Delegation
 
 Constrained Delegation when enabled on a service account, allows access only to specified services on specified computers as a user.
 
@@ -355,7 +355,7 @@ To impersonate the user, Service for User (S4U) extension is used which provides
 > If we have access to that account, it is possible to access the services listed in **msDS-AllowedToDelegateTo** of the websvc account as ANY user.
 
 
-## Discover Constrained Delegation 
+### Discover Constrained Delegation 
 
 **Enumerate users and computers with constrained delegation enabled**
 
@@ -371,7 +371,7 @@ Get-ADObject -Filter {msDS-AllowedToDelegateTo -ne "$null"} -Properties msDS-All
 ```
 
 
-## Kekeo
+#### Kekeo
 
 **Abusing with Kekeo**
 
@@ -396,7 +396,7 @@ ls \\dcorp-mssql.dollarcorp.moneycorp.local\c$
 ```
 	
 
-## Rubeus
+#### Rubeus
 
 **Abusing with Rubeus**
 
@@ -413,7 +413,7 @@ ls \\dcorp-mssql.dollarcorp.moneycorp.local\c$
 
 
 
-## Kekeo
+#### Kekeo
 
 **Abusing with Kekeo**
 
@@ -436,7 +436,7 @@ Invoke-Command -ScriptBlock{whoami} -ComputerName us-mssql.us.techcorp.local
 Invoke-Mimikatz -Command '"lsadump::dcsync/user:dcorp\krbtgt"'
 ```
 
-## Rubeus
+#### Rubeus
 
 **Abusing with Rubeus**
 
@@ -470,7 +470,7 @@ Enumerate computer accounts in the domain for which Constrained Delegation is en
 	
 
 
-# Resource-based Constrained Delegation
+## Resource-based Constrained Delegation
 
 > This moves delegation authority to the resource/service administrator.
 
