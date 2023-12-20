@@ -101,6 +101,8 @@ menu:
         url: /notes/crtp/offdotnet/
       - title: "- AD Persistence"
         url: /notes/crtp/domdom/
-      - title: "- AD Privesc (coming soon)"
+      - title: "- AD Privesc"
         url: /notes/crtp/domprivesc/
+      - title: "- Detection and Defense (coming soon)"
+        url: /notes/crtp/detdef/
       
