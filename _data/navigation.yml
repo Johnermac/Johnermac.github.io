@@ -103,6 +103,7 @@ menu:
         url: /notes/crtp/domdom/
       - title: "- AD Privesc"
         url: /notes/crtp/domprivesc/
-      - title: "- Detection and Defense (coming soon)"
-        url: /notes/crtp/detdef/
+      - title: "- Detection and Defense"
+        url: /notes/crtp/defense/
+      - title: "────────────────"
       
