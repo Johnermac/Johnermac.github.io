@@ -9,6 +9,11 @@ main:
 
 # menu links
 menu:
+  - title: Insights
+    children:
+      - title: "How to be a Pentester (2024)"
+        url: /insights/roadmap/
+      - title: "────────────────" 
   - title: Notes
     children:
       - title: "eJPT"
@@ -106,4 +111,10 @@ menu:
       - title: "- AD Defense"
         url: /notes/crtp/defense/
       - title: "────────────────"
+      - title: "CRTE"
+        url: /review/crte/
+      - title: "1 - Lateral Movement"
+        url: /notes/crte/latmov/
+      - title: "2 - AD Privesc (coming soon)"
+        url: /notes/crte/adprivesc/
       
