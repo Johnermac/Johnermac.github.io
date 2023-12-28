@@ -11,7 +11,7 @@ main:
 menu:
   - title: Insights
     children:
-      - title: "How to be a Pentester (2024)"
+      - title: "How to be a Pentester (2024) (coming soon)"
         url: /insights/roadmap/
       - title: "────────────────" 
   - title: Notes
@@ -115,6 +115,8 @@ menu:
         url: /review/crte/
       - title: "1 - Lateral Movement"
         url: /notes/crte/latmov/
-      - title: "2 - AD Privesc (coming soon)"
+      - title: "2 - AD Privesc"
         url: /notes/crte/adprivesc/
+      - title: "3 - AD Persistence (coming soon)"
+        url: /notes/crte/adpersistence/
       
