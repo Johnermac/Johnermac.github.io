@@ -25,7 +25,7 @@ Some content is the same as in CRTP:
 
 [CRTP AD Privilege Escalation](https://johnermac.github.io/notes/crtp/domprivesc/)
 
-# LAPS
+## LAPS
 
 LAPS (Local Administrator Password Solution) provides centralized storage of local users passwords in AD with periodic randomizing.
 
@@ -81,7 +81,7 @@ Get-AdmPwdPassword -ComputerName <targetmachine>
 ```
 
 
-# gMSA
+## gMSA
 
 A group Managed Service Account (gMSA) provides automatic password management, SPN management and delegated administration for service accounts across multiple servers.
 
@@ -131,7 +131,7 @@ sekurlsa::pth /user:jumpone /domain:us.techcorp.local /ntlm:0a02c684cc0fa1744195
 **We can access the services and machines (server farms) that the account has access to**
 
 
-# Golden gMSA
+## Golden gMSA
 
 **gMSA password is calculated by leveraging the secret stored in KDS root key object**
 
@@ -158,7 +158,7 @@ We need following attributes of the KDS root key to compute the Group Key Envelo
 
 
 
-# Contrained Delegation (Kerberos Only)
+## Contrained Delegation (Kerberos Only)
 
 > It requires an additional forwardable ticket to invoke S4U2Proxy.
 
