@@ -117,6 +117,8 @@ menu:
         url: /notes/crte/latmov/
       - title: "2 - AD Privesc"
         url: /notes/crte/adprivesc/
-      - title: "3 - AD Persistence (coming soon)"
+      - title: "3 - AD Persistence"
         url: /notes/crte/adpersistence/
+      - title: "4 - Cross attacks (comin' soon)"
+        url: /notes/crte/cross/
       
