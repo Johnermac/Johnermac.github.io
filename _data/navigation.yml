@@ -119,6 +119,8 @@ menu:
         url: /notes/crte/adprivesc/
       - title: "3 - AD Persistence"
         url: /notes/crte/adpersistence/
-      - title: "4 - Cross attacks (comin' soon)"
+      - title: "4 - Cross attacks"
         url: /notes/crte/cross/
+      - title: "5 - Cheat Sheet (coming soon)"
+        url: /notes/crte/cheatsheet/
       
