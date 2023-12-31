@@ -113,14 +113,14 @@ menu:
       - title: "────────────────"
       - title: "CRTE"
         url: /review/crte/
-      - title: "1 - Lateral Movement"
+      - title: "- Lateral Movement"
         url: /notes/crte/latmov/
-      - title: "2 - AD Privesc"
+      - title: "- AD Privesc"
         url: /notes/crte/adprivesc/
-      - title: "3 - AD Persistence"
+      - title: "- AD Persistence"
         url: /notes/crte/adpersistence/
-      - title: "4 - Cross attacks"
+      - title: "- Cross attacks"
         url: /notes/crte/cross/
-      - title: "5 - Cheat Sheet (coming soon)"
+      - title: "- Cheat Sheet"
         url: /notes/crte/cheatsheet/
       
