@@ -11,7 +11,7 @@ main:
 menu:
   - title: Insights
     children:
-      - title: "How to be a Pentester (2024)"
+      - title: "How to become a Pentester (2024)"
         url: /insights/roadmap/
       - title: "────────────────" 
   - title: Notes
