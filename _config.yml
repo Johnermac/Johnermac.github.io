@@ -100,6 +100,10 @@ analytics:
     tracking_id          :
     anonymize_ip         : # true, false (default)
 
+# copy button
+#after_footer_scripts:
+#  - https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
+#  - assets/js/clipboardrouge.js
 
 # Site Author
 author:
