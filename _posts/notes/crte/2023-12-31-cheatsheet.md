@@ -27,7 +27,7 @@ As we know, these exams are time-based. So, I created this cheat sheet to make s
 
 - There is no hashes or informations of the exams here!
 
-> [PS] I'm trying to add a copy button in the code blocks.
+> Copy Button added - tell me what u think
 
 <style>
   /* Style for the chapter container */
@@ -61,7 +61,10 @@ As we know, these exams are time-based. So, I created this cheat sheet to make s
     border-radius: 8px; 
     background-color: #090a08;
   }
+
+  
 </style>
+
 
 
 <div class="chapters">
