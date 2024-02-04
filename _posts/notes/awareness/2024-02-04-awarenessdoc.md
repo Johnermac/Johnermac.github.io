@@ -45,7 +45,6 @@ PDF model:
 <embed 
     src="https://johnermac.github.io/assets/images/posts/awareness/sec.pdf" 
     type="application/pdf" 
-    width="100%" 
-    height="600px" 
+    width="100%"     
     style="border: 1px solid #ccc;" 
 />
