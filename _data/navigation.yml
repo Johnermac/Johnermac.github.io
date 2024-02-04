@@ -9,10 +9,12 @@ main:
 
 # menu links
 menu:
-  - title: Insights
+  - title: Posts
     children:
-      - title: "How to become a Pentester (2024)"
+      - title: "- How to become a Pentester (2024)"
         url: /insights/roadmap/
+      - title: "- Security Awareness"
+        url: /awareness/awarenessdoc/
       - title: "────────────────" 
   - title: Notes
     children:
