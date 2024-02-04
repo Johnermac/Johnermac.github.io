@@ -37,7 +37,7 @@ browsing, improper use of external devices, among others.
 Therefore, we have included mandatory rules in this document that must be followed by
 all employees working with company equipment and/or in their digital environments, as
 well as recommendations for best practices to enhance the security of our technological
-environment. <COMPANY NAME> will continuously monitor compliance with the rules
+environment. "Company name" will continuously monitor compliance with the rules
 and recommendations presented here.
 
 PDF model:
