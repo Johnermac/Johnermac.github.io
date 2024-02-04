@@ -21,6 +21,9 @@ I will share the PDF here, and you can access the Word document on my GitHub (li
 
 [SecurityAwareness on GitHub](https://github.com/Johnermac/SecurityAwareness)
 
+[Download - Word Document](https://github.com/Johnermac/Johnermac.github.io/raw/main/assets/images/posts/awareness/Security%20Awareness%20%5BEN%5D.docx)
+
+
 > I hope this document helps raise awareness in the cyber community
 
 **Introduction**:
