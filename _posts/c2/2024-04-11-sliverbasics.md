@@ -350,4 +350,4 @@ https://tishina.in/opsec/sliver-opsec-notes
 
 https://dominicbreuker.com/post/learning_sliver_c2_01_installation/#series-overview
 
-
+https://notateamserver.xyz/sliver-101/
