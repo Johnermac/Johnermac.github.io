@@ -2,24 +2,45 @@
 title: "About me"
 permalink: /about/
 layout: archive
+classes: wide
 author_profile: true
 header:  
   overlay_image: "/assets/images/main/menu.jpg"
   overlay_filter: 0.5
 ---
 
-___________________________________________________________________________________________________________
+# I'm Johnermac 
 
-I'm a Red Teamer/Pentester with focus on AD Security. This site is where I'll be dropping my notes, articles, and other stuff that might come in handy. Just straightforward cybersecurity insights. Dive in if you're into that sort of thing.
-___________________________________________________________________________________________________________
+<img src="https://github.com/Johnermac/Johnermac/assets/115858996/f8e4b684-379b-4b2d-a671-6ebaca75adf4" alt="menu-bkp" width="700">
 
-My Certs: 
+## About Me 🕵️‍♂️
+Cybersecurity Professional, specializing in Red Teaming and Pentesting with a focus on Active Directory security. Currently delving into the world of Malware development.
+
+## Connect with Me 🤝
+<a href="https://www.linkedin.com/in/joao-gabriel-6520aa215/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+
+## Projects 🚀
+- [Github](https://johnermac.github.io)
+- [Gitbook](https://johnermac.gitbook.io)
+ 
+## 🏆 GitHub Streak
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Johnermac&theme=radical)
+
+## 🚀 Languages
+![Ruby](https://img.shields.io/badge/-Ruby-red?style=flat-square&logo=ruby&logoColor=white)
+![Powershell](https://img.shields.io/badge/-Powershell-blue?style=flat-square&logo=powershell&logoColor=white)
+![c](https://img.shields.io/badge/-C-blue?style=flat-square&logo=c&logoColor=white)
+
+## 🚀 My Certs: 
 
 | eJPT  | eCPPTv2 | CRTO | CRTP | CRTE | 
  
-Next Goals:
+## 🛡️ CVEs
+    CVE-2024-2479
+    CVE-2024-2480
 
-| CRTL | OSEP | AZ-500 | CARTP |
+
+#### Feel free to add me on Linkedin and Lets learn together!
 
 
 
