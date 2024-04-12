@@ -27,7 +27,7 @@ https://sliver.sh/
 
 https://github.com/BishopFox/sliver
 
-## Instalation
+## Installation
 curl https://sliver.sh/install|sudo bash
 
 
