@@ -176,7 +176,7 @@ Get-ForestTrust -Forest <forest>
   </details>
 
   <details>
-    <summary>Local Privesc</summary>
+    <summary>Powershell Stager</summary>
     <div class="content" markdown="1">
  
 
