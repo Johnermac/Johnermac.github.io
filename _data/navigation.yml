@@ -127,6 +127,10 @@ menu:
         url: /notes/crte/cross/
       - title: "- Cheat Sheet"
         url: /notes/crte/cheatsheet/
+      - title: "────────────────"
+      - title: "CLOUD"
+      - title: "- Intro to Cloud Pentesting!"
+        url: /notes/cloud/introcloud/
   - title: My CVEs
     children:
       - title: "CVE-2024-2479"
