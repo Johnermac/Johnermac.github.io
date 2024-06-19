@@ -5,7 +5,7 @@ header:
   teaser: /assets/images/posts/cloud/cloud-teaser1.jpg
   overlay_image: /assets/images/main/header6.jpg
   overlay_filter: 0.5
-ribbon: DarkSlateBlue
+ribbon: Firebrick
 excerpt: "The basics of Cloud Pentesting."
 description: "Wanna learn Cloud Pentesting? Start here!"
 categories:
@@ -401,38 +401,38 @@ IAM policies define permissions for an action to perform the operation. For exam
 #### Authentication to AWS using AWS CLI
 
 **Long Term: Access Key ID + Access Key Secret**
-```bash
+```shell
 aws configure --profile profile-name
 ```
 
 Programmatic Access (Access Key ID + Access Key Secret)
-```bash
+```shell
 aws sts get-caller-identity --profile profile-name
 ```
 
 Get the information about configured identity.
-```bash
+```shell
 aws configure
 ```
 
 Programmatic Access (Access Key ID + Access Key Secret + Session Token)
-```bash
+```shell
 aws sts get-caller-identity --profile profile-name
 ```
 Get the information about configured identity.
 
 **Windows**
-```bash
+```powershell
 C:\Users\UserName\.aws
 ```
 *AWS CLI Stored Credentials*
 
 **Linux**
-```bash
+```shell
 /home/UserName/.aws
 ```
 AWS CLI Stored Credentials:
-```bash
+```shell
 cat credentials
 ```
 *Content of credentials file.*
@@ -440,7 +440,7 @@ cat credentials
 ## Enumeration
 
 List the IAM groups that the specified IAM user belongs to:
-```bash
+```shell
 aws iam list-groups-for-user --user-name [user-name]
 ```
 
@@ -817,17 +817,17 @@ whoami
 - CLI Access: `gcloud auth login`
 
 **Retrieve authenticated accounts:**
-```bash
+```shell
 gcloud auth list
 ```
 
 **Login with Service Account (App ID + JSON Key File)**
-```bash
+```shell
 gcloud auth activate-service-account --key-file KeyFile
 ```
 
 **Retrieve authenticated accounts:**
-```bash
+```shell
 gcloud auth list
 ```
 
@@ -841,12 +841,12 @@ gcloud auth list
 
 ## CLI Based Enumeration
 
-```bash
+```shell
 gcloud auth list
 ```
 
 **Retrieve Google Cloud CLI Configuration:**
-```bash
+```shell
 gcloud config list
 ```
 

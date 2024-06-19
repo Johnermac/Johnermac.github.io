@@ -5,7 +5,7 @@ header:
   teaser: /assets/images/posts/c2/c2-teaser.jpg
   overlay_image: /assets/images/main/header3.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
+ribbon: DarkSlateBlue
 excerpt: "Starting with Sliver C2"
 description: "Starting with Sliver C2"
 categories:
