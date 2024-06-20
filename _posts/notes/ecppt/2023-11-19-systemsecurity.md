@@ -12,7 +12,7 @@ categories:
   - notes
   - ecppt
 tags:
-  - begginer
+  - beginner
   - pentest
   - lowlevel
   - bof

@@ -12,7 +12,7 @@ categories:
   - notes
   - cloud
 tags:
-  - begginer
+  - beginner
   - Cloud
   - AWS 
   - Azure

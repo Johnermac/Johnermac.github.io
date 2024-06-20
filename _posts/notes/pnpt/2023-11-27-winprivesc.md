@@ -12,7 +12,7 @@ categories:
   - notes
   - pnpt
 tags:
-  - begginer
+  - beginner
   - pentest
   - windows
   - privesc

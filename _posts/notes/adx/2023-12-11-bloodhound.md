@@ -12,7 +12,7 @@ categories:
   - notes
   - adx
 tags:
-  - begginer
+  - beginner
   - AD
   - enum 
 toc: true

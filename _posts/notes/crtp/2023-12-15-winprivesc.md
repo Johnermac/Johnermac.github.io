@@ -12,7 +12,7 @@ categories:
   - notes
   - crtp
 tags:
-  - begginer
+  - beginner
   - AD
   - Windows 
 toc: true
