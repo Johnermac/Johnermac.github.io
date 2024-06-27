@@ -1324,7 +1324,7 @@ In summary:
 
 [Amicontained GitHub](https://github.com/genuinetools/amicontained)
 
-### Vulnerability Analysis
+## Vulnerability Analysis
 
 
 **Dockscan** is an open-source security analysis tool for Docker environments. It:
@@ -1341,7 +1341,7 @@ In summary:
 
 [Clair GitHub](https://github.com/quay/clair)
 
-### Image Analysis
+## Image Analysis
 
 **Dive** is a command-line tool for interactive analysis of Docker container images. It:
   - Allows viewing individual layers and the content of a Docker container.
