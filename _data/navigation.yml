@@ -131,6 +131,10 @@ menu:
       - title: "CLOUD"
       - title: "- Intro to Cloud Pentesting!"
         url: /notes/cloud/introcloud/
+      - title: "────────────────"      
+      - title: "CONTAINER"
+      - title: "- Hacking Containers!"
+        url: /notes/container/hackcontainers/
   - title: My CVEs
     children:
       - title: "CVE-2024-2479"

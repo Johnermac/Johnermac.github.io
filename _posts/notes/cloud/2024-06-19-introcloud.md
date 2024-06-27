@@ -964,4 +964,4 @@ python3 ExploitScripts/iam.roles.update.py
 *;)*
 
 
-> This is my notes from *Multi-Cloud Red Team Analyst (MCRTA)* from [CWL](https://cyberwarfare.live). Check their content.
+> This is my notes of the *Multi-Cloud Red Team Analyst (MCRTA)* from [CWL](https://cyberwarfare.live). Check their content.
