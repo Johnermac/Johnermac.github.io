@@ -29,7 +29,6 @@ toc: false
 
 ***anyway... Lets start looking at main components and commands of Cloud Pentesting!***
 
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -292,7 +291,7 @@ Get-AzRoleAssignment -ObjectId [PrincipalID-ManagedIdentity]
 - Guard duty
 - IAM
 - SSO
-- EC2 Lambda ECS|EKS
+- EC2 Lambda ECS / EKS
 - S3
 - RDS
 - EBS
