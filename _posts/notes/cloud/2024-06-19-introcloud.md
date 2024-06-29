@@ -960,8 +960,39 @@ python3 ExploitScripts/iam.roles.update.py
 </body>
 </html>
 
+---
+
 *We'll see the particularities of each one later*
 *;)*
 
 
 > This is my notes of the *Multi-Cloud Red Team Analyst (MCRTA)* from [CWL](https://cyberwarfare.live). Check their content.
+
+---
+
+Before ending the post, I did a table of courses/certification about Cloud Pentesting. So if you are interested in this path, you can search for the following:
+
+## CLOUD PENTESTING TRAINING
+
+| Category    | Course                                    | Link                                                                                  | Price  |
+|-------------|-------------------------------------------|---------------------------------------------------------------------------------------|--------|
+| AZURE   | CARTP                                     | [AzureADLab](https://www.alteredsecurity.com/azureadlab)                              | $449   |
+|             | CARTE                                     | [AzureAdvanced](https://www.alteredsecurity.com/azureadvanced)                        | $499   |
+|             | OASP                                      | [BreachingAzure](https://cloudbreach.io/breachingazure/#oasp)                         | $499   |
+|             | XINTRA Azure course                       | [Attacking and Defending Azure M365](https://training.xintra.org/attacking-and-defending-azure-m365) | $1550  |
+| AWS   | OAWSP                                     | [BreachingAWS](https://cloudbreach.io/breachingaws/#oawsp)                            | $599   |
+|             | CARTS                                     | [AWS Cloud Red Team Specialist (CARTS)](https://cyberwarfare.live/product/aws-cloud-red-team-specialist-carts/) | $599   |
+| GCP     | CGRTS                                     | [Google Cloud Red Team Specialist (CGRTS)](https://cyberwarfare.live/product/google-cloud-red-team-specialist-cgrts/) | $599   |
+| KUBERNETES | Hacking Kubernetes                    | [Hacking and Securing Kubernetes Clusters](https://www.theoffensivelabs.com/p/hacking-and-securing-kubernetes-clusters) | $178   |
+|             | Kubernetes Course                         | [Kubernetes Goat](https://madhuakula.com/kubernetes-goat/)                            | -   |
+| EXTRA   | SANS Cloud Pentesting                     | [Cloud Penetration Testing](https://www.sans.org/cyber-security-courses/cloud-penetration-testing/) | $8525  |
+|             | AntiSyphon Cloud Training                 | [Breaching the Cloud](https://www.antisyphontraining.com/event/breaching-the-cloud-w-beau-bullock-3/) | $575   |
+|             | CCSP                                      | [Certified Cloud Security Professional](https://www.isc2.org/certifications/ccsp)     | $8140  |
+| OFICIAIS| Az900                                     | [Azure Fundamentals](https://learn.microsoft.com/pt-br/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification) | -      |
+|             | Az500                                     | [Azure Security Engineer](https://learn.microsoft.com/pt-br/credentials/certifications/azure-security-engineer/?practice-assessment-type=certification) | -      |
+|             | AWS Security                              | [AWS Certified Security – Specialty](https://aws.amazon.com/pt/certification/certified-security-specialty/) | -      |
+|             | AWS Administrator                         | [AWS Certified SysOps Administrator – Associate](https://aws.amazon.com/pt/certification/certified-sysops-admin-associate/) | -      |
+|             | GCP Security                              | [Google Cloud Certified - Professional Cloud Security Engineer](https://cloud.google.com/learn/certification/cloud-security-engineer?hl=pt-br) | -      |
+|             | GCP Engineer                              | [Google Cloud Certified - Associate Cloud Engineer](https://cloud.google.com/learn/certification/cloud-engineer?hl=pt-br) | -      |
+
+
