@@ -131,6 +131,8 @@ menu:
       - title: "CLOUD"
       - title: "- Intro to Cloud Pentesting!"
         url: /notes/cloud/introcloud/
+      - title: "- Get Familiar with Azure Pentesting!"
+        url: /notes/cloud/midazure/
       - title: "────────────────"      
       - title: "CONTAINER"
       - title: "- Hacking Containers!"
