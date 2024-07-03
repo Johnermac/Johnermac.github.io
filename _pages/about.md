@@ -33,14 +33,14 @@ Cybersecurity Professional, specializing in Red Teaming and Pentesting with a fo
 
 ## 🚀 My Certs: 
 
-| eJPT  | eCPPTv2 | CRTO | CRTP | CRTE | 
+| eJPT  | eCPPTv2 | CRTO | CRTP | CRTE | CARTP |
  
 ## 🛡️ CVEs
     CVE-2024-2479
     CVE-2024-2480
 
 
-#### Feel free to add me on Linkedin and Lets learn together!
+#### Feel free to add me on LinkedIn and Lets learn together!
 
 
 

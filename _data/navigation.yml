@@ -133,6 +133,8 @@ menu:
         url: /notes/cloud/introcloud/
       - title: "- Get Familiar with Azure!"
         url: /notes/cloud/midazure/
+      - title: "- CARTP Review"
+        url: /review/cartp/
       - title: "────────────────"      
       - title: "CONTAINER"
       - title: "- Hacking Containers!"
