@@ -137,6 +137,8 @@ menu:
         url: /review/cartp/
       - title: "- CARTP - Chapter One"
         url: /notes/cartp/cartp1/
+      - title: "- CARTP - Chapter Two"
+        url: /notes/cartp/cartp2/
       - title: "────────────────"      
       - title: "CONTAINER"
       - title: "- Hacking Containers!"
