@@ -981,7 +981,9 @@ Before ending the post, I did a table of courses/certification about Cloud Pente
 |             | XINTRA Azure course                       | [Attacking and Defending Azure M365](https://training.xintra.org/attacking-and-defending-azure-m365) | $1550  |
 | AWS   | OAWSP                                     | [BreachingAWS](https://cloudbreach.io/breachingaws/#oawsp)                            | $599   |
 |             | CARTS                                     | [AWS Cloud Red Team Specialist (CARTS)](https://cyberwarfare.live/product/aws-cloud-red-team-specialist-carts/) | $599   |
+|             | ARTE                              | [Hacktricks AWS Red Team Expert](https://training.hacktricks.xyz/courses/arte) | 1099€      |
 | GCP     | CGRTS                                     | [Google Cloud Red Team Specialist (CGRTS)](https://cyberwarfare.live/product/google-cloud-red-team-specialist-cgrts/) | $599   |
+|             | GRTE                              | [Hacktricks GCP Red Team Expert](https://training.hacktricks.xyz/courses/grte) | 1099€      |
 | KUBERNETES | Hacking Kubernetes                    | [Hacking and Securing Kubernetes Clusters](https://www.theoffensivelabs.com/p/hacking-and-securing-kubernetes-clusters) | $178   |
 |             | Kubernetes Course                         | [Kubernetes Goat](https://madhuakula.com/kubernetes-goat/)                            | -   |
 | EXTRA   | SANS Cloud Pentesting                     | [Cloud Penetration Testing](https://www.sans.org/cyber-security-courses/cloud-penetration-testing/) | $8525  |
