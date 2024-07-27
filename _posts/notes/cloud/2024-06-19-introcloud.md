@@ -979,6 +979,8 @@ Before ending the post, I did a table of courses/certification about Cloud Pente
 |             | CARTE                                     | [AzureAdvanced](https://www.alteredsecurity.com/azureadvanced)                        | $499   |
 |             | OASP                                      | [BreachingAzure](https://cloudbreach.io/breachingazure/#oasp)                         | $499   |
 |             | XINTRA Azure course                       | [Attacking and Defending Azure M365](https://training.xintra.org/attacking-and-defending-azure-m365) | $1550  |
+|             | White Knight Labs | [Offensive Azure Operations and Tactics](https://training.whiteknightlabs.com/offensive-azure-operations-tactics/) | $700 |
+|             | Pwned Labs | [𝗠𝗶𝗰𝗿𝗼𝘀𝗼𝗳𝘁 𝗖𝗹𝗼𝘂𝗱 𝗥𝗲𝗱 𝗧𝗲𝗮𝗺 𝗣𝗿𝗼𝗳𝗲𝘀𝘀𝗶𝗼𝗻𝗮𝗹 (𝗠𝗖𝗥𝗧𝗣)](https://bootcamps.pwnedlabs.io/mcrtp-bootcamp) | $349 |
 | AWS   | OAWSP                                     | [BreachingAWS](https://cloudbreach.io/breachingaws/#oawsp)                            | $599   |
 |             | CARTS                                     | [AWS Cloud Red Team Specialist (CARTS)](https://cyberwarfare.live/product/aws-cloud-red-team-specialist-carts/) | $599   |
 |             | ARTE                              | [Hacktricks AWS Red Team Expert](https://training.hacktricks.xyz/courses/arte) | 1099€      |

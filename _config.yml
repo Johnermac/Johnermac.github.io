@@ -289,6 +289,7 @@ defaults:
       related: false
       sidebar:
         nav: "menu"
+      
 
   # _pages
   - scope:
