@@ -133,13 +133,13 @@ menu:
         url: /notes/cloud/introcloud/
       - title: "- Get Familiar with Azure!"
         url: /notes/cloud/midazure/
-      - title: "- CARTP Review"
+      - title: "- CARTP Review (Azure)"
         url: /review/cartp/
-      - title: "- CARTP - Chapter One"
+      - title: "- Intro & Recon"
         url: /notes/cartp/cartp1/
-      - title: "- CARTP - Chapter Two"
+      - title: "- Enum & Privilege Escalation"
         url: /notes/cartp/cartp2/
-      - title: "- CARTP - Chapter Three"
+      - title: "- Lateral mov & Persistence"
         url: /notes/cartp/cartp3/
       - title: "────────────────"      
       - title: "CONTAINER"
