@@ -17,7 +17,7 @@ header:
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <style>
     body {
-      background-color: #262a35; /* Replace this with your desired color */
+      background-color: #181b20; /* Replace this with your desired color */
     }
   </style>
 </head>
