@@ -96,7 +96,9 @@ menu:
       - title: "- Win Privesc"
         url: /notes/adx/privesc/ 
       - title: "- Lateral Movement"
-        url: /notes/adx/zlateralmov/  
+        url: /notes/adx/zlateralmov/
+      - title: "- AD CS"
+        url: /notes/adcs/   
       - title: "────────────────"
       - title: "CRTP"
         url: /review/crtp/
