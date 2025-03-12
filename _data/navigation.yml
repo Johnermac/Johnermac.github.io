@@ -147,6 +147,8 @@ menu:
       - title: "CONTAINER"
       - title: "- Hacking Containers!"
         url: /notes/container/hackcontainers/
+      - title: "- Hacking Kubernetes!"
+        url: /notes/container/hackingkubernetes/
   - title: My CVEs
     children:
       - title: "CVE-2024-2479"
