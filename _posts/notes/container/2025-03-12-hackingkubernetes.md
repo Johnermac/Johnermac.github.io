@@ -110,7 +110,7 @@ Deployment: Deployment provides declarative updates for pods and ReplicaSets
 
 
 
-Master components:
+**Master components**:
 
 API Server: This provides a REST API for controlling Kubernetes. When we run kubectl commands, you are actually communicating with the master API Server component
 
@@ -123,7 +123,7 @@ Controller Manager: The Kubernetes controller manager is a deamon that embeds th
 Etcd: Kubernetes uses etcd to store all its configuration data, data about its state, metadata and user defined secrets if any
 
 
-Worker Components:
+**Worker Components**:
 
 Kubelet: Kubelet is an agent that runs on each node and is responsible for watching the API Server for pods that are bound to its node and making sure those pods are running
 
