@@ -122,7 +122,7 @@ sudo cat /proc/<process_number>/environ
 
 Ok, containers are just processes, but how can we isolate them from other container and from the host?
 
-There is several layers that provide isolation, for example:
+There are several layers that provide isolation, for example:
 
 
 ![Alt text](/assets/images/posts/container/17.png){: .align-center}
@@ -1041,7 +1041,7 @@ but How do I know which one to block?
 
 > Tools that helps to automate this process: [Inspektor Gadget](https://github.com/inspektor-gadget/inspektor-gadget) 
 
-There is various ways to run the tool!
+There are various ways to run the tool!
 
 Example with docker:
 ```
