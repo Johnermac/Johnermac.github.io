@@ -149,6 +149,8 @@ menu:
         url: /notes/container/hackcontainers/
       - title: "- Hacking Kubernetes!"
         url: /notes/container/hackingkubernetes/
+      - title: "- Container Security - Defense in Layers!"
+        url: /notes/container/defenseinlayers/
   - title: My CVEs
     children:
       - title: "CVE-2024-2479"
