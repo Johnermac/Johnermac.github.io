@@ -674,8 +674,8 @@ lscgroup
 #### Applying Cgroup
 
 1. **Mount a cgroup filesystem**  
-for example:
 
+for example:
 ```bash
 mount -t cgroup2 none /sys/fs/cgroup
 ```
@@ -693,16 +693,17 @@ echo <PID> > /sys/fs/cgroup/mygroup/cgroup.procs
 ```
 
 4. **Apply limits:**
+
 ```bash
 echo 100000 > /sys/fs/cgroup/mygroup/cpu.max      
 # in microseconds
 echo 500M > /sys/fs/cgroup/mygroup/memory.max
 ```
 
-
 > This tells the kernel: "This process can only use 500 MB of RAM and 10% CPU."
 
 ---
+
 #### How Cgroups Work in Containers (Docker)
 
 #####  In Containers:
