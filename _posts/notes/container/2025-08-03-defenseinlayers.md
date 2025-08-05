@@ -18,7 +18,7 @@ toc: true
 ---
 
 
-## Containers are just processes
+# Containers are just processes
 
 check active processes:
 
@@ -54,7 +54,7 @@ systemd+   33419   33366  0 16:05 ?        00:00:00      \_ nginx: worker proces
 
 This way we can see that our process Nginx comes from containerd!
 
-### Interacting with a container as a process
+## Interacting with a container as a process
 
 In linux /proc display information about the running process. 
 
@@ -107,7 +107,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 ```
 
-### Results
+## Results
 
 Anyone with access to host can use process lists to see information about running containers.
 
@@ -118,7 +118,7 @@ sudo cat /proc/<process_number>/environ
 ```
 
 
-## Isolation
+# Isolation
 
 Ok, containers are just processes, but how can we isolate them from other container and from the host?
 
@@ -128,7 +128,7 @@ There are several layers that provide isolation, for example:
 ![Alt text](/assets/images/posts/container/17.png){: .align-center}
 
 ---
-### Namespaces
+## Namespaces
 
 https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-2
 
@@ -177,7 +177,7 @@ sudo lsns
 Docker will by default make use of *mnt, uts, ipc, pid and net* namespaces when it creates a container
 
 ---
-#### Mount
+### Mount
 
 *mnt* namespace provides a process with an isolated view of the filesystem. When using this a new set of filesystem mounts is provided for the process in place of the ones it would receive by default.
 
@@ -226,7 +226,8 @@ dev   etc                   lib64  opt    run   sys   var
 ```
 
 ---
-#### PID
+
+### PID
 
 The PID namespace allows a process to have an isolated view of other processes running on the host. Containers use PID namespaces to ensure that they can only see and affect processes that are part of the contained application.
 
@@ -304,7 +305,7 @@ PID   USER     TIME  COMMAND
 > This is also possible to do in *Kubernetes* if u provide the option *shareProcessNamespace: true* in your pod specification
 
 ---
-#### Network
+### Network
 
 **net** namespace is responsible for providing a process's network environment (interfaces, routing, etc). 
 
@@ -337,7 +338,8 @@ kubectl debug webserver -it --image=raesene/alpine-containertools -- /bin/bash
 > If want to add the PID namespace too -- just add the flag *--target pods_name*
 
 ---
-#### Cgroup
+
+### Cgroup
 
 [Control groups](https://man7.org/linux/man-pages/man7/cgroups.7.html) are designed to help control a process's resource usage on a Linux system. 
 
@@ -362,17 +364,17 @@ This directory below contains information about system services running on the h
 /sys/fs/cgroup/system.slice/
 ```
 
-#### IPC
+### IPC
 
 The [IPC namespace](https://man7.org/linux/man-pages/man7/ipc_namespaces.7.html) is enabled by default on container runtimes to provide isolation for certain types of resources like POSIX message queues, shared memory (/dev/shm), semaphores.
 
-#### UTS
+### UTS
 
 The [UTS namespace](https://man7.org/linux/man-pages/man7/uts_namespaces.7.html) purpose is setting the hostname used by process. 
 
 For example if we run a docker with `--uts=host` it will keep the hostname of the host machine.
 
-#### Time
+### Time
 
 The [time namespace](https://man7.org/linux/man-pages/man7/time_namespaces.7.html) allows for groups of processes to have different time settings than the underlying host, which can be useful for certain purposes, such as testing or stopping time from jumping forward when a container has been snapshotted and then restored.
 
@@ -399,7 +401,7 @@ This change won’t affect the host — just the shell inside the time namespace
 
 > Note: You need Linux kernel **5.6+**, and setting `CLOCK_REALTIME` requires **CAP_SYS_TIME**.
 
-#### User
+### User
 
 The [user namespace](https://man7.org/linux/man-pages/man7/user_namespaces.7.html) is one of the **most powerful and security-critical** namespaces in Linux containers. It helps with **UID/GID remapping**, enabling containers to **run as root inside but unprivileged outside**.
 
@@ -445,16 +447,13 @@ try:
 docker run --rm -it alpine id
 ```
 
---- 
-
---- 
-
 ---
-### Capabilities
+
+## Capabilities
 
 **Linux capabilities** are a security mechanism that **breaks down the all-powerful root privileges** into **fine-grained, discrete privileges** that can be individually enabled or disabled for processes.
 
-#### Why Capabilities Exist
+### Why Capabilities Exist
 
 Traditionally, **UID 0 (root)** meant **full system control** — but that's often overkill.
 
@@ -464,7 +463,8 @@ Traditionally, **UID 0 (root)** meant **full system control** — but that's oft
 - Even if a process runs as root, you can **limit what it can actually do**.
 
 ---
-####  Example
+
+###  Example
 
 Instead of giving a process full root, you can give it just:
 
@@ -485,7 +485,7 @@ getcap /path/webserver
 ```
 
 
-#### Common Linux Capabilities
+### Common Linux Capabilities
 
 |Capability|Purpose|
 |---|---|
@@ -504,17 +504,17 @@ getcap /path/webserver
 
 ---
 
-#### Capabilities in Containers (Docker)
+### Capabilities in Containers (Docker)
 
 Docker drops many dangerous capabilities **by default**, and you can control them:
 
-##### Drop all except safe defaults:
+#### Drop all except safe defaults:
 
 ```bash
 docker run --rm -it alpine
 ```
 
-##### Drop specific capabilities:
+#### Drop specific capabilities:
 
 ```bash
 docker run --rm --cap-drop=NET_RAW alpine ping 127.0.0.1
@@ -522,13 +522,13 @@ docker run --rm --cap-drop=NET_RAW alpine ping 127.0.0.1
 
 > `ping` will now fail, because it needs `CAP_NET_RAW`.
 
-##### Add specific capabilities:
+#### Add specific capabilities:
 
 ```bash
 docker run --rm --cap-add=SYS_PTRACE alpine
 ```
 
-##### Add all capabilities (⚠️ dangerous):
+#### Add all capabilities (⚠️ dangerous):
 
 ```bash
 docker run --rm --cap-add=ALL alpine
@@ -546,6 +546,7 @@ This will show by default 1024, which is the ports that need privilege access.
 Inside container if this number is 0 we can drop NET_RAW and NET_BIND_SERVICE caps for example, and we still could open service in that port, because we already have permission to do so.
 
 ---
+
 #### View Current Capabilities
 
 To inspect a running process:
@@ -575,7 +576,7 @@ sudo filecap -a 2>/dev/null
 > This is used to investigate where caps have been added to specific programs.
 
 
-##### View capabilities from the inside
+#### View capabilities from the inside
 
 We can check capabilities a container has by using amicontained:
 
@@ -588,14 +589,14 @@ amicontained
 ```
 
 
-### Cgroups
+## Cgroups
 
 **cgroups (control groups)** are a **core part of Linux and container isolation**. They provide **resource control** — the ability to **limit, measure, and isolate** resource usage (CPU, memory, disk I/O, etc.) for processes.
 
 ---
 
 
-#### cgroups v1 vs v2
+### cgroups v1 vs v2
 
 | Feature          | cgroups v1             | cgroups v2                                  |
 | ---------------- | ---------------------- | ------------------------------------------- |
@@ -623,7 +624,7 @@ That means:
 - No special privileges required — **real resource isolation** without root.
 
 
-#### How Cgroups Work in Linux
+### How Cgroups Work in Linux
 
 We can check which Cgroups are in place for a specific process.
 
@@ -657,7 +658,7 @@ cgroup.stat             memory.events.local  memory.stat
 cgroup.subtree_control  memory.high          memory.swap.current
 ```
 
-##### Tools
+#### Tools
 
 We can see the same information with better visualization with:
 ```
@@ -671,7 +672,7 @@ lscgroup
 ```
 
 
-#### Applying Cgroup
+### Applying Cgroup
 
 1. **Mount a cgroup filesystem**  
 
@@ -704,9 +705,9 @@ echo 500M > /sys/fs/cgroup/mygroup/memory.max
 
 ---
 
-#### How Cgroups Work in Containers (Docker)
+### How Cgroups Work in Containers (Docker)
 
-#####  In Containers:
+####  In Containers:
 
 Every container is a **cgroup-managed process group**.
 
@@ -732,7 +733,7 @@ You can verify the Cgroup info applied to the container by getting the process I
 docker inspect -f '{{.State.Pid}}' [CONTAINER]
 ```
 
-##### Some examples for Docker Cgroup v2 — Resource Control Support
+#### Some examples for Docker Cgroup v2 — Resource Control Support
 
 | Docker Flag                                 | Resource     | Control Example / cgroup v2 Support                                           |
 | ------------------------------------------- | ------------ | ----------------------------------------------------------------------------- |
@@ -761,7 +762,7 @@ fork bomb example:
 > The --pids-limit 10 will mitigate the DoS attack
 
 
-##### Extra info
+#### Extra info
 
 > **Devices control (`--device`)**: In cgroup v2, the kernel no longer uses `devices.allow`. Docker still lets you configure device access, but **it does not enforce device restrictions** via cgroups. For actual enforcement, you'd need to use **eBPF** via `bpftool`.
 
@@ -770,7 +771,7 @@ fork bomb example:
 > **Freeze**: There's **no Docker flag** to pause/resume via the cgroup freezer (`cgroup.freeze`). You’d need to manually write `FROZEN` to `/sys/fs/cgroup/<container>/cgroup.freeze`
 
 
-##### Kubernetes uses cgroups under the hood too
+#### Kubernetes uses cgroups under the hood too
 
 When you define in a Pod spec:
 
@@ -785,7 +786,7 @@ resources:
 
 ---
 
-#### Monitoring Cgroups
+### Monitoring Cgroups
 
 You can see cgroup usage via:
 
@@ -804,14 +805,14 @@ Or tools like:
 ---
 
 
-### AppArmor & SELinux
+## AppArmor & SELinux
 
 **AppArmor** and **SELinux** are Linux security modules (LSMs) that enforce **Mandatory Access Control (MAC)** policies — unlike traditional discretionary access control (DAC), which relies on user/group permissions. In the context of **containers** (Docker/Kubernetes), they provide **fine-grained control** over what processes inside containers are allowed to do.
 
 > While it is possible to use either AppArmor or SELinux on any Linux host, there is typically only one default MAC system enabled, which varies based on the distribution. By default, Debian-derived systems have AppArmor and Red Hat-based systems use SELinux.
 
 ---
-#### AppArmor (Path-based)
+### AppArmor (Path-based)
 
 - Applies rules to **specific paths** (e.g., `/usr/bin/nginx`)    
 - Profiles define what a program **can read/write/execute**    
@@ -831,7 +832,7 @@ Lets run a container and check the command again to see how many processes are i
 docker run -d nginx
 ```
 
-##### Apparmor Custom Profiles
+#### Apparmor Custom Profiles
 
 Think like this, with applied apparmor we could restrict even the root running the container to access certain directories.
 
@@ -870,7 +871,7 @@ touch /etc/test
 
 > Use the tool [Bane](https://github.com/genuinetools/bane) to create profiles easier
 
-#### SELinux (Label-based)
+### SELinux (Label-based)
 
 - Applies labels to **files, processes, ports, etc.**    
 - Every interaction must match an **allowed policy** based on labels   
@@ -901,7 +902,7 @@ File systems:
 ls -alZ
 ```
 
-##### SELinux Policies
+#### SELinux Policies
 
 The general profile applies the same policy to every container
 
@@ -920,10 +921,12 @@ With the police disabled we can create a file inside the home directory
 > To create a custom policy there is the tool: [udica](https://github.com/containers/udica) 
 
 
-#### AppArmor & SELinux in Kubernetes
+### AppArmor & SELinux in Kubernetes
 
 Kubernetes supports LSMs via **security profiles** in the Pod spec.
-##### AppArmor Example (Kubernetes):
+
+#### AppArmor Example (Kubernetes):
+
 ```yml
 apiVersion: v1
 kind: Pod
@@ -939,7 +942,7 @@ spec:
 
 > Requires AppArmor enabled on the host and the profile loaded at `/etc/apparmor.d/`.
 
-##### SELinux Example (Kubernetes):
+#### SELinux Example (Kubernetes):
 
 Enable by setting the correct labels using the **CRI runtime** (e.g., `containerd`, `CRI-O`):
 ```yml
@@ -957,13 +960,13 @@ SELinux integration requires:
 
 ---
 
-### Seccomp
+## Seccomp
 
 [**Seccomp**](https://docs.docker.com/engine/security/seccomp/) is a Linux kernel feature that allows you to **filter system calls (syscalls)** made by a process. It's a sandboxing mechanism that reduces the kernel's attack surface.
 - Think of it as a **firewall for syscalls**.    
 - It uses **BPF (Berkeley Packet Filter)** rules to allow, deny, trap, or log specific syscalls.
 
-#### Seccomp in Containers (Docker)
+### Seccomp in Containers (Docker)
 
 Docker uses **Seccomp by default** to limit the syscalls containers can make.
 
@@ -973,7 +976,7 @@ Default Behavior:
 - It **blocks around 60+ dangerous syscalls**, e.g.:    
     - `keyctl`, `mount`, `ptrace`, `clone` with specific flags.        
 
-##### Testing default filter
+#### Testing default filter
 
 create a ubuntu container:
 ```
@@ -996,7 +999,7 @@ unshare
 # now it works
 ```
 
-##### Custom Seccomp Profile Example:
+#### Custom Seccomp Profile Example:
 
 In case the default filter is not enough, we could create custom profile to apply other set of restrictions.
 
@@ -1049,7 +1052,8 @@ docker run -ti --rm --privileged -v /:/host --pid=host ghcr.io/inspektor-gadget/
 ```
 
 ---
-#### Tools for Seccomp
+
+### Tools for Seccomp
 
 | Tool/Method                                                              | Use Case                                 |
 | ------------------------------------------------------------------------ | ---------------------------------------- |
@@ -1068,11 +1072,11 @@ sudo apt install seccomp-tools
 
 ---
 
-### Conclusion
+# Conclusion
 
 Container security isn't built on a single wall — it's a **defense-in-depth model** layered across the Linux kernel. **Namespaces** isolate what a container can see, **cgroups** limit what it can consume, **capabilities** restrict what it can do, while **Seccomp** filters how it behaves at the syscall level. Add **AppArmor or SELinux** to define access policies, and you have a layered sandbox that protects both the host and other containers. Each layer has limits, but together they form a powerful isolation model — and understanding how they work is key to hardening modern containerized environments.
 
-### References
+# References
 
 - [Security Labs Series of Container Fundamentals](https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-1/)
 - [Docker Engine Security](https://docs.docker.com/engine/security/)
