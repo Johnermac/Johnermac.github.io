@@ -153,6 +153,8 @@ menu:
         url: /notes/container/hackingkubernetes/
       - title: "- Container Security - Defense in Layers!"
         url: /notes/container/defenseinlayers/
+      - title: "- Linux Isolation Primitives in Action!"
+        url: /notes/container/containerscratch/
   - title: My CVEs
     children:
       - title: "CVE-2024-2479"
