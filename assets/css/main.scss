@@ -146,8 +146,9 @@ figure.highlight {
   border: 1px solid rgba(255,255,255,0.06);
 
   box-shadow:
-    0 1px 2px rgba(0,0,0,0.04),
-    0 8px 24px rgba(0,0,0,0.06);
+    0 1px 2px rgba(0,0,0,0.03),
+    0 6px 16px rgba(0,0,0,0.05);
+
 
   margin: 1.6rem 0;
 
@@ -329,3 +330,150 @@ figure.highlight:hover .btn {
   opacity: 1;
   pointer-events: auto;
 }
+
+/* =========================
+   Modern Post Typography (Scoped)
+   ========================= */
+
+.page__content {
+
+  /* ---------- Body Text ---------- */
+
+  font-weight: 400;
+  line-height: 1.72;
+  letter-spacing: 0.01em;
+
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  text-rendering: optimizeLegibility;  
+
+
+  /* ---------- Paragraph Rhythm ---------- */
+
+  p {
+    margin-bottom: 1.45rem;
+    line-height: 1.72;
+  }
+
+
+  /* ---------- Headings (Modern Docs Style) ---------- */
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.24;
+
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h1 {
+    font-size: 2.1rem;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    border-bottom: 1px solid rgba($border-color, 0.35);
+    padding-bottom: 0.55rem;
+  }
+
+  h3 { font-size: 1.35rem; }
+  h4 { font-size: 1.12rem; }
+
+
+  /* ---------- Blockquotes ---------- */
+
+  blockquote {
+    border-left: 3px solid $link-color;
+
+    padding-left: 1.15rem;
+    margin: 1.6rem 0;
+
+    font-style: normal;
+    font-weight: 450;
+
+    color: mix($text-color, #999, 80%);
+    line-height: 1.7;
+  }
+
+
+  /* ---------- Links ---------- */
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid rgba($link-color, 0.28);
+
+    transition:
+      color 0.18s ease,
+      border-color 0.18s ease;
+
+    &:hover {
+      border-bottom-color: $link-color;
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba($link-color, 0.45);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  }
+
+
+  
+  /* ---------- Strong Text ---------- */
+
+  strong, b {
+    font-weight: 600;
+  }
+
+}
+
+
+/* =========================
+   Modern TOC List Styling
+   ========================= */
+
+nav.toc {
+
+  ul,
+  ol {
+    margin: 0.4rem 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  li {
+    margin: 0.18rem 0;
+    line-height: 1.45;
+  }
+
+  /* TOC links — modern density */
+  a {
+    display: block;
+
+    padding: 0.18rem 0.4rem;
+    border-radius: 6px;
+
+    text-decoration: none;
+    border-bottom: none;
+
+    opacity: 0.85;
+
+    transition:
+      background 0.15s ease,
+      opacity 0.15s ease,
+      transform 0.12s ease;
+  }
+
+  a:hover {
+    background: rgba($text-color, 0.06);
+    opacity: 1;
+    transform: translateX(2px);
+  }
+
+}
+
