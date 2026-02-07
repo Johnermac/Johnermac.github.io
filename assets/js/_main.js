@@ -133,4 +133,28 @@ $(function() {
       $(this).append(anchor);
     }
   });
+
+    // Collapsible Table of Contents toggle
+    $('nav.toc').each(function() {
+      var $nav = $(this);
+      var $menu = $nav.find('.toc__menu');
+      var $header = $nav.find('header');
+
+      if ($menu.length && $header.length) {
+        var $btn = $('<button class="toc__toggle" aria-expanded="true" aria-controls="toc-menu">Hide</button>');
+        // insert after title
+        $header.append($btn);
+
+        $btn.on('click', function() {
+          var isCollapsed = $nav.hasClass('is--collapsed');
+          if (isCollapsed) {
+            $nav.removeClass('is--collapsed');
+            $btn.attr('aria-expanded', 'true').text('Hide');
+          } else {
+            $nav.addClass('is--collapsed');
+            $btn.attr('aria-expanded', 'false').text('Show');
+          }
+        });
+      }
+    });
 });

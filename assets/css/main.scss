@@ -4,5 +4,126 @@
 
 @charset "utf-8";
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+/* =========================
+   Smart Wide Layout
+   ========================= */
+
+/* Mobile default */
+body.wide #main {
+  width: 95vw;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Tablet */
+@include breakpoint($medium) {
+  body.wide #main {
+    width: 80vw;
+  }
+}
+
+/* Desktop */
+@include breakpoint($large) {
+  body.wide #main {
+    width: 60vw;
+    max-width: 1400px;
+  }
+}
+
+/* Ensure inner page fills container */
+body.wide .page {
+  width: 100%;
+  padding-right: 0;
+  float: none;
+}
+
+/* =========================
+   Collapsible Table of Contents — Thin Modern
+   ========================= */
+
+nav.toc {
+
+  /* ---------- Toggle Button ---------- */
+  .toc__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 0.45rem;
+    padding: 0.18rem 0.45rem;
+
+    min-height: 20px;
+
+    font-size: 0.78rem;
+    line-height: 1;
+
+    color: $text-color;
+
+    background: rgba($text-color, 0.035);
+    border: 1px solid rgba($border-color, 0.45);
+    border-radius: calc($border-radius * 1.1);
+
+    cursor: pointer;
+
+    transition:
+      background 0.16s ease,
+      border-color 0.16s ease,
+      opacity 0.16s ease;
+
+    opacity: 0.9;
+  }
+
+  /* Hover — modern but subtle */
+  .toc__toggle:hover {
+    background: rgba($text-color, 0.07);
+    border-color: rgba($border-color, 0.75);
+    opacity: 1;
+  }
+
+  /* Active press — no movement, just density */
+  .toc__toggle:active {
+    background: rgba($text-color, 0.12);
+  }
+
+  /* Focus accessibility */
+  .toc__toggle:focus-visible {
+    outline: 2px solid rgba($link-color, 0.35);
+    outline-offset: 2px;
+  }
+
+  /* ---------- Menu Collapse Animation ---------- */
+  .toc__menu {
+    max-height: 36rem;
+    overflow: auto;
+
+    transition:
+      max-height 0.26s cubic-bezier(.4,0,.2,1),
+      opacity 0.18s ease;
+
+    opacity: 1;
+  }
+
+  &.is--collapsed {
+    .toc__menu {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+    }
+  }
+
+  /* ---------- Mobile Tuning ---------- */
+  @include breakpoint($small) {
+    .toc__menu {
+      max-height: 18rem;
+    }
+
+    .toc__toggle {
+      padding: 0.16rem 0.4rem;
+      font-size: 0.75rem;
+      min-height: 18px;
+    }
+  }
+}

@@ -6,11 +6,9 @@ function sleep(ms) {
 }
 
 async function buttonBlink(btn, style) {
-  btn.classList.remove("btn-light");
   btn.classList.add(style);
   await sleep(250); // Blink ms
   btn.classList.remove(style);
-  btn.classList.add("btn-light");
 }
 // End
 
@@ -29,7 +27,9 @@ codeChunks.forEach(function (codeChunk) {
 
   // Prepare button
   var btn = document.createElement("button");
-  btn.innerHTML = "<i class='far fa-copy'></i>"; // Updated button content
+  btn.setAttribute('type', 'button');
+  btn.setAttribute('aria-label', 'Copy code');
+  btn.innerHTML = "<i class='far fa-copy btn-icon' aria-hidden='true'></i><span class='btn-label'>Copy code</span>"; // Icon + label
 
   // Inline styling for the button
   btn.classList.add("btn", "btn--primary", "btn-sm"); // Added "btn-sm" for smaller button size
@@ -51,43 +51,101 @@ codeChunks.forEach(function (codeChunk) {
 });
 // End
 
-// Add CSS styles dynamically
 var styles = `
-  .window-container {
-    position: relative;
-    background-color: #141414; /* Darker background color */
-    border-radius: 0px;
-    margin-bottom: 0px;
-  }
+.window-container {
+  position: relative;
+  background-color: #141414;
+  border-radius: 0;
+  margin-bottom: 0;
+}
 
-  .window-header {
-    background-color: #454545;
-    padding: 0px;
-    border-bottom: 0px solid #ddd;
-    text-align: right;
-  }
+/* ---------- HEADER SAME AS CODE BLOCK ---------- */
+.window-header {
+  background: inherit; /* matches code block */
 
-  .btn {
-    display: inline-block;
-    padding: 5px 8px; /* Adjusted button size */
-    margin-bottom: 0;
-    font-size: 12px; /* Adjusted font size */
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid transparent;
-    border-radius: 1px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
-  .btn--primary {
-    color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
-  }
+  min-height: 26px;
+  padding: 2px 6px;
+
+  border-bottom: none;
+}
+
+/* ---------- PERFECTLY CENTERED THIN BUTTON ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* ensures horizontal centering */
+
+  gap: 0.35rem;
+
+  padding: 2px 7px;
+  min-height: 20px; /* prevents font pushing height */
+
+  font-size: 12px;
+  font-weight: 450;
+  line-height: 1; /* critical for vertical centering */
+
+  white-space: nowrap;
+  cursor: pointer;
+
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 5px;
+
+  background: rgba(255,255,255,0.04);
+  color: #e6e6e6;
+
+  transition:
+    background .16s ease,
+    border-color .16s ease,
+    transform .05s ease,
+    opacity .16s ease;
+
+  opacity: 0.92;
+}
+
+.btn:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.14);
+  opacity: 1;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* ---------- ICON + LABEL BALANCE ---------- */
+.btn-icon {
+  font-size: 0.9rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.btn-label {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+/* ---------- STATES ---------- */
+.btn.is--copied {
+  background: rgba(22,163,74,0.9);
+  color: #fff;
+  border-color: transparent;
+}
+
+.btn.is--error {
+  background: rgba(220,38,38,0.9);
+  color: #fff;
+  border-color: transparent;
+}
 `;
+
+
+
 
 var styleTag = document.createElement("style");
 styleTag.innerHTML = styles;
@@ -103,14 +161,18 @@ var clipboards = new ClipboardJS(".btn", {
 // Messages and make the button blink
 clipboards.on("success", function (e) {
   e.clearSelection();
+  // brief blink then show persistent copied state
   buttonBlink(e.trigger, "btn--success");
 
-  // Change button content to "Copied!"
-  e.trigger.innerHTML = "<i class='fas fa-check'></i>";
+  e.trigger.classList.add('is--copied');
+  e.trigger.setAttribute('aria-pressed', 'true');
+  e.trigger.innerHTML = "<i class='fas fa-check btn-icon' aria-hidden='true'></i><span class='btn-label'>Copied!</span>";
 
-  // Reset button content after a delay (e.g., 1500 milliseconds)
+  // Reset button content after a delay
   setTimeout(function () {
-    e.trigger.innerHTML = "<i class='far fa-copy'></i>";
+    e.trigger.classList.remove('is--copied');
+    e.trigger.setAttribute('aria-pressed', 'false');
+    e.trigger.innerHTML = "<i class='far fa-copy btn-icon' aria-hidden='true'></i><span class='btn-label'>Copy code</span>";
   }, 1500);
 });
 
@@ -118,12 +180,14 @@ clipboards.on("error", function (e) {
   e.clearSelection();
   buttonBlink(e.trigger, "btn--danger");
 
-  // Change button content to "Error!"
-  e.trigger.innerHTML = "<i class='far fa-times-circle'></i>";
+  e.trigger.classList.add('is--error');
+  e.trigger.setAttribute('aria-pressed', 'true');
+  e.trigger.innerHTML = "<i class='far fa-times-circle btn-icon' aria-hidden='true'></i><span class='btn-label'>Error</span>";
 
-  // Reset button content after a delay (e.g., 1500 milliseconds)
   setTimeout(function () {
-    e.trigger.innerHTML = "<i class='far fa-copy'></i>";
+    e.trigger.classList.remove('is--error');
+    e.trigger.setAttribute('aria-pressed', 'false');
+    e.trigger.innerHTML = "<i class='far fa-copy btn-icon' aria-hidden='true'></i><span class='btn-label'>Copy code</span>";
   }, 1500);
 });
 // Finish
