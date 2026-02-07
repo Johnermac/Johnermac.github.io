@@ -477,3 +477,233 @@ nav.toc {
 
 }
 
+/* =========================
+   Modern Navigation Menu — 2026 Dev Docs Style
+   ========================= */
+
+.nav__list {
+  /* center the nav block and limit its width so it looks balanced */
+  width: 100%;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.75rem;
+  padding-right: 1.6rem;
+
+  padding-left: 0;   /* reduce global left weight */
+  padding-right: 0.4rem;  /* add breathing room right */
+
+
+  /* ---------- Category Titles ---------- */
+
+  .nav__category-title {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+
+    margin: 1.2rem 0 0.6rem 0;
+    padding: 0.45rem 0.55rem;
+
+    font-size: 1rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+
+    color: mix($link-color, $text-color, 70%);
+
+    background: transparent;
+    border: none;
+  }
+
+
+  /* ---------- Category Links ---------- */
+
+  .nav__category-link {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+
+    margin: 1.2rem 0 0.6rem 0;
+    padding: 0.45rem 0.55rem;
+
+    font-size: 1rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+
+    color: mix($link-color, $text-color, 70%);
+
+    background: transparent;
+    border: none;
+
+    text-decoration: none;
+    border-bottom: none;
+
+    transition:
+      background 0.18s ease,
+      transform 0.14s ease,
+      color 0.18s ease;
+  }
+
+  .nav__category-link:hover {
+    background: rgba($text-color, 0.05);
+    transform: translateX(1.5px);
+    color: $link-color;
+  }
+
+
+  /* ---------- Menu Items ---------- */
+
+  .nav__items {
+    a {
+      padding: 0.5rem 1rem; /* give slightly more right-side space */
+      display: block;
+
+      padding: 0.38rem 0.55rem;
+      margin: 0.1rem 0;
+
+      border-radius: 6px;
+
+      font-size: 0.92rem;
+      line-height: 1.45;
+
+      color: $text-color;
+
+      background: transparent;
+      border: none;
+
+      transition:
+        background 0.16s ease,
+        transform 0.12s ease,
+        color 0.16s ease,
+        opacity 0.16s ease;
+
+      opacity: 0.9;
+    }
+
+    a:hover {
+      background: rgba($text-color, 0.06);
+      transform: translateX(2px);
+      color: $link-color;
+      opacity: 1;
+    }
+
+    a.active {
+      background: rgba($link-color, 0.12);
+      color: $link-color;
+      font-weight: 600;
+      opacity: 1;
+    }
+
+
+    /* ---------- Dividers ---------- */
+
+    .nav__divider {
+      height: 1px;
+      margin: 0.8rem 0;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba($border-color, 0.25),
+        transparent
+      );
+    }
+
+
+    /* ---------- Badges ---------- */
+
+    .nav__badge {
+      display: inline-block;
+
+      margin-left: 0.4rem;
+      padding: 0.12rem 0.45rem;
+
+      font-size: 0.65rem;
+      font-weight: 650;
+
+      color: white;
+      background: $link-color;
+
+      border-radius: 999px;
+
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+  }
+
+
+  /* ---------- Collapsible ---------- */
+
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked ~ .nav__items {
+      display: block;
+    }
+  }
+
+
+  /* ---------- Mobile ---------- */
+
+  @include breakpoint(max-width $large - 1px) {
+
+    label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+
+      padding: 0.45rem 0.75rem;
+
+      font-weight: 600;
+      font-size: 0.9rem;
+
+      border-radius: 8px;
+
+      background: rgba($text-color, 0.06);
+      border: 1px solid rgba($border-color, 0.25);
+
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    label:hover {
+      background: rgba($text-color, 0.1);
+    }
+
+    label::before {
+      content: "▾";
+      font-size: 0.7rem;
+      transition: transform 0.2s ease;
+    }
+
+    input:checked + label::before {
+      transform: rotate(-180deg);
+    }
+
+    .nav__items {
+      margin-top: 0.4rem;
+      border-radius: 8px;
+      overflow: hidden;
+
+      background: rgba($border-color, 0.08);
+      animation: slideDown 0.28s ease;
+    }
+
+  }
+
+}
+
+
+/* ---------- Animation ---------- */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

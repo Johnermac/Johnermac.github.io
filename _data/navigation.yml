@@ -10,155 +10,170 @@ main:
 # menu links
 menu:
   - title: Posts
+    icon: "📝"
     children:
-      - title: "- How to become a Pentester (2024)"
+      - title: "How to become a Pentester (2024)"
         url: /insights/roadmap/
-      - title: "- Security Awareness"
+      - title: "Security Awareness"
         url: /awareness/awarenessdoc/
-      - title: "- Seniority != Mastery"
+      - title: "Seniority != Mastery"
         url: /insights/seniors/
-      - title: "- Sliver C2 Basics"
+      - title: "Sliver C2 Basics"
         url: /c2/sliverbasics/
-      - title: "────────────────" 
+      - separator: true
   - title: Notes
+    icon: "📚"
     children:
       - title: "eJPT"
         url: /notes/ejpt/
-      - title: "────────────────"      
+        badge: "Beginner"
+      - separator: true      
       - title: "eCPPTv2"
-        url: /review/ecppt/        
-      - title: "- System Security" 
+        url: /review/ecppt/
+        badge: "Intermediate"
+      - title: "System Security" 
         url: /notes/ecppt/systemsecurity/
-      - title: "- Network Security" 
+      - title: "Network Security" 
         url: /notes/ecppt/networksecurity/
-      - title: "- Powershell" 
+      - title: "Powershell" 
         url: /notes/ecppt/powershell/
-      - title: "- Linux Security" 
+      - title: "Linux Security" 
         url: /notes/ecppt/linux/
-      - title: "- Web App Security" 
+      - title: "Web App Security" 
         url: /notes/ecppt/webapp/
-      - title: "- Wi-Fi Pentest" 
+      - title: "Wi-Fi Pentest" 
         url: /notes/ecppt/wifi/
-      - title: "- Metasploit & Ruby" 
+      - title: "Metasploit & Ruby" 
         url: /notes/ecppt/ruby/
-      - title: "────────────────"
+      - separator: true
       - title: "PNPT" 
         url: /review/pnpt/
-      - title: "- Practical Ethical Hacker" 
+        badge: "Practical"
+      - title: "Practical Ethical Hacker" 
         url: /notes/pnpt/peh/
-      - title: "- OSINT" 
+      - title: "OSINT" 
         url: /notes/pnpt/osint/
-      - title: "- External Pentest Playbook" 
+      - title: "External Pentest Playbook" 
         url: /notes/pnpt/pentestexternal/
-      - title: "- Linux Privesc" 
+      - title: "Linux Privesc" 
         url: /notes/pnpt/linuxprivesc/
-      - title: "- Windows Privesc" 
+      - title: "Windows Privesc" 
         url: /notes/pnpt/winprivesc/  
-      - title: "- Movement, Pivoting and Persistence" 
+      - title: "Movement, Pivoting and Persistence" 
         url: /notes/pnpt/wpivoting/
-      - title: "────────────────"
+      - separator: true
       - title: "eWPTXv2" 
         url: /review/eewptx/
-      - title: "- Encoding & Filtering" 
+        badge: "Web"
+      - title: "Encoding & Filtering" 
         url: /notes/ewptx/encoding/
-      - title: "- Evasion Basics" 
+      - title: "Evasion Basics" 
         url: /notes/ewptx/evasionbasics/
-      - title: "- Cross-site scripting (XSS)" 
+      - title: "Cross-site scripting (XSS)" 
         url: /notes/ewptx/xss/
-      - title: "- XSS Filter Evasion" 
+      - title: "XSS Filter Evasion" 
         url: /notes/ewptx/xssfilter/
-      - title: "- Cross-site request forgery (CSRF)" 
+      - title: "Cross-site request forgery (CSRF)" 
         url: /notes/ewptx/csrf/
-      - title: "- HTML5" 
+      - title: "HTML5" 
         url: /notes/ewptx/html5/
-      - title: "- SQL Injection" 
+      - title: "SQL Injection" 
         url: /notes/ewptx/sqli/
-      - title: "- SQLI Filter Evasion" 
+      - title: "SQLI Filter Evasion" 
         url: /notes/ewptx/sqlievasion/
-      - title: "- XML Attacks" 
+      - title: "XML Attacks" 
         url: /notes/ewptx/xmlattacks/
-      - title: "- Attacking Serialization" 
+      - title: "Attacking Serialization" 
         url: /notes/ewptx/zattackingserialization/
-      - title: "- Server Side Attacks" 
+      - title: "Server Side Attacks" 
         url: /notes/ewptx/serverside/
-      - title: "- Attacking Crypto" 
+      - title: "Attacking Crypto" 
         url: /notes/ewptx/crypto/
-      - title: "- Authentication & SSO" 
+      - title: "Authentication & SSO" 
         url: /notes/ewptx/authenticationsso/
-      - title: "- APIs & Cloud Apps" 
+      - title: "APIs & Cloud Apps" 
         url: /notes/ewptx/apiscloud/
-      - title: "- Attacking LDAP" 
+      - title: "Attacking LDAP" 
         url: /notes/ewptx/ldap/
-      - title: "────────────────"
+      - separator: true
       - title: "Active Directory Exploitation"
-      - title: "- Powershell"
+        icon: "🔓"
+      - title: "Powershell"
         url: /notes/adx/powershell/
-      - title: "- Bloodhound"
+      - title: "Bloodhound"
         url: /notes/adx/bloodhound/    
-      - title: "- Win Privesc"
+      - title: "Win Privesc"
         url: /notes/adx/privesc/ 
-      - title: "- Lateral Movement"
+      - title: "Lateral Movement"
         url: /notes/adx/zlateralmov/
-      - title: "- AD CS"
+      - title: "AD CS"
         url: /notes/adcs/   
-      - title: "────────────────"
+      - separator: true
       - title: "CRTP"
         url: /review/crtp/
-      - title: "- AD Enumeration"
+        badge: "AD"
+      - title: "AD Enumeration"
         url: /notes/crtp/enum/
-      - title: "- Local Privesc"
+      - title: "Local Privesc"
         url: /notes/crtp/winprivesc/
-      - title: "- Lateral Movement"
+      - title: "Lateral Movement"
         url: /notes/crtp/latmov/
-      - title: "- Offensive .NET"
+      - title: "Offensive .NET"
         url: /notes/crtp/offdotnet/
-      - title: "- AD Persistence"
+      - title: "AD Persistence"
         url: /notes/crtp/domdom/
-      - title: "- AD Privesc"
+      - title: "AD Privesc"
         url: /notes/crtp/domprivesc/
-      - title: "- AD Defense"
+      - title: "AD Defense"
         url: /notes/crtp/defense/
-      - title: "────────────────"
+      - separator: true
       - title: "CRTE"
         url: /review/crte/
-      - title: "- Lateral Movement"
+        badge: "AD Elite"
+      - title: "Lateral Movement"
         url: /notes/crte/latmov/
-      - title: "- AD Privesc"
+      - title: "AD Privesc"
         url: /notes/crte/adprivesc/
-      - title: "- AD Persistence"
+      - title: "AD Persistence"
         url: /notes/crte/adpersistence/
-      - title: "- Cross attacks"
+      - title: "Cross attacks"
         url: /notes/crte/cross/
-      - title: "- Cheat Sheet"
+      - title: "Cheat Sheet"
         url: /notes/crte/cheatsheet/
-      - title: "────────────────"
-      - title: "CLOUD"
-      - title: "- Intro to Cloud Pentesting!"
+      - separator: true
+    
+  - title: CLOUD
+    icon: "☁️"
+    children:
+      - title: "Intro to Cloud Pentesting!"
         url: /notes/cloud/introcloud/
-      - title: "- Get Familiar with Azure!"
+      - title: "Get Familiar with Azure!"
         url: /notes/cloud/midazure/
-      - title: "- CARTP Review (Azure)"
+      - title: "CARTP Review (Azure)"
         url: /review/cartp/
-      - title: "- Intro & Recon"
+      - title: "Intro & Recon"
         url: /notes/cartp/cartp1/
-      - title: "- Enum & Privilege Escalation"
+      - title: "Enum & Privilege Escalation"
         url: /notes/cartp/cartp2/
-      - title: "- Lateral mov & Persistence"
+      - title: "Lateral mov & Persistence"
         url: /notes/cartp/cartp3/
-      - title: "────────────────"      
-      - title: "CONTAINER"
-      - title: "- Hacking Containers!"
+  - title: CONTAINER
+    icon: "🐳"
+    children:
+      - title: "Hacking Containers!"
         url: /notes/container/hackcontainers/
-      - title: "- Hacking Kubernetes!"
+      - title: "Hacking Kubernetes!"
         url: /notes/container/hackingkubernetes/
-      - title: "- Container Security - Defense in Layers!"
+      - title: "Container Security - Defense in Layers!"
         url: /notes/container/defenseinlayers/
-      - title: "- Linux Isolation Primitives in Action!"
+      - title: "Linux Isolation Primitives in Action!"
         url: /notes/container/containerscratch/
   - title: My CVEs
+    icon: "🔐"
     children:
       - title: "CVE-2024-2479"
         url: /cve/xss/
       - title: "CVE-2024-2480"
         url: /cve/sqli/
+
       
