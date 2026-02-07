@@ -1,6 +1,6 @@
 ---
 title: "2 - Evasion Basics"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser3.jpg
   overlay_image: /assets/images/main/header4.jpg

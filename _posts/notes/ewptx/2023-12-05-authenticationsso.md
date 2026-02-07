@@ -1,6 +1,6 @@
 ---
 title: "13 - Authentication & SSO"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser14.jpg
   overlay_image: /assets/images/main/header5.jpg

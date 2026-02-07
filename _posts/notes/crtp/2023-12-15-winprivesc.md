@@ -1,6 +1,6 @@
 ---
 title: "2 - Win Privesc"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/crtp/crtp-teaser3.jpg
   overlay_image: /assets/images/main/header1.jpg

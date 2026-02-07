@@ -1,6 +1,6 @@
 ---
 title: "10 - Attacking Serialization"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser11.jpg
   overlay_image: /assets/images/main/header3.jpg

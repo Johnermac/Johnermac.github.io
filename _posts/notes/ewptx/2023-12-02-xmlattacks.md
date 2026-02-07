@@ -1,6 +1,6 @@
 ---
 title: "9 - XML Attacks"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser10.jpg
   overlay_image: /assets/images/main/header4.jpg

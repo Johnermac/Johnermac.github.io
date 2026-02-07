@@ -1,6 +1,6 @@
 ---
 title: "4 - Offensive .NET"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/crtp/crtp-teaser5.jpg
   overlay_image: /assets/images/main/header5.jpg

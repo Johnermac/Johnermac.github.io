@@ -1,6 +1,6 @@
 ---
 title: "4 - Windows Lateral Movement"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/adx/adx-teaser4.jpg
   overlay_image: /assets/images/main/header4.jpg

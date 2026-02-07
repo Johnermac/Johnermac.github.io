@@ -1,6 +1,6 @@
 ---
 title: "6 - AD Privesc"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/crtp/crtp-teaser7.jpg
   overlay_image: /assets/images/main/header3.jpg

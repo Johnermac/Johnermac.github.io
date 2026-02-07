@@ -1,6 +1,6 @@
 ---
 title: "3 - AD Persistence"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/crte/crte-teaser4.jpg
   overlay_image: /assets/images/main/header8.jpg

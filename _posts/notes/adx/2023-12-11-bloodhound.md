@@ -1,6 +1,6 @@
 ---
 title: "2 - Bloodhound"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/adx/adx-teaser2.jpg
   overlay_image: /assets/images/main/header1.jpg

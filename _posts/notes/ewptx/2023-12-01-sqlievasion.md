@@ -1,6 +1,6 @@
 ---
 title: "8 - SQLI Filter Evasion"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser9.jpg
   overlay_image: /assets/images/main/header5.jpg

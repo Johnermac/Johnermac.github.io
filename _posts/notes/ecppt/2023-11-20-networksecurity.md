@@ -1,6 +1,6 @@
 ---
 title: "2 - Network Security"
-classes: single
+classes: wide
 header:  
   teaser: "/assets/images/posts/2023-11-19-ecppt/ecppt-teaser3.jpg"
   overlay_image: "/assets/images/main/header3.jpg"

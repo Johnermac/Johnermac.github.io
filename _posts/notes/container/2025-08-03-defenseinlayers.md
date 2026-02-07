@@ -1,6 +1,6 @@
 ---
 title: "Container Security - Defense in Layers!"
-classes: full-width
+classes: wide
 header:  
   teaser: /assets/images/posts/container/container-teaser1.jpg
   overlay_image: /assets/images/main/header10.jpg

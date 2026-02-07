@@ -1,6 +1,6 @@
 ---
 title: "4 - XSS Filter Evasion"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser5.jpg
   overlay_image: /assets/images/main/header4.jpg

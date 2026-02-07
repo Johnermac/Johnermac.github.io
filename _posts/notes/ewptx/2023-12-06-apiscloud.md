@@ -1,6 +1,6 @@
 ---
 title: "14 - APIs & Cloud Apps"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser15.jpg
   overlay_image: /assets/images/main/header4.jpg

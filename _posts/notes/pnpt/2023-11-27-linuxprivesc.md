@@ -1,6 +1,6 @@
 ---
 title: "4 - Linux Privilege Escalation"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/pnpt/pnpt-teaser6.jpg
   overlay_image: /assets/images/main/header2.jpg

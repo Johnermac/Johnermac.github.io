@@ -1,6 +1,6 @@
 ---
 title: "1 - Powershell"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/adx/adx-teaser1.jpg
   overlay_image: /assets/images/main/header2.jpg

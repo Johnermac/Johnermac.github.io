@@ -1,6 +1,6 @@
 ---
 title: "5 - Windows Privilege Escalation"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/pnpt/pnpt-teaser.jpg
   overlay_image: /assets/images/main/header2.jpg

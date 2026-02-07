@@ -1,6 +1,6 @@
 ---
 title: "6 - Movement, Pivoting and Persistence"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/pnpt/pnpt-teaser5.jpg
   overlay_image: /assets/images/main/header4.jpg

@@ -1,6 +1,6 @@
 ---
 title: "11 - Server Side Attacks"
-classes: single
+classes: wide
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser12.jpg
   overlay_image: /assets/images/main/header2.jpg
