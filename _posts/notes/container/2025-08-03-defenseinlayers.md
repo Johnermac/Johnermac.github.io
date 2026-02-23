@@ -198,7 +198,7 @@ ps -ef --forest
 
 But a better way is with docker inspect command:
 ```bash
-docker inspect -f '{{.State.Pid}}' [CONTAINER]
+docker inspect -f 'State.Pid' [CONTAINER]
 ```
 
 
@@ -240,7 +240,7 @@ docker run --name busyback -d busybox top
 
 Use docker inspect to get the PID:
 ```
-docker inspect -f '{{.State.Pid}}' busyback
+docker inspect -f '{{State.Pid}}' busyback
 ```
 
 Now we can for list the processes inside the container:
@@ -730,7 +730,7 @@ So:
 
 You can verify the Cgroup info applied to the container by getting the process ID from that container:
 ```
-docker inspect -f '{{.State.Pid}}' [CONTAINER]
+docker inspect -f '{{State.Pid}}' [CONTAINER]
 ```
 
 #### Some examples for Docker Cgroup v2 — Resource Control Support

@@ -159,6 +159,8 @@ Simple if its enabled we apply the flag and then UNSHARE.
 
 > I have to change to switch-case, ignore that amount of IFs please lol
 
+> nvm forgot that Go doesnt have fall-through in switch-case
+
 ```go
 func ApplyNamespaces(cfg NamespaceConfig) error {
 	var flags int
