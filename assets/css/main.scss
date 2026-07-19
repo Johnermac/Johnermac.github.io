@@ -46,6 +46,30 @@ body.wide .page {
 
 nav.toc {
 
+  /* ---------- Header Bar (toggle lives inside it) ---------- */
+  .nav__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .nav__title .toc__toggle {
+    margin-left: auto;
+    color: #fff;
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.25);
+  }
+
+  .nav__title .toc__toggle:hover {
+    background: rgba(255,255,255,0.22);
+    border-color: rgba(255,255,255,0.4);
+  }
+
+  &.is--collapsed .toc__toggle {
+    transform: rotate(-90deg);
+  }
+
   /* ---------- Toggle Button ---------- */
   .toc__toggle {
     display: inline-flex;
@@ -71,7 +95,8 @@ nav.toc {
     transition:
       background 0.16s ease,
       border-color 0.16s ease,
-      opacity 0.16s ease;
+      opacity 0.16s ease,
+      transform 0.2s ease;
 
     opacity: 0.9;
   }
@@ -185,13 +210,13 @@ figure.highlight:hover {
 .window-header {
   background: inherit;
   border: 0;
-  min-height: 34px;
+  min-height: 26px;
 
   display: flex;
   align-items: center;
   justify-content: flex-end;
 
-  padding: 0.2rem 0.45rem;
+  padding: 2px 6px;
 
   box-shadow: none;
   margin: 0;
@@ -200,8 +225,12 @@ figure.highlight:hover {
 
 /* Remove any thin separator lines */
 .window-container {
+  position: relative;
+  background-color: #141414;
   border: 0;
+  border-radius: 0;
   box-shadow: none;
+  margin-bottom: 0;
 }
 
 .window-header::before,
@@ -210,27 +239,31 @@ figure.highlight:hover {
 }
 
 
-/* ---------- Ultra Thin Modern Button ---------- */
+/* ---------- Ultra Thin Modern Copy Button ---------- */
 
-.btn {
+.code-copy-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  height: 26px;
-  padding: 0 0.65rem;
+  gap: 0.35rem;
 
-  font-size: 12.5px;
-  font-weight: 500;
+  height: 26px;
+  min-height: 20px;
+  padding: 2px 7px;
+
+  font-size: 12px;
+  font-weight: 450;
   line-height: 1;
+
+  white-space: nowrap;
+  cursor: pointer;
 
   color: #e6e6e6;
 
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 7px;
-
-  cursor: pointer;
+  border-radius: 5px;
 
   transition:
     background .16s ease,
@@ -238,51 +271,69 @@ figure.highlight:hover {
     transform .05s ease,
     opacity .16s ease;
 
-  opacity: .9;
+  opacity: .92;
 }
 
-.btn:hover {
-  background: rgba(255,255,255,0.07);
+.code-copy-btn:hover {
+  background: rgba(255,255,255,0.08);
   border-color: rgba(255,255,255,0.14);
   opacity: 1;
 }
 
-.btn:active {
-  transform: translateY(1px);
+.code-copy-btn:active {
+  transform: scale(0.96);
+}
+
+.code-copy-btn .btn-icon {
+  font-size: 0.9rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.code-copy-btn .btn-label {
+  display: flex;
+  align-items: center;
+  line-height: 1;
 }
 
 
 /* ---------- Copy States ---------- */
 
-.btn.is--copied {
-  background: #16a34a;
+.code-copy-btn.is--copied {
+  background: rgba(22,163,74,0.9);
   border-color: transparent;
   color: white;
 }
 
-.btn.is--error {
-  background: #dc2626;
+.code-copy-btn.is--error {
+  background: rgba(220,38,38,0.9);
   border-color: transparent;
   color: white;
 }
 
 
-/* ---------- Modern Scrollbars ---------- */
+/* ---------- Modern Scrollbars (site-wide, matches dark theme) ---------- */
 
-.highlight pre::-webkit-scrollbar {
+html {
+  scrollbar-color: rgba(255,255,255,0.22) transparent; /* Firefox; inherits */
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
   height: 8px;
 }
 
-.highlight pre::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.highlight pre::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background: rgba(255,255,255,0.18);
   border-radius: 20px;
 }
 
-.highlight pre::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover {
   background: rgba(255,255,255,0.32);
 }
 
@@ -296,7 +347,7 @@ figure.highlight:hover {
     padding: 1rem 1rem;
   }
 
-  .btn {
+  .code-copy-btn {
     height: 24px;
     font-size: 12px;
   }
@@ -306,8 +357,8 @@ figure.highlight:hover {
 /* ---------- Copy Button Visibility (Hover Reveal) ---------- */
 
 /* Hidden by default */
-div.highlighter-rouge .btn,
-figure.highlight .btn {
+div.highlighter-rouge .code-copy-btn,
+figure.highlight .code-copy-btn {
   opacity: 0;
   transform: translateY(-2px);
   pointer-events: none;
@@ -318,15 +369,15 @@ figure.highlight .btn {
 }
 
 /* Show when hovering code block */
-div.highlighter-rouge:hover .btn,
-figure.highlight:hover .btn {
+div.highlighter-rouge:hover .code-copy-btn,
+figure.highlight:hover .code-copy-btn {
   opacity: 0.9;
   transform: translateY(0);
   pointer-events: auto;
 }
 
 /* Keep visible when keyboard focused (accessibility) */
-.btn:focus-visible {
+.code-copy-btn:focus-visible {
   opacity: 1;
   pointer-events: auto;
 }
@@ -487,9 +538,6 @@ nav.toc {
   max-width: 360px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 0.75rem;
-  padding-right: 1.6rem;
-
   padding-left: 0;   /* reduce global left weight */
   padding-right: 0.4rem;  /* add breathing room right */
 
@@ -554,7 +602,6 @@ nav.toc {
 
   .nav__items {
     a {
-      padding: 0.5rem 1rem; /* give slightly more right-side space */
       display: block;
 
       padding: 0.38rem 0.55rem;
