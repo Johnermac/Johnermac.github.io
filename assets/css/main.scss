@@ -78,12 +78,14 @@ body.wide .page {
 
 /* ---------- Content Panel — every page framed like a terminal window ---------- */
 
-article.page,
 #main .archive {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba($border-color, 0.6);
   border-radius: 14px;
+}
 
+article.page,
+#main .archive {
   padding: 1.6rem 1.2rem;
   margin-top: 1.4rem;
   margin-bottom: 2rem;
@@ -156,17 +158,20 @@ article.page,
 .note-titlebar {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+
   gap: 0.5rem;
 
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba($border-color, 0.6);
+  border-radius: 14px;
+
+  padding: 0 1.2rem;
+  min-height: 3rem;
   margin: 0 0 1.3rem;
 
   user-select: none;
-
-  /* Phone: long paths must break inside the panel, centered */
-  @include breakpoint(max-width $medium - 1px) {
-    justify-content: center;
-    text-align: center;
-  }
 }
 
 .note-titlebar__dot {
