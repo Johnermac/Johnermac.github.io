@@ -161,9 +161,16 @@ article.page,
   margin: 0 0 1.3rem;
 
   user-select: none;
+
+  /* Phone: long paths must break inside the panel, centered */
+  @include breakpoint(max-width $medium - 1px) {
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 .note-titlebar__dot {
+  flex-shrink: 0;
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -175,6 +182,9 @@ article.page,
   font-size: 0.72rem;
   letter-spacing: 0.05em;
   color: mix($text-color, #888, 75%);
+
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 /* =========================
@@ -1052,12 +1062,22 @@ nav.toc {
 /* ---------- Author Links as Icon Buttons ---------- */
 
 .sidebar .author__urls {
-  display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.45rem;
 
-  padding: 0;
+  /* Below $large the theme renders this as a "Follow" dropdown —
+     keep it hidden until toggled, and lay out as flex when open. */
+  display: none;
+
+  &.is--visible {
+    display: flex;
+  }
+
+  @include breakpoint($large) {
+    display: flex;
+    padding: 0;
+  }
 
   li {
     padding: 0;
