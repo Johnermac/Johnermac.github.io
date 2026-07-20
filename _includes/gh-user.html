@@ -1,0 +1,20 @@
+{%- comment -%}
+  Resolves the site owner's GitHub username. Usage:
+    {% capture gh_user %}{% include gh-user.html %}{% endcapture %}
+    {% assign gh_user = gh_user | strip %}
+  Resolution order (all automatic for forks):
+    1. site.github_username (explicit override in _config.yml)
+    2. the GitHub link in the author profile (author.links)
+    3. site.url hostname (USER.github.io)
+{%- endcomment -%}
+{%- assign __gh = site.github_username -%}
+{%- if __gh == nil or __gh == "" -%}
+  {%- for link in site.author.links -%}
+    {%- if link.url contains "github.com/" -%}
+      {%- assign __gh = link.url | split: "github.com/" | last | split: "/" | first -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+{%- if __gh == nil or __gh == "" -%}
+  {%- assign __gh = site.url | remove: "https://" | remove: "http://" | split: "." | first -%}
+{%- endif -%}{{ __gh }}

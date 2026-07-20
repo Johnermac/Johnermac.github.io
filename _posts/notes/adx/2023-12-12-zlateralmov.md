@@ -1,21 +1,18 @@
 ---
 title: "4 - Windows Lateral Movement"
-classes: wide
+categories:
+  - notes
+  - adx
+order: 4
 header:  
   teaser: /assets/images/posts/adx/adx-teaser4.jpg
   overlay_image: /assets/images/main/header4.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Intro to Windows Lateral Movement"
-description: "Intro to Windows Lateral Movement"
-categories:
-  - notes
-  - adx
 tags:
   - beginner
   - AD
   - Windows 
-toc: true
 ---
 
 # Lateral Movement

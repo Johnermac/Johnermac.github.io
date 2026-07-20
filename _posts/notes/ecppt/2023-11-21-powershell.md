@@ -1,22 +1,20 @@
 ---
 title: "3 - Powershell"
-classes: wide
+categories:
+  - notes
+  - ecppt
+order: 3
 header:  
   teaser: "/assets/images/posts/2023-11-19-ecppt/ecppt-teaser4.jpg"
   overlay_image: "/assets/images/main/header6.jpg"
   overlay_filter: 0.5  
-ribbon: Firebrick
 excerpt: "eCPPTv2"
 description: "Learn to reduce your footprint and evade defense mechanisms"
-categories:
-  - notes
-  - ecppt
 tags:
   - beginner
   - pentest
   - windows
-  - powershell
-toc: true
+  - powershell
 ---
 
 # Fundamentals

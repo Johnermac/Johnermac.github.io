@@ -1,16 +1,14 @@
 ---
 title: "5 - Cheat Sheet"
-classes: wide
+categories:
+  - notes
+  - crte
+order: 5
 header:  
   teaser: /assets/images/posts/crte/crte-teaser6.jpg
   overlay_image: /assets/images/main/header4.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Cheat Sheet for CRTP/CRTE exams"
-description: "Cheat Sheet for CRTP/CRTE exams"
-categories:
-  - notes
-  - crte
 tags:
   - intermediate
   - AD

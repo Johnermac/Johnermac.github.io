@@ -1,20 +1,16 @@
 ---
 title: "Container Security - Defense in Layers!"
-classes: wide
+categories:
+  - notes
+  - container
 header:  
   teaser: /assets/images/posts/container/container-teaser1.jpg
   overlay_image: /assets/images/main/header10.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Isolation Layers: Namespaces, Capabilities, Cgroups, AppArmor & SELinux and Seccomp!"
-description: "Isolation Layers: Namespaces, Capabilities, Cgroups, AppArmor & SELinux and Seccomp!"
-categories:
-  - notes
-  - container
 tags:
   - container
-  - docker 
-toc: true
+  - docker 
 ---
 
 

@@ -1,22 +1,20 @@
 ---
 title: "1 - System Security"
-classes: wide
+categories:
+  - notes
+  - ecppt
+order: 1
 header:  
   teaser: "/assets/images/posts/2023-11-19-ecppt/ecppt-teaser2.jpg"
   overlay_image: "/assets/images/main/header2.jpg"
   overlay_filter: 0.5  
-ribbon: Firebrick
 excerpt: "eCPPTv2"
 description: "Low level stuff - Do not panic!"
-categories:
-  - notes
-  - ecppt
 tags:
   - beginner
   - pentest
   - lowlevel
-  - bof
-toc: true
+  - bof
 ---
 
 # Architecture

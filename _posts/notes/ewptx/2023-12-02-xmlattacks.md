@@ -1,21 +1,18 @@
 ---
 title: "9 - XML Attacks"
-classes: wide
+categories:
+  - notes
+  - ewptx
+order: 9
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser10.jpg
   overlay_image: /assets/images/main/header4.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Tag Injection, XXE, Xpath Injection and More"
-description: "Tag Injection, XXE, Xpath Injection and More"
-categories:
-  - notes
-  - ewptx
 tags:
   - advanced
   - pentest
   - web   
-toc: true
 ---
 
 # XML Attacks

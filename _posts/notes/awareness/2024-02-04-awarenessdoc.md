@@ -1,13 +1,11 @@
 ---
 title: "Security Awareness"
-classes: wide
 header:  
   teaser: /assets/images/posts/awareness/teaser.jpg
   overlay_image: /assets/images/main/header2.jpg
   overlay_filter: 0.5
 ribbon: DarkSlateBlue
 excerpt: "Document to raise awareness of the security in your company"
-description: "Document to raise awareness of the security in your company"
 categories:
   - awareness
 tags:

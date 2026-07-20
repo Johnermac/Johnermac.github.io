@@ -1,22 +1,19 @@
 ---
 title: "8 - SQLI Filter Evasion"
-classes: wide
+categories:
+  - notes
+  - ewptx
+order: 8
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser9.jpg
   overlay_image: /assets/images/main/header5.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Bypassing Keyword and Function Filters"
-description: "Bypassing Keyword and Function Filters"
-categories:
-  - notes
-  - ewptx
 tags:
   - advanced
   - pentest
   - web  
   - bypass
-toc: true
 ---
 
 # SQL Injection Filter Evasion

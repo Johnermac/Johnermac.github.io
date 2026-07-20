@@ -1,23 +1,20 @@
 ---
 title: "6 - Movement, Pivoting and Persistence"
-classes: wide
+categories:
+  - notes
+  - pnpt
+order: 6
 header:  
   teaser: /assets/images/posts/pnpt/pnpt-teaser5.jpg
   overlay_image: /assets/images/main/header4.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Lateral Movement, Pivoting and Persistence using the C2 Covenant and Metasploit"
-description: "Lateral Movement, Pivoting and Persistence using the C2 Covenant and Metasploit"
-categories:
-  - notes
-  - pnpt
 tags:
   - beginner
   - pentest
   - pivot
   - c2
   - AD
-toc: true
 ---
 
 > [INFO] Even though this course is not necessary to pass the PNPT exam, I'm adding it here anyway.

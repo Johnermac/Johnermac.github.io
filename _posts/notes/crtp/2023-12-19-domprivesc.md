@@ -1,22 +1,19 @@
 ---
 title: "6 - AD Privesc"
-classes: wide
+categories:
+  - notes
+  - crtp
+order: 6
 header:  
   teaser: /assets/images/posts/crtp/crtp-teaser7.jpg
   overlay_image: /assets/images/main/header3.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Kerberos attacks, Delegations, Across Trusts escalation, ADCS and More"
-description: "Kerberos attacks, Delegations, Across Trusts escalation, ADCS and More"
-categories:
-  - notes
-  - crtp
 tags:
   - beginner
   - AD
   - Windows
   - privesc 
-toc: true
 ---
 
 # Privesc - Kerberoast

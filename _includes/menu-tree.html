@@ -1,0 +1,55 @@
+{% capture gh_user %}{% include gh-user.html %}{% endcapture %}
+{% assign gh_user = gh_user | strip | downcase %}
+{% comment %}
+  Automatic directory tree of all posts. Folders/categories become
+  directories (nested), posts become files. Zero configuration.
+  Within a folder, posts sort by numeric `order:` front matter when any
+  post in that folder defines it, otherwise by date.
+{% endcomment %}
+<div class="menu-tree">
+  <div class="menu-tree__root">~/{{ gh_user }}</div>
+
+  {% assign tops = site.posts | group_by_exp: "p", "p.categories | first" | sort: "name" %}
+  {% for top in tops %}
+    {% assign top_last = forloop.last %}
+    {% if top_last %}{% assign p1 = "&nbsp;&nbsp;&nbsp;" %}{% else %}{% assign p1 = "│&nbsp;&nbsp;" %}{% endif %}
+
+    <div class="menu-tree__row menu-tree__row--dir">
+      <span class="menu-tree__glyph">{% if top_last %}└──{% else %}├──{% endif %}</span>
+      <span class="menu-tree__dir">{% if top.name == "" %}posts/{% else %}{{ top.name | downcase }}/{% endif %}</span>
+    </div>
+
+    {% assign subs = top.items | group_by_exp: "p", "p.categories | slice: 1, 9 | join: '/'" | sort: "name" %}
+    {% for sub in subs %}
+      {% assign sub_last = forloop.last %}
+
+      {% if sub.name == "" %}
+        {% comment %} posts directly under the top-level folder {% endcomment %}
+        {% assign ordered = sub.items | where_exp: "p", "p.order" %}
+        {% if ordered.size > 0 %}{% assign kids = sub.items | sort: "order" %}{% else %}{% assign kids = sub.items | sort: "date" %}{% endif %}
+        {% for post in kids %}
+          {% if sub_last and forloop.last %}{% assign g2 = "└──" %}{% else %}{% assign g2 = "├──" %}{% endif %}
+          <div class="menu-tree__row">
+            <span class="menu-tree__glyph">{{ p1 }} {{ g2 }}</span>
+            <a class="menu-tree__file" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="menu-tree__row menu-tree__row--dir">
+          <span class="menu-tree__glyph">{{ p1 }} {% if sub_last %}└──{% else %}├──{% endif %}</span>
+          <span class="menu-tree__dir">{{ sub.name | downcase }}/</span>
+        </div>
+
+        {% if sub_last %}{% assign p2 = "&nbsp;&nbsp;&nbsp;" %}{% else %}{% assign p2 = "│&nbsp;&nbsp;" %}{% endif %}
+        {% assign ordered = sub.items | where_exp: "p", "p.order" %}
+        {% if ordered.size > 0 %}{% assign kids = sub.items | sort: "order" %}{% else %}{% assign kids = sub.items | sort: "date" %}{% endif %}
+        {% for post in kids %}
+          <div class="menu-tree__row">
+            <span class="menu-tree__glyph">{{ p1 }} {{ p2 }} {% if forloop.last %}└──{% else %}├──{% endif %}</span>
+            <a class="menu-tree__file" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</div>

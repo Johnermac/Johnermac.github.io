@@ -1,22 +1,20 @@
 ---
 title: "2 - Evasion Basics"
-classes: wide
+categories:
+  - notes
+  - ewptx
+order: 2
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser3.jpg
   overlay_image: /assets/images/main/header4.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Some basic techniques for evasion in WEB APP scenario"
 description: "Base64 encoding, obfuscations, compressing, escapes and More"
-categories:
-  - notes
-  - ewptx
 tags:
   - advanced
   - pentest
   - web
   - bypass
-toc: true
 ---
 
 ## Base64 Encoding Evasion

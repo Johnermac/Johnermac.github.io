@@ -1,21 +1,18 @@
 ---
 title: "10 - Attacking Serialization"
-classes: wide
+categories:
+  - notes
+  - ewptx
+order: 10
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser11.jpg
   overlay_image: /assets/images/main/header3.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Attacking Serialization in Java, PHP and .NET"
-description: "Attacking Serialization in Java, PHP and .NET"
-categories:
-  - notes
-  - ewptx
 tags:
   - advanced
   - pentest
   - web    
-toc: true
 ---
 
 # Attacking Serialization

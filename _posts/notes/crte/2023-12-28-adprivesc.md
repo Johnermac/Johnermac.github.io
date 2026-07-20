@@ -1,22 +1,19 @@
 ---
 title: "2 - AD Privesc"
-classes: wide
+categories:
+  - notes
+  - crte
+order: 2
 header:  
   teaser: /assets/images/posts/crte/crte-teaser3.jpg
   overlay_image: /assets/images/main/header9.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "LAPS, gMSA and Constrained Deleg"
-description: "LAPS, gMSA and Constrained Deleg"
-categories:
-  - notes
-  - crte
 tags:
   - intermediate
   - AD
   - Windows
   - privesc 
-toc: true
 ---
 
 # AD Privesc

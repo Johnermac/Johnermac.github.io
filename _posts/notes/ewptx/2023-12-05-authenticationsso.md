@@ -1,22 +1,19 @@
 ---
 title: "13 - Authentication & SSO"
-classes: wide
+categories:
+  - notes
+  - ewptx
+order: 13
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser14.jpg
   overlay_image: /assets/images/main/header5.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Attacking JWT, OAuth, SAML and Bypassing 2FA"
-description: "Attacking JWT, OAuth, SAML and Bypassing 2FA"
-categories:
-  - notes
-  - ewptx
 tags:
   - advanced
   - pentest
   - web   
   - bypass 
-toc: true
 ---
 
 # Attacking Authentication & SSO

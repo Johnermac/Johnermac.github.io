@@ -1,21 +1,18 @@
 ---
 title: "1 - Powershell"
-classes: wide
+categories:
+  - notes
+  - adx
+order: 1
 header:  
   teaser: /assets/images/posts/adx/adx-teaser1.jpg
   overlay_image: /assets/images/main/header2.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Starting with Powershell for AD Exploitation!"
-description: "Starting with Powershell for AD Exploitation!"
-categories:
-  - notes
-  - adx
 tags:
   - beginner
   - AD
   - powershell 
-toc: true
 ---
 
 # Active Directory Exploitation 

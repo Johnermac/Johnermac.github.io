@@ -1,4 +1,4 @@
-/* Small TOC toggle so pages can collapse/expand the table of contents. */
+/* TOC toggle — chapters tree starts collapsed, header click expands/collapses. */
 (function($){
   $(function(){
     var $toc = $('nav.toc');
@@ -12,8 +12,7 @@
       $heading = $toc.find('.toc__heading, h2, h3').first();
     }
 
-    // Single icon button
-    var $btn = $('<button class="toc__toggle" aria-expanded="true" aria-label="Toggle table of contents">▾</button>');
+    var $btn = $('<button class="toc__toggle" aria-expanded="false" aria-label="Toggle table of contents">▾</button>');
 
     if ($heading.length) {
       $heading.append($btn);
@@ -21,10 +20,23 @@
       $toc.prepend($btn);
     }
 
-    $btn.on('click', function(){
-      var expanded = $(this).attr('aria-expanded') === 'true';
-      $(this).attr('aria-expanded', !expanded);
+    // Start collapsed
+    $toc.addClass('is--collapsed');
+
+    function toggle(){
+      var expanded = $btn.attr('aria-expanded') === 'true';
+      $btn.attr('aria-expanded', String(!expanded));
       $toc.toggleClass('is--collapsed');
+    }
+
+    $btn.on('click', function(e){
+      e.stopPropagation();
+      toggle();
     });
+
+    // Whole header bar is a click target
+    if ($heading.length) {
+      $heading.css('cursor', 'pointer').on('click', toggle);
+    }
   });
 })(jQuery);

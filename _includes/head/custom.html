@@ -1,10 +1,18 @@
 <!-- start custom head snippets -->
 
+<!-- Font Awesome 6 (replaces dead kit script) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<!-- Self-hosted font preload -->
+<link rel="preload" href="/assets/fonts/JetBrainsMono-var.woff2" as="font" type="font/woff2" crossorigin>
+
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->
 
-<!-- favicon -->
-<link rel="icon" type="image/jpeg" sizes="32x32" href="/assets/images/main/fav-32x32.jpeg">
-<link rel="icon" type="image/jpeg" sizes="16x16" href="/assets/images/main/fav-16x16.jpeg">
-<meta name="theme-color" content="#ffffff">
+<!-- favicon — automated from the owner's GitHub avatar -->
+{% capture gh_user %}{% include gh-user.html %}{% endcapture %}{% assign gh_user = gh_user | strip %}
+<link rel="icon" type="image/png" sizes="32x32" href="https://github.com/{{ gh_user }}.png?size=32">
+<link rel="icon" type="image/png" sizes="16x16" href="https://github.com/{{ gh_user }}.png?size=16">
+<link rel="apple-touch-icon" sizes="180x180" href="https://github.com/{{ gh_user }}.png?size=180">
+<meta name="theme-color" content="#181b20">

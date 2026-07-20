@@ -1,0 +1,36 @@
+{% comment %}
+  Renders the owner's GitHub profile README (repo USER/USER) client-side.
+  Username resolution order — all automatic for forks:
+    1. site.github_username (explicit override in _config.yml)
+    2. the GitHub link in the author profile (author.links)
+    3. site.url hostname (USER.github.io)
+{% endcomment %}
+{% capture gh_user %}{% include gh-user.html %}{% endcapture %}
+{% assign gh_user = gh_user | strip %}
+<div class="gh-readme" id="gh-readme" data-user="{{ gh_user }}">
+  <p class="gh-readme__status">Loading README…</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/16.3.0/lib/marked.umd.min.js" integrity="sha512-V6rGY7jjOEUc7q5Ews8mMlretz1Vn2wLdMW/qgABLWunzsLfluM0FwHuGjGQ1lc8jO5vGpGIGFE+rTzB+63HdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  (function () {
+    var el = document.getElementById("gh-readme");
+    if (!el) return;
+    var user = el.getAttribute("data-user");
+    var profile = "https://github.com/" + user;
+
+    fetch("https://raw.githubusercontent.com/" + user + "/" + user + "/HEAD/README.md")
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.text();
+      })
+      .then(function (md) {
+        el.innerHTML = marked.parse(md);
+      })
+      .catch(function () {
+        el.innerHTML =
+          '<p>Could not load the profile README. Visit <a href="' +
+          profile + '">' + profile + "</a>.</p>";
+      });
+  })();
+</script>

@@ -1,22 +1,19 @@
 ---
 title: "4 - Offensive .NET"
-classes: wide
+categories:
+  - notes
+  - crtp
+order: 4
 header:  
   teaser: /assets/images/posts/crtp/crtp-teaser5.jpg
   overlay_image: /assets/images/main/header5.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Use Minimal obfuscation and String manipulation to bypass Win Defender"
-description: "Use Minimal obfuscation and String manipulation to bypass Win Defender"
-categories:
-  - notes
-  - crtp
 tags:
   - beginner
   - AD
   - Windows
   - bypass 
-toc: true
 ---
 
 # Offensive .NET

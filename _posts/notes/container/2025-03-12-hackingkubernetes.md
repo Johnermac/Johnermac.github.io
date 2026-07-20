@@ -1,20 +1,16 @@
 ---
 title: "Hacking Kubernetes!"
-classes: wide
+categories:
+  - notes
+  - container
 header:  
   teaser: /assets/images/posts/container/kubernetes-teaser1.jpg
   overlay_image: /assets/images/main/header2.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "API Server, Kubelet API, ETCD Storage and More!"
-description: "API Server, Kubelet API, ETCD Storage and More!"
-categories:
-  - notes
-  - container
 tags:
   - container
-  - kubernetes 
-toc: true
+  - kubernetes 
 ---
 
 

@@ -1,22 +1,20 @@
 ---
 title: "5 - Windows Privilege Escalation"
-classes: wide
+categories:
+  - notes
+  - pnpt
+order: 5
 header:  
   teaser: /assets/images/posts/pnpt/pnpt-teaser.jpg
   overlay_image: /assets/images/main/header2.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Elevate and Conquer: Windows Privilege Escalation Strategies."
 description: "Navigating Windows Privesc Techniques: Kernel Exploits, Impersonation, Registry, DLL Hijacking and More "
-categories:
-  - notes
-  - pnpt
 tags:
   - beginner
   - pentest
   - windows
   - privesc
-toc: true
 ---
 
 **Resources**:

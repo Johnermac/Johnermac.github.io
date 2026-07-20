@@ -1,21 +1,18 @@
 ---
 title: "11 - Server Side Attacks"
-classes: wide
+categories:
+  - notes
+  - ewptx
+order: 11
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser12.jpg
   overlay_image: /assets/images/main/header2.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "SSRF, SSI, XSLT attacks and More"
-description: "SSRF, SSI, XSLT attacks and More"
-categories:
-  - notes
-  - ewptx
 tags:
   - advanced
   - pentest
   - web    
-toc: true
 ---
 
 # Server-Side Attacks

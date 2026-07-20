@@ -1,22 +1,19 @@
 ---
 title: "4 - XSS Filter Evasion"
-classes: wide
+categories:
+  - notes
+  - ewptx
+order: 4
 header:  
   teaser: /assets/images/posts/ewptx/ewptx-teaser5.jpg
   overlay_image: /assets/images/main/header4.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Bypass blacklisting Filters, sanitization and Browser Filters"
-description: "Bypass blacklisting Filters, sanitization and Browser Filters"
-categories:
-  - notes
-  - ewptx
 tags:
   - advanced
   - pentest
   - web
   - bypass
-toc: true
 ---
 
 # Filter Evasion and WAF Bypassing

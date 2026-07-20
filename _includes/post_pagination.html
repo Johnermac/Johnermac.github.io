@@ -1,14 +1,26 @@
 {% if page.previous or page.next %}
-  <nav class="pagination">
+  <nav class="post-pagination">
     {% if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}" class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+      <a href="{{ page.previous.url | relative_url }}" class="pager-btn" title="{{ page.previous.title | markdownify | strip_html }}">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        <span class="pager-btn__label">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</span>
+      </a>
     {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+      <span class="pager-btn disabled">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        <span class="pager-btn__label">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</span>
+      </span>
     {% endif %}
     {% if page.next %}
-      <a href="{{ page.next.url | relative_url }}" class="pagination--pager" title="{{ page.next.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+      <a href="{{ page.next.url | relative_url }}" class="pager-btn" title="{{ page.next.title | markdownify | strip_html }}">
+        <span class="pager-btn__label">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</span>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
     {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+      <span class="pager-btn disabled">
+        <span class="pager-btn__label">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</span>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </span>
     {% endif %}
   </nav>
 {% endif %}

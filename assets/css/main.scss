@@ -4,6 +4,42 @@
 
 @charset "utf-8";
 
+/* =========================
+   Terminal Type System — self-hosted JetBrains Mono (variable)
+   ========================= */
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono-var.woff2") format("woff2-variations"),
+       url("/assets/fonts/JetBrainsMono-var.woff2") format("woff2");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono-Italic-var.woff2") format("woff2-variations"),
+       url("/assets/fonts/JetBrainsMono-Italic-var.woff2") format("woff2");
+  font-weight: 100 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Override theme font variables (must come before theme import).
+   $sans-serif too — masthead, archive cards and nav use it directly. */
+$mono-stack: "JetBrains Mono", ui-monospace, "Cascadia Code", "Fira Code", Consolas, monospace;
+$sans-serif: $mono-stack;
+$global-font-family: $mono-stack;
+$header-font-family: $mono-stack;
+$monospace: $mono-stack;
+
+/* Accent — denim blue instead of the dark skin's magenta */
+$text-color: #eaeaea;
+$primary-color: #1560bd;
+$link-color: mix($primary-color, $text-color, 60%);
+$link-color-hover: lighten($primary-color, 12%);
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
@@ -11,8 +47,8 @@
    Smart Wide Layout
    ========================= */
 
-/* Mobile default */
-body.wide #main {
+/* Mobile default — applies to every page, not only .wide posts */
+#main {
   width: 95vw;
   margin-inline: auto;
   padding-inline: 1rem;
@@ -20,16 +56,16 @@ body.wide #main {
 
 /* Tablet */
 @include breakpoint($medium) {
-  body.wide #main {
-    width: 80vw;
+  #main {
+    width: 90vw;
   }
 }
 
 /* Desktop */
 @include breakpoint($large) {
-  body.wide #main {
-    width: 60vw;
-    max-width: 1400px;
+  #main {
+    width: 86vw;
+    max-width: 1700px;
   }
 }
 
@@ -40,11 +76,118 @@ body.wide .page {
   float: none;
 }
 
+/* ---------- Content Panel — every page framed like a terminal window ---------- */
+
+article.page,
+#main .archive {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba($border-color, 0.6);
+  border-radius: 14px;
+
+  padding: 1.6rem 1.2rem;
+  margin-top: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+@include breakpoint($medium) {
+  article.page,
+  #main .archive {
+    padding: 2rem 2.4rem 2.6rem;
+  }
+
+  article.page {
+    padding-top: 1.2rem;
+  }
+}
+
+/* TOC block spans the full panel width, same as the titlebar */
+.page__content .sidebar__right {
+  width: 100%;
+  margin: 0 0 1.6rem;
+  padding: 0;
+  float: none;
+  position: relative;
+  top: auto;
+  right: auto;
+}
+
+/* ---------- Hero image framed like the content panels ---------- */
+
+.page__hero--overlay {
+  width: 95vw;
+  margin: 1.2rem auto 0;
+  border-radius: 14px;
+  border: 1px solid rgba($border-color, 0.6);
+  overflow: hidden;
+}
+
+@include breakpoint($medium) {
+  .page__hero--overlay {
+    width: 90vw;
+  }
+}
+
+@include breakpoint($large) {
+  .page__hero--overlay {
+    width: 86vw;
+    max-width: 1700px;
+  }
+}
+
+/* ---------- Profile sidebar panel ---------- */
+
+.sidebar div[itemtype="https://schema.org/Person"] {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba($border-color, 0.6);
+  border-radius: 14px;
+  padding: 1.4rem 1.2rem 1.5rem;
+  margin-top: 1.4rem;
+}
+
+/* ---------- Masthead title (text logo) ---------- */
+
+.masthead .site-title {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- Note Titlebar — the post as an open .md file ---------- */
+
+.note-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  margin: 0 0 1.3rem;
+
+  user-select: none;
+}
+
+.note-titlebar__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: $link-color;
+  opacity: 0.8;
+}
+
+.note-titlebar__name {
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: mix($text-color, #888, 75%);
+}
+
 /* =========================
    Collapsible Table of Contents — Thin Modern
    ========================= */
 
 nav.toc {
+
+  /* Panel — same treatment as the menu directory tree */
+  background: rgba(255,255,255,0.018);
+  border: 1px solid rgba($border-color, 0.4);
+  border-radius: 14px;
+  overflow: hidden;
 
   /* ---------- Header Bar (toggle lives inside it) ---------- */
   .nav__title {
@@ -52,18 +195,20 @@ nav.toc {
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
+
+    margin: 0;
+    padding: 0.8rem 1.2rem;
+
+    background: transparent;
+    border: none;
+
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: $link-color;
   }
 
   .nav__title .toc__toggle {
     margin-left: auto;
-    color: #fff;
-    background: rgba(255,255,255,0.12);
-    border-color: rgba(255,255,255,0.25);
-  }
-
-  .nav__title .toc__toggle:hover {
-    background: rgba(255,255,255,0.22);
-    border-color: rgba(255,255,255,0.4);
   }
 
   &.is--collapsed .toc__toggle {
@@ -119,13 +264,13 @@ nav.toc {
     outline-offset: 2px;
   }
 
-  /* ---------- Menu Collapse Animation ---------- */
+  /* ---------- Menu Collapse Animation (expands fully, no inner scroll) ---------- */
   .toc__menu {
-    max-height: 36rem;
-    overflow: auto;
+    max-height: 6000px;
+    overflow: visible;
 
     transition:
-      max-height 0.26s cubic-bezier(.4,0,.2,1),
+      max-height 0.3s cubic-bezier(.4,0,.2,1),
       opacity 0.18s ease;
 
     opacity: 1;
@@ -141,10 +286,6 @@ nav.toc {
 
   /* ---------- Mobile Tuning ---------- */
   @include breakpoint($small) {
-    .toc__menu {
-      max-height: 18rem;
-    }
-
     .toc__toggle {
       padding: 0.16rem 0.4rem;
       font-size: 0.75rem;
@@ -196,7 +337,7 @@ figure.highlight:hover {
 .highlight pre {
   padding: 1.15rem 1.25rem;
 
-  font-size: 0.95em;
+  font-size: 1em; /* match body text (both mono) */
   line-height: 1.55;
 
   scroll-behavior: smooth;
@@ -214,12 +355,26 @@ figure.highlight:hover {
 
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
 
   padding: 2px 6px;
 
   box-shadow: none;
   margin: 0;
+}
+
+/* Language tag, parsed from the fenced code block */
+.window-lang {
+  padding-left: 6px;
+
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.4);
+  user-select: none;
 }
 
 
@@ -246,17 +401,13 @@ figure.highlight:hover {
   align-items: center;
   justify-content: center;
 
-  gap: 0.35rem;
-
+  width: 28px;
   height: 26px;
-  min-height: 20px;
-  padding: 2px 7px;
+  padding: 0;
 
   font-size: 12px;
-  font-weight: 450;
   line-height: 1;
 
-  white-space: nowrap;
   cursor: pointer;
 
   color: #e6e6e6;
@@ -285,16 +436,10 @@ figure.highlight:hover {
 }
 
 .code-copy-btn .btn-icon {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   line-height: 1;
   display: flex;
   align-items: center;
-}
-
-.code-copy-btn .btn-label {
-  display: flex;
-  align-items: center;
-  line-height: 1;
 }
 
 
@@ -343,7 +488,7 @@ html {
 @include breakpoint($small) {
 
   .highlight pre {
-    font-size: 0.92em;
+    font-size: 1em;
     padding: 1rem 1rem;
   }
 
@@ -382,73 +527,143 @@ figure.highlight:hover .code-copy-btn {
   pointer-events: auto;
 }
 
+/* Touch devices have no hover — keep the button available */
+@media (hover: none) {
+  div.highlighter-rouge .code-copy-btn,
+  figure.highlight .code-copy-btn {
+    opacity: 0.9;
+    transform: none;
+    pointer-events: auto;
+  }
+}
+
 /* =========================
    Modern Post Typography (Scoped)
    ========================= */
 
 .page__content {
 
+  /* ---------- Inline Images — framed like the hero/banner ---------- */
+
+  p > img,
+  a > img,
+  figure > img,
+  img.align-center,
+  img.align-left,
+  img.align-right {
+    border-radius: 12px;
+    border: 1px solid rgba($border-color, 0.6);
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Badge/shield/emoji-sized inline images stay plain */
+  img[src*="img.shields.io"],
+  img[src*="badge"],
+  .emoji {
+    border: none;
+    border-radius: 0;
+  }
+
+
   /* ---------- Body Text ---------- */
 
+  font-size: 0.86em;
   font-weight: 400;
-  line-height: 1.72;
-  letter-spacing: 0.01em;
+  line-height: 1.6;
+  letter-spacing: 0;
 
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
-  text-rendering: optimizeLegibility;  
+  text-rendering: optimizeLegibility;
 
 
   /* ---------- Paragraph Rhythm ---------- */
 
   p {
-    margin-bottom: 1.45rem;
-    line-height: 1.72;
+    margin-bottom: 1.05rem;
+    line-height: 1.6;
   }
 
 
-  /* ---------- Headings (Modern Docs Style) ---------- */
+  /* ---------- Headings (Shell Grammar) ---------- */
 
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    letter-spacing: -0.015em;
-    line-height: 1.24;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
 
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 
     &:first-child {
       margin-top: 0;
     }
   }
 
+  /* Headings display their own markdown glyph — terminal signature */
+  h1::before,
+  h2::before,
+  h3::before {
+    content: "# ";
+    color: $link-color;
+    font-weight: 600;
+    opacity: 0.75;
+  }
+
+  h2::before {
+    content: "## ";
+  }
+
+  h3::before {
+    content: "### ";
+  }
+
   h1 {
-    font-size: 2.1rem;
+    font-size: 1.85rem;
     letter-spacing: -0.02em;
   }
 
   h2 {
-    font-size: 1.7rem;
+    font-size: 1.45rem;
     border-bottom: 1px solid rgba($border-color, 0.35);
     padding-bottom: 0.55rem;
   }
 
-  h3 { font-size: 1.35rem; }
-  h4 { font-size: 1.12rem; }
+  h3 { font-size: 1.18rem; }
+  h4 { font-size: 1.02rem; }
+
+
+  /* ---------- Inline Code ---------- */
+
+  p > code, li > code, td > code, h2 > code, h3 > code {
+    padding: 0.08em 0.4em;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px;
+    font-size: 0.92em;
+  }
 
 
   /* ---------- Blockquotes ---------- */
 
+  /* Obsidian-style callout */
   blockquote {
     border-left: 3px solid $link-color;
+    background: rgba($link-color, 0.07);
+    border-radius: 0 8px 8px 0;
 
-    padding-left: 1.15rem;
-    margin: 1.6rem 0;
+    padding: 0.85rem 1.1rem;
+    margin: 1.4rem 0;
 
     font-style: normal;
     font-weight: 450;
 
-    color: mix($text-color, #999, 80%);
-    line-height: 1.7;
+    color: mix($text-color, #bbb, 85%);
+    line-height: 1.6;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 
 
@@ -485,45 +700,93 @@ figure.highlight:hover .code-copy-btn {
 
 
 /* =========================
-   Modern TOC List Styling
+   TOC as Directory Tree (matches menu page)
    ========================= */
 
 nav.toc {
 
   ul,
   ol {
-    margin: 0.4rem 0;
+    margin: 0;
     padding-left: 0;
     list-style: none;
   }
 
-  li {
-    margin: 0.18rem 0;
-    line-height: 1.45;
+  .toc__menu {
+    padding: 0 1.2rem 1rem;
+    font-size: 0.86rem;
+
+    transition:
+      max-height 0.26s cubic-bezier(.4,0,.2,1),
+      padding 0.26s cubic-bezier(.4,0,.2,1),
+      opacity 0.18s ease;
   }
 
-  /* TOC links — modern density */
-  a {
-    display: block;
+  &.is--collapsed .toc__menu {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 
-    padding: 0.18rem 0.4rem;
-    border-radius: 6px;
+  li {
+    margin: 0;
+    line-height: 1.9;
+    white-space: nowrap;
+  }
+
+  /* Tree glyphs — chapters as files */
+  .toc__menu li::before {
+    content: "├── ";
+    white-space: pre;
+    color: rgba($text-color, 0.35);
+  }
+
+  .toc__menu > li:last-child::before {
+    content: "└── ";
+  }
+
+  .toc__menu ul li::before {
+    content: "│   ├── ";
+  }
+
+  .toc__menu ul li:last-child::before {
+    content: "│   └── ";
+  }
+
+  .toc__menu > li:last-child ul li::before {
+    content: "    ├── ";
+  }
+
+  .toc__menu > li:last-child ul li:last-child::before {
+    content: "    └── ";
+  }
+
+  /* Chapter links — same hover as menu tree files */
+  .toc__menu a,
+  .toc__menu a:visited {
+    color: $text-color;
+  }
+
+  .toc__menu a {
+    display: inline-block;
+
+    padding: 0.02rem 0.3rem;
+    border-radius: 4px;
 
     text-decoration: none;
     border-bottom: none;
 
-    opacity: 0.85;
+    opacity: 0.9;
 
     transition:
       background 0.15s ease,
-      opacity 0.15s ease,
-      transform 0.12s ease;
+      color 0.15s ease,
+      opacity 0.15s ease;
   }
 
-  a:hover {
-    background: rgba($text-color, 0.06);
+  .toc__menu a:hover {
+    background: transparent;
+    color: $link-color-hover;
     opacity: 1;
-    transform: translateX(2px);
   }
 
 }
@@ -754,3 +1017,473 @@ nav.toc {
   }
 }
 
+
+
+/* =========================
+   Terminal Profile Sidebar
+   ========================= */
+
+.sidebar .author__avatar img {
+  max-width: 120px;
+  border-radius: 14px;
+  border: 1px solid rgba($border-color, 0.5);
+}
+
+.sidebar .author__name {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Terminal path prefix — signature */
+.sidebar .author__name::before {
+  content: "~/";
+  color: $link-color;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.sidebar .author__bio {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+/* ---------- Author Links as Icon Buttons ---------- */
+
+.sidebar .author__urls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+
+  padding: 0;
+
+  li {
+    padding: 0;
+    white-space: nowrap;
+  }
+
+  /* Location line sits on its own row, quiet */
+  li[itemprop="homeLocation"] {
+    flex-basis: 100%;
+
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  li a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+    border: 1px solid rgba($border-color, 0.5);
+    background: rgba(255,255,255,0.03);
+
+    color: $text-color;
+    text-decoration: none;
+
+    transition:
+      border-color 0.16s ease,
+      color 0.16s ease,
+      background 0.16s ease,
+      transform 0.12s ease;
+  }
+
+  li a i {
+    font-size: 0.95rem;
+  }
+
+  li a:hover {
+    border-color: $link-color;
+    color: $link-color;
+    background: rgba(255,255,255,0.05);
+    transform: translateY(-2px);
+  }
+
+  /* Keep link names for screen readers, hide visually */
+  li a .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+/* Follow toggle (mobile dropdown) — match icon-button style */
+.author__urls-wrapper button.btn--inverse {
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  padding: 0.4rem 0.9rem;
+  border-radius: 9px;
+
+  color: $text-color;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba($border-color, 0.5);
+}
+
+
+/* =========================
+   Post Meta — quiet terminal labels
+   ========================= */
+
+.page__meta {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+
+/* =========================
+   Menu Page — ASCII banner + directory tree
+   ========================= */
+
+.menu-tree {
+  font-size: 0.86rem;
+  line-height: 1.9;
+
+  padding: 1.2rem 1.4rem 1.4rem;
+
+  background: rgba(255,255,255,0.018);
+  border: 1px solid rgba($border-color, 0.4);
+  border-radius: 14px;
+
+  overflow-x: auto;
+}
+
+/* Wide archive pages WITHOUT a sidebar (menu) — kill the theme's
+   right-sidebar reservation so the panel centers. Pages with an
+   author-profile sidebar (about) keep the theme's float layout. */
+body.wide #main:not(:has(.sidebar > div)) .archive {
+  float: none;
+  width: 100%;
+  padding-right: 0;
+}
+
+/* Archive pages already provide the outer panel — don't double-frame the tree */
+#main .archive .menu-tree {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0.4rem 0 0;
+}
+
+.menu-tree__root {
+  font-weight: 700;
+  color: $link-color;
+  margin-bottom: 0.3rem;
+}
+
+.menu-tree__row {
+  white-space: nowrap;
+}
+
+.menu-tree__glyph {
+  white-space: pre;
+  color: rgba($text-color, 0.35);
+  user-select: none;
+}
+
+.menu-tree__dir {
+  font-weight: 700;
+  color: mix($link-color, $text-color, 60%);
+}
+
+.menu-tree__file,
+.menu-tree__file:visited {
+  color: $text-color;
+  text-decoration: none;
+  border-bottom: none;
+
+  border-radius: 4px;
+  padding: 0.05rem 0.3rem;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.menu-tree__file:hover {
+  background: transparent;
+  color: $link-color-hover;
+}
+
+.menu-tree__badge {
+  display: inline-block;
+
+  margin-left: 0.35rem;
+  padding: 0.05rem 0.45rem;
+
+  font-size: 0.62rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: white;
+  background: $link-color;
+  border-radius: 999px;
+
+  vertical-align: middle;
+}
+
+
+/* =========================
+   Search as Floating Overlay
+   ========================= */
+
+.search-content {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  padding: 10vh 1rem 4rem;
+
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  overflow-y: auto;
+}
+
+.search-content.is--visible {
+  display: block;
+  visibility: visible;
+}
+
+.search-content__inner-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+
+  padding: 1.3rem 1.6rem 1.6rem;
+
+  background: mix(#fff, #181b20, 3%);
+  border: 1px solid rgba($border-color, 0.6);
+  border-radius: 14px;
+
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+.search-content .search-input {
+  width: 100%;
+
+  font-family: inherit;
+  font-size: 1.1rem;
+
+  color: $text-color;
+  background: transparent;
+
+  border: none;
+  border-bottom: 1px solid rgba($border-color, 0.6);
+  border-radius: 0;
+
+  padding: 0.4rem 0.2rem 0.6rem;
+  outline: none;
+}
+
+.search-content .search-input:focus {
+  border-bottom-color: $link-color;
+}
+
+/* Keep the page visible behind the overlay backdrop */
+.initial-content.is--hidden {
+  display: block;
+  visibility: visible;
+}
+
+
+/* =========================
+   Share Icons + Post Pagination (icon-button style)
+   ========================= */
+
+.page__share {
+  float: none;
+  width: 100%;
+  clear: both;
+  margin-bottom: 2.2rem;
+}
+
+.page__share-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.6rem;
+}
+
+.share-icons {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.share-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 9px;
+  border: 1px solid rgba($border-color, 0.5);
+  background: rgba(255,255,255,0.03);
+
+  color: $text-color;
+  text-decoration: none;
+
+  transition:
+    border-color 0.16s ease,
+    color 0.16s ease,
+    background 0.16s ease,
+    transform 0.12s ease;
+}
+
+.share-icon-btn i {
+  font-size: 1rem;
+}
+
+.share-icon-btn:hover {
+  border-color: $link-color;
+  color: $link-color;
+  background: rgba(255,255,255,0.05);
+  transform: translateY(-2px);
+}
+
+/* ---------- Previous / Next ---------- */
+
+.post-pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+
+  clear: both;
+  width: 100%;
+
+  margin: 2.4rem 0 0.5rem;
+}
+
+.pager-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  padding: 0.55rem 1rem;
+
+  font-size: 0.82rem;
+  font-weight: 600;
+
+  border-radius: 9px;
+  border: 1px solid rgba($border-color, 0.5);
+  background: rgba(255,255,255,0.03);
+
+  color: $text-color;
+  text-decoration: none;
+
+  transition:
+    border-color 0.16s ease,
+    color 0.16s ease,
+    background 0.16s ease,
+    transform 0.12s ease;
+}
+
+.pager-btn:hover {
+  border-color: $link-color;
+  color: $link-color;
+  background: rgba(255,255,255,0.05);
+  transform: translateY(-2px);
+}
+
+.pager-btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+
+/* =========================
+   Search Results Layout (overlay)
+   ========================= */
+
+.search-content .archive__item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  width: 100%; /* override theme's 75% cap on search results */
+
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba($border-color, 0.35);
+}
+
+.search-content .list__item {
+  width: 100%;
+  max-width: none;
+}
+
+.search-content .archive__item-teaser {
+  flex: 0 0 96px;
+  margin: 0;
+}
+
+.search-content .archive__item-teaser img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba($border-color, 0.6);
+}
+
+.search-content .archive__item-body {
+  flex: 1 1 auto;
+  min-width: 0; /* let long text wrap inside flex */
+}
+
+.search-content .archive__item-title {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.search-content .archive__item-title a {
+  color: $text-color;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.search-content .archive__item-title a:hover {
+  color: $link-color-hover;
+}
+
+.search-content .archive__item-excerpt {
+  margin: 0;
+  max-width: none;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: mix($text-color, #888, 78%);
+  word-break: break-word;
+}
+
+.search-content .archive__item-excerpt mark {
+  background: rgba($primary-color, 0.85);
+  color: #fff;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+.search-content .results__found {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin: 0.4rem 0 0.8rem;
+}

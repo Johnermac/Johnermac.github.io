@@ -1,21 +1,18 @@
 ---
 title: "2 - Win Privesc"
-classes: wide
+categories:
+  - notes
+  - crtp
+order: 2
 header:  
   teaser: /assets/images/posts/crtp/crtp-teaser3.jpg
   overlay_image: /assets/images/main/header1.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Unquoted Paths and Modifiable Services"
-description: "Unquoted Paths and Modifiable Services"
-categories:
-  - notes
-  - crtp
 tags:
   - beginner
   - AD
   - Windows 
-toc: true
 ---
 
 

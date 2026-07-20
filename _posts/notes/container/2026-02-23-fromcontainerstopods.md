@@ -1,20 +1,17 @@
 ---
 title: "From Containers to Pods – Engineering Multi-Container Isolation"
-classes: wide
+categories:
+  - notes
+  - container
 header:  
   teaser: /assets/images/posts/container/container-teaser3.jpg
   overlay_image: assets/images/posts/container/container-header2.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Designing a pod-first container runtime with shared namespaces, bridge networking, and centralized supervision."
 description: "An architectural study of pod-based isolation, explaining shared network namespaces, inter-container communication, execution modes, and the reliability tradeoffs of centralized supervision."
-categories:
-  - notes
-  - container
 tags:
   - container 
-  - linux
-toc: true
+  - linux
 ---
 
 # Intro

@@ -26,3 +26,6 @@ codekit-config.json
 .sass-cache
 _asset_bundler_cache
 _site
+
+# Local-only reference notes
+FORK-GUIDE.md

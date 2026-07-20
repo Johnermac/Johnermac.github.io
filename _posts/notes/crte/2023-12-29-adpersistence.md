@@ -1,22 +1,19 @@
 ---
 title: "3 - AD Persistence"
-classes: wide
+categories:
+  - notes
+  - crte
+order: 3
 header:  
   teaser: /assets/images/posts/crte/crte-teaser4.jpg
   overlay_image: /assets/images/main/header8.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Constrained Deleg and Malicious SSP"
-description: "Constrained Deleg and Malicious SSP"
-categories:
-  - notes
-  - crte
 tags:
   - intermediate
   - AD
   - Windows
   - peristence 
-toc: true
 ---
 
 

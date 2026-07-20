@@ -1,21 +1,19 @@
 ---
 title: "2 - Bloodhound"
-classes: wide
+categories:
+  - notes
+  - adx
+order: 2
 header:  
   teaser: /assets/images/posts/adx/adx-teaser2.jpg
   overlay_image: /assets/images/main/header1.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Enumeration + Graph Analysis =  Identification of Security Risks"
 description: "BloodHound is a versatile and powerful tool for AD enumeration and analysis."
-categories:
-  - notes
-  - adx
 tags:
   - beginner
   - AD
   - enum 
-toc: true
 ---
 
 # Bloodhound

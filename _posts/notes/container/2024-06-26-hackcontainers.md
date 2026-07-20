@@ -1,20 +1,16 @@
 ---
 title: "Hacking Containers!"
-classes: wide
+categories:
+  - notes
+  - container
 header:  
   teaser: /assets/images/posts/container/container-teaser.jpg
   overlay_image: /assets/images/main/header2.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "Container escape, Extract Info from Registry, Bypass Restrictions and more!"
-description: "Container escape, Extract Info from Registry, Bypass Restrictions and more!"
-categories:
-  - notes
-  - container
 tags:
   - container
-  - docker 
-toc: true
+  - docker 
 ---
 
 

@@ -1,20 +1,16 @@
 ---
 title: "Containers from Scratch: Linux Isolation Primitives in Action!"
-classes: wide
+categories:
+  - notes
+  - container
 header:  
   teaser: /assets/images/posts/container/container-teaser2.jpg
   overlay_image: assets/images/posts/container/container-header1.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "A deep dive into creating a secure sandbox using Namespaces, Cgroups, Capabilities, and Seccomp-BPF filters in Go and C."
-description: "A deep dive into creating a secure sandbox using Namespaces, Cgroups, Capabilities, and Seccomp-BPF filters in Go and C."
-categories:
-  - notes
-  - container
 tags:
   - container 
-  - linux
-toc: true
+  - linux
 ---
 
 

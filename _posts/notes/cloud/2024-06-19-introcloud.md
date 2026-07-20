@@ -1,16 +1,14 @@
 ---
 title: "Intro to Cloud Pentesting!"
-classes: wide
+categories:
+  - notes
+  - cloud
 header:  
   teaser: /assets/images/posts/cloud/cloud-teaser1.jpg
   overlay_image: /assets/images/main/header6.jpg
   overlay_filter: 0.5
-ribbon: Firebrick
 excerpt: "The basics of Cloud Pentesting."
 description: "Wanna learn Cloud Pentesting? Start here!"
-categories:
-  - notes
-  - cloud
 tags:
   - beginner
   - Cloud
