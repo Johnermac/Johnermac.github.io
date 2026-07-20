@@ -29,7 +29,8 @@
 
   <div class="post-description">
     <h1>{{ title }}</h1>
-    <p>  {{ post.description | truncate: 120}}</p>
+    {% assign card_description = post.description | default: post.excerpt %}
+    <p>  {{ card_description | markdownify | strip_html | truncate: 120 }}</p>
     
     <p class="post-date page__meta">
       {{post.date | date_to_string}}
