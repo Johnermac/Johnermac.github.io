@@ -549,8 +549,8 @@ Everything traced back to one flag: `--privileged`. Remove it and the attack has
     <circle cx="838" cy="91"  r="7" fill="#153a1e"/><path d="M834,91  l3,3 l5-6" stroke="#46a758" stroke-width="1.8" fill="none"/>
     <circle cx="838" cy="141" r="7" fill="#153a1e"/><path d="M834,141 l3,3 l5-6" stroke="#46a758" stroke-width="1.8" fill="none"/>
     <circle cx="838" cy="191" r="7" fill="#153a1e"/><path d="M834,191 l3,3 l5-6" stroke="#46a758" stroke-width="1.8" fill="none"/>
-    <circle cx="838" cy="241" r="7" fill="#153a1e"/><path d="M834,241 l3,3 l5-6" stroke="#46a758" stroke-width="1.8" fill="none"/>
-    <circle cx="838" cy="291" r="7" fill="#153a1e"/><path d="M834,291 l3,3 l5-6" stroke="#46a758" stroke-width="1.8" fill="none"/>
+    <circle cx="838" cy="241" r="7" fill="#20252d" stroke="#3a4048" stroke-width="1.5"/><line x1="835" y1="241" x2="841" y2="241" stroke="#6a727c" stroke-width="1.8"/>
+    <circle cx="838" cy="291" r="7" fill="#20252d" stroke="#3a4048" stroke-width="1.5"/><line x1="835" y1="291" x2="841" y2="291" stroke="#6a727c" stroke-width="1.8"/>
     <circle cx="838" cy="341" r="7" fill="#153a1e"/><path d="M834,341 l3,3 l5-6" stroke="#46a758" stroke-width="1.8" fill="none"/>
   </g>
 </svg>
@@ -566,10 +566,10 @@ Against this escape, a default bctor container:
 
 - drops `CAP_SYS_ADMIN` and every other capability, so the sysctl write is denied,
 - mounts `/proc` read-only and masks the sensitive paths, so there is nothing to write,
-- installs a seccomp profile, removing the neighbouring syscalls,
+- installs a seccomp profile, removing the neighbouring escape syscalls,
 - sets `no_new_privs`.
 
-That is four independent reasons the write never happens, and the workload cannot turn any of them off without an explicit flag.
+The first two stop this write outright. The last two do not touch this path, but they close the neighbouring escapes and harden the rest. None can be turned off without an explicit flag.
 
 ---
 
@@ -579,7 +579,7 @@ That is four independent reasons the write never happens, and the workload canno
 
 - The attack is short once you see that `core_pattern` is host-global and the `upperdir` maps both ways.
 - The detection is a lesson on its own: the default ruleset caught the noise around my PoC, not the escape. Useful detection watches the mechanism.
-- The defense is layered, and the escape fails against any one of five independent controls.
+- The defense is layered: three independent controls each stop this write, and seccomp plus `no_new_privs` close the neighbouring escapes.
 
 The host and container share one kernel. Most escapes in this space come down to a resource the kernel did not namespace, or a capability that should not have been granted.
 
