@@ -29,3 +29,6 @@ _site
 
 # Local-only reference notes
 FORK-GUIDE.md
+
+# Container escape lab (local-only, not for publish)
+_labs/
