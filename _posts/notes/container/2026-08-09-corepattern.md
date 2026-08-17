@@ -8,7 +8,7 @@ header:
   overlay_image: assets/images/posts/container/container-header3.jpg
   overlay_filter: 0.5
 excerpt: "How a privileged container escapes to the host through the kernel's core-dump handler, how Falco sees it, and how to shut it down."
-description: "A deep dive into the core_pattern container escape: the usermode-helper mechanism that lets a CAP_SYS_ADMIN container run code as root on the host, runtime detection with Falco, and the isolation defaults that neutralize it."
+description: "A privileged container writes core_pattern to run code as root on the host."
 tags:
   - container
   - container-escapes
@@ -27,15 +27,62 @@ First technique: the `core_pattern` escape from a privileged container. A few re
 
 ## Threat model
 
-The attack requires one misconfiguration: a privileged container.
+The single misconfiguration is a privileged container.
 
 ```sh
 docker run --privileged ...
 ```
 
-`--privileged` turns on several things at once. The container gets the full capability set (including `CAP_SYS_ADMIN`), device access, and a writable `/proc/sys`. This post is about what an attacker does with that last item.
+`--privileged` is a bundle, and this escape only needs a few items from it. It is worth being exact about what has to be true for the write to turn into host code execution. Four gates plus a trigger, all of which `--privileged` provides at once:
 
-> [!] This does not apply to a default container. A default Docker container drops most caps and mounts `/proc/sys` read-only. The attack assumes someone already handed the container elevated privileges.
+1. **A writable `/proc/sys`.** The escape writes `/proc/sys/kernel/core_pattern`. `--privileged` mounts `/proc/sys` read-write. A default container mounts it read-only, and the write fails with `EROFS` before any permission check runs.
+2. **uid 0 as the host sees it.** `core_pattern` is owned by root with mode `0644`, and the sysctl permission check hands the owner bits to the global root uid. A container without `userns-remap` runs as that uid, so ownership carries the write. A container with `CapEff: 0000000000000000` opens the file for writing. `CAP_SYS_ADMIN` applies one step earlier, to remounting a read-only `/proc/sys`.
+3. **AppArmor allowing the write.** On Debian and Ubuntu the `docker-default` profile denies writes under `/proc/sys/kernel`, and it holds even with every capability granted and `/proc/sys` mounted read-write. `--privileged` runs the container unconfined. Hosts using SELinux have no equivalent rule here.
+4. **The handler runs in a usable host context.** `call_usermodehelper` runs the named program as real host root in the host's namespaces. The attacker points it at a path inside the container's overlay `upperdir`, which is a real directory on the host. With `userns-remap` the daemon refuses to start a privileged container at all, so nothing reaches this stage.
+5. **A core dump can be triggered.** The handler only runs when a process actually dumps core, so the attacker needs to crash something with a core-generating signal (`SIGSEGV`, `SIGABRT`).
+
+The syscalls involved are few:
+
+- `openat(2)` plus `write(2)` on `/proc/sys/kernel/core_pattern`, to arm the escape.
+- `openat(2)` plus `write(2)` to drop the handler script.
+- the crash itself, either a process that faults on its own or a `kill(2)` with `SIGSEGV` against an existing one.
+
+<div style="margin:1.5em 0;overflow-x:auto;">
+<svg viewBox="0 0 880 300" width="100%" style="max-width:880px;height:auto;display:block;margin:0 auto;font-family:-apple-system,Segoe UI,Roboto,sans-serif;" role="img" aria-label="The core_pattern escape path. Writing the pipe handler to /proc/sys/kernel/core_pattern passes one gate: /proc/sys must be read-write, the process must run as the host's uid 0, and no AppArmor profile may deny the write. A triggered core dump then makes the kernel call_usermodehelper run the handler as real host root. Privileged opens the gate; a default container has it closed.">
+  <defs>
+    <marker id="cp-ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8a929c"/></marker>
+  </defs>
+  <rect x="10" y="95" width="175" height="90" rx="8" fill="#21262e" stroke="#3a4048" stroke-width="1.5"/>
+  <text x="97" y="122" text-anchor="middle" fill="#eaeaea" font-size="12.5" font-weight="600">write |handler</text>
+  <text x="97" y="142" text-anchor="middle" fill="#b9c0c8" font-size="10.5" font-family="monospace">/proc/sys/kernel/</text>
+  <text x="97" y="157" text-anchor="middle" fill="#b9c0c8" font-size="10.5" font-family="monospace">core_pattern</text>
+
+  <rect x="270" y="95" width="180" height="90" rx="8" fill="#21262e" stroke="#99058d" stroke-width="1.5"/>
+  <text x="360" y="120" text-anchor="middle" fill="#d17bd0" font-size="12.5" font-weight="700">gate</text>
+  <text x="360" y="142" text-anchor="middle" fill="#eaeaea" font-size="11" font-family="monospace">write(2)</text>
+  <text x="360" y="158" text-anchor="middle" fill="#b9c0c8" font-size="10">/proc/sys rw + host uid 0</text>
+  <text x="360" y="172" text-anchor="middle" fill="#b9c0c8" font-size="10">+ no AppArmor deny</text>
+
+  <rect x="535" y="95" width="150" height="90" rx="8" fill="#21262e" stroke="#3a4048" stroke-width="1.5"/>
+  <text x="610" y="126" text-anchor="middle" fill="#eaeaea" font-size="12.5" font-weight="600">core dump</text>
+  <text x="610" y="146" text-anchor="middle" fill="#b9c0c8" font-size="10.5">crash a process</text>
+
+  <rect x="770" y="95" width="100" height="90" rx="8" fill="#3a1416" stroke="#e5484d" stroke-width="1.8"/>
+  <text x="820" y="122" text-anchor="middle" fill="#ff6b70" font-size="12" font-weight="700">host root</text>
+  <text x="820" y="142" text-anchor="middle" fill="#eaeaea" font-size="10">handler runs</text>
+  <text x="820" y="157" text-anchor="middle" fill="#eaeaea" font-size="10">as real root</text>
+
+  <line x1="187" y1="140" x2="267" y2="140" stroke="#8a929c" stroke-width="1.8" marker-end="url(#cp-ar)"/>
+  <line x1="452" y1="140" x2="532" y2="140" stroke="#8a929c" stroke-width="1.8" marker-end="url(#cp-ar)"/>
+  <line x1="687" y1="140" x2="767" y2="140" stroke="#8a929c" stroke-width="1.8" marker-end="url(#cp-ar)"/>
+  <text x="610" y="80" text-anchor="middle" fill="#8a929c" font-size="10.5">kernel call_usermodehelper</text>
+
+  <text x="440" y="235" text-anchor="middle" fill="#8a929c" font-size="11.5">--privileged opens the gate and leaves /proc/sys writable</text>
+  <text x="440" y="255" text-anchor="middle" fill="#8a929c" font-size="11.5">a default container mounts /proc/sys read-only, so the write never lands</text>
+</svg>
+</div>
+
+> [!] This does not apply to a default container. A default Docker container mounts `/proc/sys` read-only and keeps the AppArmor profile that denies writes under `/proc/sys/kernel`. The write fails with `EROFS` before the handler ever comes up. The attack assumes the privilege was already handed over.
 
 A privileged container can escape in several ways. This post covers one of them, `core_pattern`, because the mechanism is easy to follow end to end.
 
@@ -47,7 +94,7 @@ A privileged container can escape in several ways. This post covers one of them,
 
 Most of the time the flow is one-way: your process asks the kernel to do things through syscalls. In a few places the kernel needs to run a userspace program to finish a job, and it runs that program from kernel context, as root, in the host's namespaces. This mechanism is called a usermode helper (`call_usermodehelper` in the source).
 
-x86 defines four privilege rings. Linux uses only two: ring 3 for user code and ring 0 for the kernel. A syscall is the normal way in, ring 3 asking ring 0 to act. A usermode helper is the unusual way out: the kernel, running in ring 0, spawns a fresh ring 3 process itself, as root, in the initial namespaces.
+x86 defines four privilege rings. Linux uses only two: ring 3 for user code and ring 0 for the kernel. A syscall crosses from ring 3 into ring 0, a process asking the kernel to act. A usermode helper crosses the other way: the kernel, running in ring 0, spawns a fresh ring 3 process itself, as root, in the initial namespaces.
 
 <div style="margin:1.5em 0;overflow-x:auto;">
 <svg viewBox="0 0 880 410" width="100%" style="max-width:880px;height:auto;display:block;margin:0 auto;font-family:-apple-system,Segoe UI,Roboto,sans-serif;" role="img" aria-label="x86 protection rings on Linux. Ring 3 is user mode, ring 0 is the kernel, rings 1 and 2 are unused. A syscall crosses from ring 3 into ring 0. call_usermodehelper goes the other way: the kernel in ring 0 spawns a new ring 3 process as root in the host namespaces.">
@@ -93,7 +140,7 @@ Some examples that share this pattern:
 
 Each one is a file whose contents are a command the host kernel will execute as root. If a container can write one of these files and then trigger the matching event, it runs code on the host. `release_agent` is cgroup v1 only and mostly gone on modern systems. `core_pattern` does not depend on cgroups and is still present everywhere.
 
-All three funnel through the same kernel entry point. `call_usermodehelper` takes a path and arg vector and hands them to a helper kthread, which is a child of `kthreadd` (the kernel's thread spawner) and therefore runs as root in the initial namespaces, not in whatever container triggered it:
+All three funnel through the same kernel machinery. `call_usermodehelper` takes a path and arg vector and hands them to a helper kthread, which is a child of `kthreadd` (the kernel's thread spawner) and therefore runs as root in the initial namespaces, not in whatever container triggered it:
 
 ```c
 // kernel/umh.c
@@ -111,7 +158,7 @@ int call_usermodehelper(const char *path, char **argv, char **envp, int wait)
 }
 ```
 
-The core-dump path (`do_coredump` in `fs/coredump.c`) is one caller: when `core_pattern` begins with `|`, it parses the rest into `argv` and reaches this function. `path` is attacker-controlled, and the process it launches never sees the container. That is the whole escape in one sentence.
+`release_agent` takes exactly that path. The core-dump path (`do_coredump` in `fs/coredump.c`) uses the two halves directly: when `core_pattern` begins with `|` it parses the rest into `argv`, calls `call_usermodehelper_setup()` with an extra init callback, `umh_pipe_setup`, and passes the result to `call_usermodehelper_exec()`. The callback is what connects the dump to the handler's stdin. Either way `path` is attacker-controlled, and the process it launches never sees the container.
 
 ## core_pattern and core dumps
 
@@ -122,7 +169,7 @@ $ cat /proc/sys/kernel/core_pattern
 core
 ```
 
-That is the default: dump to a file called `core`. The value has a second mode. If it starts with a pipe `|`, the kernel does not write a file. It executes the program named after the pipe and streams the core dump to its stdin.
+That is the default: dump to a file called `core`. The value has a second mode. If it starts with a pipe `|`, the kernel executes the program named after the pipe and streams the core dump to its stdin instead of writing a file.
 
 ```sh
 # "on any core dump, run /usr/bin/handler with these args"
@@ -139,7 +186,7 @@ Two facts make this an escape:
 
 `core_pattern` is a single host-global kernel setting. It is not namespaced, so there is one value for the whole machine, containers included. And the handler it names runs in the host's context: host mount namespace, host PID namespace, real host root.
 
-So a process inside a container that can write `/proc/sys/kernel/core_pattern` is editing the host's setting, not a container-local copy. The next core dump anywhere, including one the attacker triggers inside the container, makes the host kernel execute the attacker's program as root, outside the container.
+So a process inside a container that can write `/proc/sys/kernel/core_pattern` is editing the host's own setting. The next core dump anywhere, including one the attacker triggers inside the container, makes the host kernel execute the attacker's program as root, outside the container.
 
 ---
 
@@ -157,7 +204,7 @@ overlay2 [name=seccomp,profile=builtin name=cgroupns]
 ```
 {% endraw %}
 
-> [!] `name=userns` must not be present. Docker with userns-remap enabled relocates container storage and runs the core-dump helper in a context where this PoC fails (`coredump: ... pipe failed` in dmesg). I cover this in the Defend section. It is why my own WSL2 box refused the escape at first.
+> [!] `name=userns` must not be present. With userns-remap enabled the daemon rejects the container before it starts: `privileged mode is incompatible with user namespaces. You must run the container in the host namespace when running privileged mode`. I cover this in the Defend section.
 
 Save the host value so we can restore it:
 
@@ -181,15 +228,17 @@ root@ctr:/# grep CapEff /proc/self/status
 CapEff: 000001ffffffffff
 ```
 
-`000001ffffffffff` is the full set, every capability. That indicates a privileged container. `CAP_SYS_ADMIN` is included, which is what allows writing kernel sysctls.
+`000001ffffffffff` is the full set, every capability Docker grants, which points at a privileged container. The sysctl write itself needs none of them. What the capabilities buy here is the option to remount `/proc/sys` read-write if you find it read-only.
 
 ```sh
 # is /proc/sys writable? (the second precondition)
-root@ctr:/# echo test 2>/dev/null > /proc/sys/kernel/core_pattern && echo writable
+root@ctr:/# : >> /proc/sys/kernel/core_pattern && echo writable
 writable
 ```
 
-Both preconditions are met: full caps and a writable `/proc/sys`. The rest is mechanics.
+`: >>` opens the file for append and writes nothing, so the host value stays as it is. A default container answers `Read-only file system`. Under an AppArmor profile the answer is `Permission denied`.
+
+Both preconditions are met: the host's own uid 0 and a writable `/proc/sys`.
 
 ## The escape
 
@@ -253,20 +302,22 @@ host PID1: /sbin/init
 host / listing: bin boot dev etc home lib ... root run sbin srv sys tmp usr var
 ```
 
-The hostname is the host's, not the container's. PID 1 is the host `init`, not our `bash`. The root listing is the host filesystem. The handler ran as root, outside the container.
+Those are the host's hostname, the host's `init` as PID 1, and the host's root listing.
 
-From the host you can confirm the kernel invoked the handler:
+`dmesg` covers only the failure case. The kernel logs a line when the helper cannot be executed:
 
 ```sh
-$ dmesg | grep -i coredump | tail -1
-coredump: 1234(crash): |/var/lib/docker/overlay2/<hash>/diff/handler.sh
+$ dmesg | tail -1
+Core dump to |/var/lib/docker/overlay2/<hash>/diff/handler.sh pipe failed
 ```
+
+That line means the handler never ran. A successful run logs nothing, so `/proof.txt` above is the confirmation.
 
 ---
 
 # Detect
 
-Escaping is half the work. If you defend systems, the useful question is whether you would have seen it. So I put [Falco](https://falco.org/) in front of the same attack. Falco is a CNCF runtime-security tool that taps the kernel through an eBPF probe and matches syscall activity against rules.
+If you defend systems, the useful question is whether you would have seen this happen. So I put [Falco](https://falco.org/) in front of the same attack. Falco is a CNCF runtime-security tool that taps the kernel through an eBPF probe and matches syscall activity against rules.
 
 <div style="margin:1.5em 0;overflow-x:auto;">
 <svg viewBox="0 0 880 300" width="100%" style="max-width:880px;height:auto;display:block;margin:0 auto;font-family:-apple-system,Segoe UI,Roboto,sans-serif;" role="img" aria-label="Falco detection pipeline: a write to core_pattern inside the container becomes an open_write syscall, seen by the eBPF probe, matched by the Falco engine, raising a CRITICAL T1611 alert before the crash happens.">
@@ -343,15 +394,13 @@ I ran Falco with only its stable default ruleset and repeated the attack. It fir
 
 It caught the `bash` shell, and it caught `gcc`/`as`/`ld`/`/crash` under "Drop and execute new binary in container" (one alert per compiler stage).
 
-What it did not catch was the write to `/proc/sys/kernel/core_pattern`. The action that performs the escape produced no alerts. `Launch Privileged Container` did not fire either, because that rule ships disabled in stable (too noisy).
+What it did not catch was the write to `/proc/sys/kernel/core_pattern`. The action that performs the escape produced no alerts. `Launch Privileged Container` did not fire either, because that rule ships in the incubating maturity tier, which the stable ruleset does not load.
 
-> [!] Worth noting: default Falco detected me compiling and running a new binary, which are side effects of how I wrote the PoC. It did not detect the escape write.
-
-Those side effects are easy to remove. Ship a static prebuilt crasher and there is no compiler step. Crash an existing base-image process (`kill -SEGV` on something already running) and there is no new binary. In that case default Falco produces no alerts while the escape still works. The detection here is incidental.
+Those side effects, compiling and running a new binary, come from how I wrote the PoC, and they are easy to remove. Ship a static prebuilt crasher and there is no compiler step. Crash an existing base-image process (`kill -SEGV` on something already running) and there is no new binary. In that case default Falco produces no alerts while the escape still works.
 
 ## A rule that catches the mechanism
 
-The escape is the write to `core_pattern`, so that is what the rule should watch: the file, not the surrounding activity.
+The escape is the write to `core_pattern`, so that is what the rule should watch: the file itself.
 
 ```yaml
 - rule: Write to core_pattern from container
@@ -492,7 +541,7 @@ Being clear about what the rule covers:
 - It matches the open-for-write, so it fires the moment `core_pattern` is opened for writing, before any crash is triggered.
 - It will not catch a write through a path that does not resolve to `/proc/sys/kernel/core_pattern` as Falco sees it (bind-mount tricks, for example). 
 
-> Falco alerts after the write happens. Stopping the write is the next section.
+> Falco alerts after the write happens, so it does not stop the escape.
 
 ---
 
@@ -500,20 +549,20 @@ Being clear about what the rule covers:
 
 ## The single misconfiguration
 
-Everything traced back to one flag: `--privileged`. Remove it and the attack has no foothold, because there is no `CAP_SYS_ADMIN` to authorize the sysctl write and `/proc/sys` is read-only. The first defense is simple: do not run privileged containers. Most workloads do not need it.
+Everything traced back to one flag: `--privileged`. Remove it and every gate from the threat model closes at once. The first defense is simple: do not run privileged containers. Most workloads do not need it.
 
 > "Do not misconfigure it" is not enough on its own. Defense in depth means the escape should fail even if one layer is wrong. Here is what each independent control does to this specific attack.
 
 ## Layered defenses
 
 <div style="margin:1.5em 0;overflow-x:auto;">
-<svg viewBox="0 0 880 388" width="100%" style="max-width:880px;height:auto;display:block;margin:0 auto;font-family:-apple-system,Segoe UI,Roboto,sans-serif;" role="img" aria-label="Layered defenses. no --privileged removes every precondition at once. drop CAP_SYS_ADMIN denies the write to core_pattern with EPERM. read-only or masked /proc makes core_pattern not writable. seccomp default profile blocks neighbouring escape syscalls like init_module. no_new_privs prevents privilege regain across exec. userns-remap makes container root not equal host root, so the handler path is unusable.">
-  <rect x="10" y="10" width="860" height="368" rx="10" fill="#1c2027" stroke="#3a4048" stroke-width="1.5"/>
+<svg viewBox="0 0 880 436" width="100%" style="max-width:880px;height:auto;display:block;margin:0 auto;font-family:-apple-system,Segoe UI,Roboto,sans-serif;" role="img" aria-label="Layered defenses. no --privileged removes every precondition at once. a read-only /proc/sys makes the write fail with EROFS. the AppArmor docker-default profile denies writes under /proc/sys/kernel. userns-remap makes the daemon refuse privileged containers. dropping CAP_SYS_ADMIN only prevents remounting /proc/sys read-write. the seccomp default profile blocks neighbouring escape syscalls like init_module. no_new_privs prevents privilege regain across exec.">
+  <rect x="10" y="10" width="860" height="416" rx="10" fill="#1c2027" stroke="#3a4048" stroke-width="1.5"/>
   <!-- header -->
   <text x="34" y="42" fill="#8a929c" font-size="12" font-weight="700" letter-spacing="1">CONTROL</text>
   <text x="330" y="42" fill="#8a929c" font-size="12" font-weight="700" letter-spacing="1">EFFECT ON THIS ESCAPE</text>
   <line x1="24" y1="56" x2="856" y2="56" stroke="#3a4048" stroke-width="1"/>
-  <line x1="312" y1="56" x2="312" y2="366" stroke="#3a4048" stroke-width="1"/>
+  <line x1="312" y1="56" x2="312" y2="416" stroke="#3a4048" stroke-width="1"/>
 
   <!-- rows -->
   <g font-family="monospace" font-size="13">
@@ -521,42 +570,47 @@ Everything traced back to one flag: `--privileged`. Remove it and the attack has
     <text x="34"  y="96"  fill="#d17bd0" font-weight="700">no --privileged</text>
     <text x="330" y="96"  fill="#eaeaea" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5">removes every precondition at once</text>
 
-    <text x="34"  y="146" fill="#d17bd0" font-weight="700">drop CAP_SYS_ADMIN</text>
-    <text x="330" y="146" fill="#eaeaea" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5">write to core_pattern denied (EPERM)</text>
+    <text x="34"  y="146" fill="#d17bd0" font-weight="700">read-only /proc/sys</text>
+    <text x="330" y="146" fill="#eaeaea" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5">the write fails with EROFS</text>
 
     <rect x="24"  y="166" width="288" height="50" fill="#20252d"/>
-    <text x="34"  y="196" fill="#d17bd0" font-weight="700">read-only / masked /proc</text>
-    <text x="330" y="196" fill="#eaeaea" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5">core_pattern is not writable</text>
+    <text x="34"  y="196" fill="#d17bd0" font-weight="700">AppArmor docker-default</text>
+    <text x="330" y="196" fill="#eaeaea" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5">writes under /proc/sys/kernel denied</text>
 
-    <text x="34"  y="246" fill="#d17bd0" font-weight="700">seccomp default profile</text>
-    <text x="330" y="246" fill="#eaeaea" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5">blocks neighbouring syscalls (init_module...)</text>
+    <text x="34"  y="246" fill="#d17bd0" font-weight="700">userns-remap</text>
+    <text x="330" y="246" fill="#eaeaea" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5">daemon refuses privileged containers</text>
 
     <rect x="24"  y="266" width="288" height="50" fill="#20252d"/>
-    <text x="34"  y="296" fill="#d17bd0" font-weight="700">no_new_privs</text>
-    <text x="330" y="296" fill="#eaeaea" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5">no privilege regain across exec</text>
+    <text x="34"  y="296" fill="#d17bd0" font-weight="700">drop CAP_SYS_ADMIN</text>
+    <text x="330" y="296" fill="#eaeaea" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5">only stops remounting /proc/sys read-write</text>
 
-    <text x="34"  y="346" fill="#d17bd0" font-weight="700">userns-remap</text>
-    <text x="330" y="346" fill="#eaeaea" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5">container root &ne; host root; handler path unusable</text>
+    <text x="34"  y="346" fill="#d17bd0" font-weight="700">seccomp default profile</text>
+    <text x="330" y="346" fill="#eaeaea" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5">blocks neighbouring syscalls (init_module...)</text>
+
+    <rect x="24"  y="366" width="288" height="50" fill="#20252d"/>
+    <text x="34"  y="396" fill="#d17bd0" font-weight="700">no_new_privs</text>
+    <text x="330" y="396" fill="#eaeaea" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5">no privilege regain across exec</text>
   </g>
   <!-- row dividers -->
   <g stroke="#282e37" stroke-width="1">
     <line x1="24" y1="116" x2="856" y2="116"/><line x1="24" y1="166" x2="856" y2="166"/>
     <line x1="24" y1="216" x2="856" y2="216"/><line x1="24" y1="266" x2="856" y2="266"/>
-    <line x1="24" y1="316" x2="856" y2="316"/>
+    <line x1="24" y1="316" x2="856" y2="316"/><line x1="24" y1="366" x2="856" y2="366"/>
   </g>
   <!-- green "breaks escape" ticks -->
   <g>
     <circle cx="838" cy="91"  r="7" fill="#153a1e"/><path d="M834,91  l3,3 l5-6" stroke="#46a758" stroke-width="1.8" fill="none"/>
     <circle cx="838" cy="141" r="7" fill="#153a1e"/><path d="M834,141 l3,3 l5-6" stroke="#46a758" stroke-width="1.8" fill="none"/>
     <circle cx="838" cy="191" r="7" fill="#153a1e"/><path d="M834,191 l3,3 l5-6" stroke="#46a758" stroke-width="1.8" fill="none"/>
-    <circle cx="838" cy="241" r="7" fill="#20252d" stroke="#3a4048" stroke-width="1.5"/><line x1="835" y1="241" x2="841" y2="241" stroke="#6a727c" stroke-width="1.8"/>
+    <circle cx="838" cy="241" r="7" fill="#153a1e"/><path d="M834,241 l3,3 l5-6" stroke="#46a758" stroke-width="1.8" fill="none"/>
     <circle cx="838" cy="291" r="7" fill="#20252d" stroke="#3a4048" stroke-width="1.5"/><line x1="835" y1="291" x2="841" y2="291" stroke="#6a727c" stroke-width="1.8"/>
-    <circle cx="838" cy="341" r="7" fill="#153a1e"/><path d="M834,341 l3,3 l5-6" stroke="#46a758" stroke-width="1.8" fill="none"/>
+    <circle cx="838" cy="341" r="7" fill="#20252d" stroke="#3a4048" stroke-width="1.5"/><line x1="835" y1="341" x2="841" y2="341" stroke="#6a727c" stroke-width="1.8"/>
+    <circle cx="838" cy="391" r="7" fill="#20252d" stroke="#3a4048" stroke-width="1.5"/><line x1="835" y1="391" x2="841" y2="391" stroke="#6a727c" stroke-width="1.8"/>
   </g>
 </svg>
 </div>
 
-To land this escape an attacker needs `CAP_SYS_ADMIN`, a writable `/proc/sys`, and the handler to run in a usable context. Removing any one of these breaks it. The `userns-remap` row is the one that stopped me by accident: my WSL2 Docker had it enabled, so the exploit failed with `pipe failed` until I forced `--userns=host`.
+To land this escape an attacker needs a writable `/proc/sys`, the host's own uid 0, no LSM rule covering `/proc/sys/kernel`, and a handler path the kernel can reach. Removing any one of these breaks it. Dropping `CAP_SYS_ADMIN` covers a narrower case, remounting a read-only `/proc/sys`. The `userns-remap` row is the one that stopped me by accident: my WSL2 Docker had it enabled, so the daemon refused the privileged container until I forced `--userns=host`.
 
 ## Defaults done right
 
@@ -578,10 +632,8 @@ The first two stop this write outright. The last two do not touch this path, but
 `core_pattern` is a 20-year-old kernel feature doing what it was designed to do, run a program on a core dump, abused by a container that was given too much privilege. That makes it a good example to learn from:
 
 - The attack is short once you see that `core_pattern` is host-global and the `upperdir` maps both ways.
-- The detection is a lesson on its own: the default ruleset caught the noise around my PoC, not the escape. Useful detection watches the mechanism.
-- The defense is layered: three independent controls each stop this write, and seccomp plus `no_new_privs` close the neighbouring escapes.
-
-The host and container share one kernel. Most escapes in this space come down to a resource the kernel did not namespace, or a capability that should not have been granted.
+- The detection is a lesson on its own: the default ruleset caught the noise around my PoC and missed the escape. Useful detection watches the mechanism.
+- The defense is layered: a read-only `/proc/sys`, an LSM rule over `/proc/sys/kernel`, and userns-remap each stop this write on their own, while seccomp and `no_new_privs` close the neighbouring escapes.
 
 > Next in the series I will take another escape through the same attack, detect, defend cycle.
 
