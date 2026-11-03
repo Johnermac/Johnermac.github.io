@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 492" width="820" height="492" role="img" aria-label="Shared responsibility grid. Rows are layers from data down to hardware. For EC2 the customer owns everything down to the guest OS and runtime. For RDS, AWS patches the OS and engine on a schedule the customer picks. For Lambda, AWS owns the OS and the customer picks the runtime version. AWS always owns virtualization, hosts and facilities.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .c{font-size:11px}
+  </style>
+  <defs>
+    <pattern id="half" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="10" height="10" fill="#38b2ac" fill-opacity="0.22"/>
+      <rect width="5" height="10" fill="#3d86e0" fill-opacity="0.30"/>
+    </pattern>
+  </defs>
+  <rect width="820" height="492" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <text x="395.0" y="48" text-anchor="middle" class="h">EC2</text>
+  <text x="395.0" y="68" text-anchor="middle" class="s">infrastructure</text>
+  <text x="560.0" y="48" text-anchor="middle" class="h">RDS</text>
+  <text x="560.0" y="68" text-anchor="middle" class="s">managed platform</text>
+  <text x="725.0" y="48" text-anchor="middle" class="h">LAMBDA</text>
+  <text x="725.0" y="68" text-anchor="middle" class="s">fully managed</text>
+  <text x="24" y="119">Data and encryption choices</text>
+  <rect x="320" y="96" width="150" height="36" rx="5" fill="#3d86e0" fill-opacity="0.22" stroke="#3d86e0" stroke-opacity="0.7"/>
+  <text x="395.0" y="118" text-anchor="middle" class="c" style="fill:#a9c8f0">you</text>
+  <rect x="485" y="96" width="150" height="36" rx="5" fill="#3d86e0" fill-opacity="0.22" stroke="#3d86e0" stroke-opacity="0.7"/>
+  <text x="560.0" y="118" text-anchor="middle" class="c" style="fill:#a9c8f0">you</text>
+  <rect x="650" y="96" width="150" height="36" rx="5" fill="#3d86e0" fill-opacity="0.22" stroke="#3d86e0" stroke-opacity="0.7"/>
+  <text x="725.0" y="118" text-anchor="middle" class="c" style="fill:#a9c8f0">you</text>
+  <text x="24" y="161">Identity and access (IAM)</text>
+  <rect x="320" y="138" width="150" height="36" rx="5" fill="#3d86e0" fill-opacity="0.22" stroke="#3d86e0" stroke-opacity="0.7"/>
+  <text x="395.0" y="160" text-anchor="middle" class="c" style="fill:#a9c8f0">you</text>
+  <rect x="485" y="138" width="150" height="36" rx="5" fill="#3d86e0" fill-opacity="0.22" stroke="#3d86e0" stroke-opacity="0.7"/>
+  <text x="560.0" y="160" text-anchor="middle" class="c" style="fill:#a9c8f0">you</text>
+  <rect x="650" y="138" width="150" height="36" rx="5" fill="#3d86e0" fill-opacity="0.22" stroke="#3d86e0" stroke-opacity="0.7"/>
+  <text x="725.0" y="160" text-anchor="middle" class="c" style="fill:#a9c8f0">you</text>
+  <text x="24" y="203">Application code</text>
+  <rect x="320" y="180" width="150" height="36" rx="5" fill="#3d86e0" fill-opacity="0.22" stroke="#3d86e0" stroke-opacity="0.7"/>
+  <text x="395.0" y="202" text-anchor="middle" class="c" style="fill:#a9c8f0">you</text>
+  <rect x="485" y="180" width="150" height="36" rx="5" fill="#3d86e0" fill-opacity="0.22" stroke="#3d86e0" stroke-opacity="0.7"/>
+  <text x="560.0" y="202" text-anchor="middle" class="c" style="fill:#a9c8f0">you</text>
+  <rect x="650" y="180" width="150" height="36" rx="5" fill="#3d86e0" fill-opacity="0.22" stroke="#3d86e0" stroke-opacity="0.7"/>
+  <text x="725.0" y="202" text-anchor="middle" class="c" style="fill:#a9c8f0">you</text>
+  <text x="24" y="245">Network rules (security groups)</text>
+  <rect x="320" y="222" width="150" height="36" rx="5" fill="#3d86e0" fill-opacity="0.22" stroke="#3d86e0" stroke-opacity="0.7"/>
+  <text x="395.0" y="244" text-anchor="middle" class="c" style="fill:#a9c8f0">you</text>
+  <rect x="485" y="222" width="150" height="36" rx="5" fill="#3d86e0" fill-opacity="0.22" stroke="#3d86e0" stroke-opacity="0.7"/>
+  <text x="560.0" y="244" text-anchor="middle" class="c" style="fill:#a9c8f0">you</text>
+  <rect x="650" y="222" width="150" height="36" rx="5" fill="url(#half)" stroke="#8b949e" stroke-opacity="0.7"/>
+  <text x="725.0" y="244" text-anchor="middle" class="c" style="fill:#e6e6e6">only in a VPC</text>
+  <text x="24" y="287">Guest OS and patches</text>
+  <rect x="320" y="264" width="150" height="36" rx="5" fill="#3d86e0" fill-opacity="0.22" stroke="#3d86e0" stroke-opacity="0.7"/>
+  <text x="395.0" y="286" text-anchor="middle" class="c" style="fill:#a9c8f0">you</text>
+  <rect x="485" y="264" width="150" height="36" rx="5" fill="url(#half)" stroke="#8b949e" stroke-opacity="0.7"/>
+  <text x="560.0" y="286" text-anchor="middle" class="c" style="fill:#e6e6e6">you schedule</text>
+  <rect x="650" y="264" width="150" height="36" rx="5" fill="#38b2ac" fill-opacity="0.16" stroke="#38b2ac" stroke-opacity="0.7"/>
+  <text x="725.0" y="286" text-anchor="middle" class="c" style="fill:#8fdcd7">AWS</text>
+  <text x="24" y="329">Runtime or database engine</text>
+  <rect x="320" y="306" width="150" height="36" rx="5" fill="#3d86e0" fill-opacity="0.22" stroke="#3d86e0" stroke-opacity="0.7"/>
+  <text x="395.0" y="328" text-anchor="middle" class="c" style="fill:#a9c8f0">you</text>
+  <rect x="485" y="306" width="150" height="36" rx="5" fill="url(#half)" stroke="#8b949e" stroke-opacity="0.7"/>
+  <text x="560.0" y="328" text-anchor="middle" class="c" style="fill:#e6e6e6">you pick version</text>
+  <rect x="650" y="306" width="150" height="36" rx="5" fill="url(#half)" stroke="#8b949e" stroke-opacity="0.7"/>
+  <text x="725.0" y="328" text-anchor="middle" class="c" style="fill:#e6e6e6">you pick version</text>
+  <text x="24" y="371">Virtualization and hosts</text>
+  <rect x="320" y="348" width="150" height="36" rx="5" fill="#38b2ac" fill-opacity="0.16" stroke="#38b2ac" stroke-opacity="0.7"/>
+  <text x="395.0" y="370" text-anchor="middle" class="c" style="fill:#8fdcd7">AWS</text>
+  <rect x="485" y="348" width="150" height="36" rx="5" fill="#38b2ac" fill-opacity="0.16" stroke="#38b2ac" stroke-opacity="0.7"/>
+  <text x="560.0" y="370" text-anchor="middle" class="c" style="fill:#8fdcd7">AWS</text>
+  <rect x="650" y="348" width="150" height="36" rx="5" fill="#38b2ac" fill-opacity="0.16" stroke="#38b2ac" stroke-opacity="0.7"/>
+  <text x="725.0" y="370" text-anchor="middle" class="c" style="fill:#8fdcd7">AWS</text>
+  <text x="24" y="413">Hardware, facilities, network</text>
+  <rect x="320" y="390" width="150" height="36" rx="5" fill="#38b2ac" fill-opacity="0.16" stroke="#38b2ac" stroke-opacity="0.7"/>
+  <text x="395.0" y="412" text-anchor="middle" class="c" style="fill:#8fdcd7">AWS</text>
+  <rect x="485" y="390" width="150" height="36" rx="5" fill="#38b2ac" fill-opacity="0.16" stroke="#38b2ac" stroke-opacity="0.7"/>
+  <text x="560.0" y="412" text-anchor="middle" class="c" style="fill:#8fdcd7">AWS</text>
+  <rect x="650" y="390" width="150" height="36" rx="5" fill="#38b2ac" fill-opacity="0.16" stroke="#38b2ac" stroke-opacity="0.7"/>
+  <text x="725.0" y="412" text-anchor="middle" class="c" style="fill:#8fdcd7">AWS</text>
+  <path d="M312 345.0 H477.5 V261.0 H642.5 V219.0 H808" fill="none" stroke="#f5c542" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="24" y="447" width="14" height="14" rx="3" fill="#3d86e0" fill-opacity="0.35" stroke="#3d86e0"/><text x="46" y="458" class="s">you</text>
+  <rect x="96" y="447" width="14" height="14" rx="3" fill="#38b2ac" fill-opacity="0.3" stroke="#38b2ac"/><text x="118" y="458" class="s">AWS</text>
+  <rect x="168" y="447" width="14" height="14" rx="3" fill="url(#half)" stroke="#8b949e"/><text x="190" y="458" class="s">shared: AWS does the work, you control when or which</text>
+  <line x1="590" y1="454" x2="616" y2="454" stroke="#f5c542" stroke-width="2.5"/><text x="624" y="458" class="s">where your part ends</text>
+</svg>

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" width="820" height="420" role="img" aria-label="Users reach edge locations first, which connect over the AWS backbone to a Region made of three isolated Availability Zones. Local Zones, Wavelength and Outposts extend a Region.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .aws{fill:#38b2ac}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8b949e"/></marker>
+    <g id="dc">
+      <rect width="40" height="34" rx="3" fill="#252a33" stroke="#4a5260"/>
+      <line x1="7" y1="10" x2="33" y2="10" stroke="#4a5260"/>
+      <line x1="7" y1="17" x2="33" y2="17" stroke="#4a5260"/>
+      <line x1="7" y1="24" x2="33" y2="24" stroke="#4a5260"/>
+    </g>
+  </defs>
+  <rect width="820" height="420" rx="12" fill="#1e2128" stroke="#353b45"/>
+
+  <!-- users -->
+  <circle cx="52" cy="168" r="9" fill="none" stroke="#e6e6e6" stroke-width="1.5"/>
+  <path d="M36 200 Q52 176 68 200" fill="none" stroke="#e6e6e6" stroke-width="1.5"/>
+  <text x="52" y="222" text-anchor="middle" class="s">users</text>
+  <line x1="74" y1="185" x2="106" y2="185" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- edge -->
+  <rect x="110" y="110" width="170" height="150" rx="8" fill="#38b2ac" fill-opacity="0.08" stroke="#38b2ac"/>
+  <text x="124" y="134" class="h aws">EDGE LOCATION</text>
+  <text x="124" y="160">CloudFront</text>
+  <text x="124" y="180">Route 53 DNS</text>
+  <text x="124" y="200">Global Accelerator</text>
+  <text x="124" y="220">Shield, WAF</text>
+  <text x="124" y="246" class="s">caches and routes</text>
+  <line x1="280" y1="185" x2="326" y2="185" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="304" y="172" text-anchor="middle" class="s" style="font-size:10px">backbone</text>
+
+  <!-- region -->
+  <rect x="330" y="30" width="466" height="300" rx="10" fill="none" stroke="#38b2ac" stroke-dasharray="6 4"/>
+  <text x="346" y="54" class="h aws">REGION  us-east-1</text>
+  <text x="780" y="54" text-anchor="end" class="s">isolated from other Regions</text>
+
+  <g transform="translate(346,72)">
+    <rect width="138" height="190" rx="8" fill="#38b2ac" fill-opacity="0.06" stroke="#38b2ac"/>
+    <text x="12" y="22" class="h">AZ</text><text x="12" y="38" class="s">use1-az1</text>
+    <use href="#dc" x="16" y="54"/><use href="#dc" x="70" y="54"/>
+    <text x="12" y="106" class="s">data centers</text>
+    <rect x="12" y="130" width="114" height="28" rx="5" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0"/>
+    <text x="69" y="148" text-anchor="middle">your app</text>
+  </g>
+  <g transform="translate(496,72)">
+    <rect width="138" height="190" rx="8" fill="#38b2ac" fill-opacity="0.06" stroke="#38b2ac"/>
+    <text x="12" y="22" class="h">AZ</text><text x="12" y="38" class="s">use1-az2</text>
+    <use href="#dc" x="16" y="54"/><use href="#dc" x="70" y="54"/>
+    <text x="12" y="106" class="s">data centers</text>
+    <rect x="12" y="130" width="114" height="28" rx="5" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0"/>
+    <text x="69" y="148" text-anchor="middle">your app</text>
+  </g>
+  <g transform="translate(646,72)">
+    <rect width="138" height="190" rx="8" fill="#38b2ac" fill-opacity="0.06" stroke="#38b2ac"/>
+    <text x="12" y="22" class="h">AZ</text><text x="12" y="38" class="s">use1-az3</text>
+    <use href="#dc" x="16" y="54"/><use href="#dc" x="70" y="54"/>
+    <text x="12" y="106" class="s">data centers</text>
+    <rect x="12" y="130" width="114" height="28" rx="5" fill="none" stroke="#3d86e0" stroke-dasharray="4 3"/>
+    <text x="69" y="148" text-anchor="middle" class="s">spare capacity</text>
+  </g>
+
+  <!-- AZ interconnect -->
+  <line x1="415" y1="262" x2="415" y2="284" stroke="#38b2ac"/>
+  <line x1="565" y1="262" x2="565" y2="284" stroke="#38b2ac"/>
+  <line x1="715" y1="262" x2="715" y2="284" stroke="#38b2ac"/>
+  <line x1="415" y1="284" x2="715" y2="284" stroke="#38b2ac" stroke-width="2"/>
+  <text x="563" y="310" text-anchor="middle" class="s">AZs: separate power and network, linked by low-latency fiber</text>
+
+  <!-- extensions -->
+  <line x1="403" y1="330" x2="403" y2="352" stroke="#4a5260" stroke-dasharray="3 3"/>
+  <line x1="563" y1="330" x2="563" y2="352" stroke="#4a5260" stroke-dasharray="3 3"/>
+  <line x1="723" y1="330" x2="723" y2="352" stroke="#4a5260" stroke-dasharray="3 3"/>
+  <g transform="translate(330,352)">
+    <rect width="146" height="52" rx="6" fill="#252a33" stroke="#4a5260"/>
+    <text x="12" y="21" class="h aws" style="font-size:11px">LOCAL ZONE</text>
+    <text x="12" y="39" class="s">metro, low latency</text>
+  </g>
+  <g transform="translate(490,352)">
+    <rect width="146" height="52" rx="6" fill="#252a33" stroke="#4a5260"/>
+    <text x="12" y="21" class="h aws" style="font-size:11px">WAVELENGTH</text>
+    <text x="12" y="39" class="s">inside 5G networks</text>
+  </g>
+  <g transform="translate(650,352)">
+    <rect width="146" height="52" rx="6" fill="#252a33" stroke="#4a5260"/>
+    <text x="12" y="21" class="h aws" style="font-size:11px">OUTPOSTS</text>
+    <text x="12" y="39" class="s">racks in your DC</text>
+  </g>
+  <text x="314" y="374" text-anchor="end" class="s">extensions of a Region,</text>
+  <text x="314" y="390" text-anchor="end" class="s">managed by its parent</text>
+</svg>

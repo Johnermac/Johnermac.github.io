@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" width="820" height="420" role="img" aria-label="Four disaster recovery strategies compared by what runs in the recovery Region. Backup and restore keeps only backups, RPO hours, RTO 24 hours or less. Pilot light replicates data and deploys core infrastructure with no app servers, RPO minutes, RTO tens of minutes. Warm standby runs everything at reduced capacity, RPO seconds, RTO minutes. Multi-site active runs full copies serving traffic, RPO near zero, RTO potentially zero.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.2px}
+    .k{font-size:11px;fill:#8b949e;letter-spacing:1px}
+  </style>
+  <defs>
+    <linearGradient id="cost" gradientUnits="userSpaceOnUse" x1="24" y1="0" x2="792" y2="0"><stop offset="0" stop-color="#f5c542" stop-opacity="0.25"/><stop offset="1" stop-color="#f5c542"/></linearGradient>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f5c542"/></marker>
+  </defs>
+  <rect width="820" height="420" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <text x="114.0" y="40" text-anchor="middle" class="h">BACKUP &amp; RESTORE</text>
+  <rect x="24" y="56" width="180" height="214" rx="8" fill="#252a33" stroke="#4a5260"/>
+  <text x="36" y="78" class="k">RECOVERY REGION</text>
+  <text x="36" y="104" class="s">data</text>
+  <rect x="36" y="112" width="156" height="12" rx="3" fill="none" stroke="#4a5260"/>
+  <rect x="36" y="112" width="156" height="12" rx="3" fill="none" stroke="#3d86e0" stroke-dasharray="4 3"/>
+  <text x="36" y="138" style="font-size:11px">backup copies</text>
+  <text x="36" y="162" class="s">core infrastructure</text>
+  <rect x="36" y="170" width="156" height="12" rx="3" fill="none" stroke="#4a5260"/>
+  <text x="36" y="196" style="font-size:11px">rebuilt on demand</text>
+  <text x="36" y="220" class="s">app servers</text>
+  <rect x="36" y="228" width="156" height="12" rx="3" fill="none" stroke="#4a5260"/>
+  <text x="36" y="254" style="font-size:11px">rebuilt on demand</text>
+  <text x="36" y="298" class="k">RPO</text><text x="74" y="298">hours</text>
+  <text x="36" y="320" class="k">RTO</text><text x="74" y="320">24 h or less</text>
+  <text x="310.0" y="40" text-anchor="middle" class="h">PILOT LIGHT</text>
+  <rect x="220" y="56" width="180" height="214" rx="8" fill="#252a33" stroke="#4a5260"/>
+  <text x="232" y="78" class="k">RECOVERY REGION</text>
+  <text x="232" y="104" class="s">data</text>
+  <rect x="232" y="112" width="156" height="12" rx="3" fill="none" stroke="#4a5260"/>
+  <rect x="232" y="112" width="156" height="12" rx="3" fill="#3d86e0" fill-opacity="0.55" stroke="#3d86e0"/>
+  <text x="232" y="138" style="font-size:11px">live replica</text>
+  <text x="232" y="162" class="s">core infrastructure</text>
+  <rect x="232" y="170" width="156" height="12" rx="3" fill="none" stroke="#4a5260"/>
+  <rect x="232" y="170" width="156" height="12" rx="3" fill="#3d86e0" fill-opacity="0.55" stroke="#3d86e0"/>
+  <text x="232" y="196" style="font-size:11px">deployed</text>
+  <text x="232" y="220" class="s">app servers</text>
+  <rect x="232" y="228" width="156" height="12" rx="3" fill="none" stroke="#4a5260"/>
+  <text x="232" y="254" style="font-size:11px">not running</text>
+  <text x="232" y="298" class="k">RPO</text><text x="270" y="298">minutes</text>
+  <text x="232" y="320" class="k">RTO</text><text x="270" y="320">tens of minutes</text>
+  <text x="506.0" y="40" text-anchor="middle" class="h">WARM STANDBY</text>
+  <rect x="416" y="56" width="180" height="214" rx="8" fill="#252a33" stroke="#4a5260"/>
+  <text x="428" y="78" class="k">RECOVERY REGION</text>
+  <text x="428" y="104" class="s">data</text>
+  <rect x="428" y="112" width="156" height="12" rx="3" fill="none" stroke="#4a5260"/>
+  <rect x="428" y="112" width="156" height="12" rx="3" fill="#3d86e0" fill-opacity="0.55" stroke="#3d86e0"/>
+  <text x="428" y="138" style="font-size:11px">live replica</text>
+  <text x="428" y="162" class="s">core infrastructure</text>
+  <rect x="428" y="170" width="156" height="12" rx="3" fill="none" stroke="#4a5260"/>
+  <rect x="428" y="170" width="156" height="12" rx="3" fill="#3d86e0" fill-opacity="0.55" stroke="#3d86e0"/>
+  <text x="428" y="196" style="font-size:11px">deployed</text>
+  <text x="428" y="220" class="s">app servers</text>
+  <rect x="428" y="228" width="156" height="12" rx="3" fill="none" stroke="#4a5260"/>
+  <rect x="428" y="228" width="54.599999999999994" height="12" rx="3" fill="#3d86e0" fill-opacity="0.55" stroke="#3d86e0"/>
+  <text x="428" y="254" style="font-size:11px">reduced capacity</text>
+  <text x="428" y="298" class="k">RPO</text><text x="466" y="298">seconds</text>
+  <text x="428" y="320" class="k">RTO</text><text x="466" y="320">minutes</text>
+  <text x="702.0" y="40" text-anchor="middle" class="h">MULTI-SITE ACTIVE</text>
+  <rect x="612" y="56" width="180" height="214" rx="8" fill="#252a33" stroke="#4a5260"/>
+  <text x="624" y="78" class="k">RECOVERY REGION</text>
+  <text x="624" y="104" class="s">data</text>
+  <rect x="624" y="112" width="156" height="12" rx="3" fill="none" stroke="#4a5260"/>
+  <rect x="624" y="112" width="156" height="12" rx="3" fill="#3d86e0" fill-opacity="0.55" stroke="#3d86e0"/>
+  <text x="624" y="138" style="font-size:11px">live replica</text>
+  <text x="624" y="162" class="s">core infrastructure</text>
+  <rect x="624" y="170" width="156" height="12" rx="3" fill="none" stroke="#4a5260"/>
+  <rect x="624" y="170" width="156" height="12" rx="3" fill="#3d86e0" fill-opacity="0.55" stroke="#3d86e0"/>
+  <text x="624" y="196" style="font-size:11px">deployed</text>
+  <text x="624" y="220" class="s">app servers</text>
+  <rect x="624" y="228" width="156" height="12" rx="3" fill="none" stroke="#4a5260"/>
+  <rect x="624" y="228" width="156" height="12" rx="3" fill="#3d86e0" fill-opacity="0.55" stroke="#3d86e0"/>
+  <text x="624" y="254" style="font-size:11px">serving traffic</text>
+  <text x="624" y="298" class="k">RPO</text><text x="662" y="298">near zero</text>
+  <text x="624" y="320" class="k">RTO</text><text x="662" y="320">potentially zero</text>
+  <line x1="24" y1="352" x2="792" y2="352" stroke="url(#cost)" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="24" y="376" class="s">cheaper, slower to recover</text>
+  <text x="796" y="376" text-anchor="end" class="s">more cost, less downtime and data loss</text>
+  <text x="24" y="400" class="s">primary Region runs the full workload in every case</text>
+</svg>

@@ -32,3 +32,6 @@ FORK-GUIDE.md
 
 # Container escape lab (local-only, not for publish)
 _labs/
+
+# Local-only writing plans
+.plans/

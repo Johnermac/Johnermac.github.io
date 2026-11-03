@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 250" width="820" height="250" role="img" aria-label="With iam:PassRole on every role, a developer with limited rights can create a Lambda function that runs as an admin role and act through it. With PassRole scoped to one role, the function can only get that role.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+  </style>
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e6e6e6"/></marker>
+  </defs>
+  <rect width="820" height="250" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <text x="24" y="40" class="h" style="fill:#f0545c">UNSCOPED</text>
+  <rect x="24" y="60" width="140" height="48" rx="6" fill="#3d86e0" fill-opacity="0.14" stroke="#3d86e0"/>
+  <text x="94" y="80" text-anchor="middle">developer</text><text x="94" y="96" text-anchor="middle" class="s">limited rights</text>
+  <line x1="164" y1="84" x2="326" y2="84" stroke="#e6e6e6" stroke-width="1.4" marker-end="url(#g)"/>
+  <text x="245" y="76" text-anchor="middle" class="s" style="fill:#f0545c">iam:PassRole on *</text>
+  <text x="245" y="100" text-anchor="middle" class="s">+ CreateFunction</text>
+  <rect x="330" y="60" width="120" height="48" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac"/>
+  <text x="390" y="80" text-anchor="middle">Lambda</text><text x="390" y="96" text-anchor="middle" class="s">new function</text>
+  <line x1="450" y1="84" x2="526" y2="84" stroke="#e6e6e6" stroke-width="1.4" marker-end="url(#g)"/>
+  <text x="488" y="76" text-anchor="middle" class="s">runs as</text>
+  <rect x="530" y="60" width="140" height="48" rx="6" fill="#f0545c" fill-opacity="0.16" stroke="#f0545c"/>
+  <text x="600" y="89" text-anchor="middle">role/Admin</text>
+  <text x="690" y="80" style="fill:#f0545c;font-weight:700">escalation</text><text x="690" y="96" class="s">acts as admin</text>
+  <line x1="24" y1="138" x2="796" y2="138" stroke="#353b45"/>
+  <text x="24" y="160" class="h" style="fill:#4cc38a">SCOPED</text>
+  <rect x="24" y="180" width="140" height="48" rx="6" fill="#3d86e0" fill-opacity="0.14" stroke="#3d86e0"/>
+  <text x="94" y="200" text-anchor="middle">developer</text><text x="94" y="216" text-anchor="middle" class="s">limited rights</text>
+  <line x1="164" y1="204" x2="326" y2="204" stroke="#e6e6e6" stroke-width="1.4" marker-end="url(#g)"/>
+  <text x="245" y="196" text-anchor="middle" class="s" style="fill:#4cc38a">iam:PassRole on app-fn</text>
+  <text x="245" y="220" text-anchor="middle" class="s">+ CreateFunction</text>
+  <rect x="330" y="180" width="120" height="48" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac"/>
+  <text x="390" y="200" text-anchor="middle">Lambda</text><text x="390" y="216" text-anchor="middle" class="s">new function</text>
+  <line x1="450" y1="204" x2="526" y2="204" stroke="#e6e6e6" stroke-width="1.4" marker-end="url(#g)"/>
+  <text x="488" y="196" text-anchor="middle" class="s">runs as</text>
+  <rect x="530" y="180" width="140" height="48" rx="6" fill="#4cc38a" fill-opacity="0.16" stroke="#4cc38a"/>
+  <text x="600" y="209" text-anchor="middle">role/app-fn</text>
+  <text x="690" y="200" style="fill:#4cc38a;font-weight:700">no escalation</text><text x="690" y="216" class="s">its own rights</text>
+</svg>
