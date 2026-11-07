@@ -5,8 +5,8 @@ categories:
   - aws
 order: 1
 header:
-  teaser: /assets/images/posts/cloud/cloud-teaser1.jpg
-  overlay_image: /assets/images/main/header2.jpg
+  teaser: /assets/images/posts/aws/aws-teaser1.jpg
+  overlay_image: /assets/images/main/aws-header.jpg
   overlay_filter: 0.5
 excerpt: "How AWS is built physically, who is responsible for what, and how identity and permissions work across one account and many."
 tags:
