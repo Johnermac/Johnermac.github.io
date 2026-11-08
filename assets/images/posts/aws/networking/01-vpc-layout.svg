@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 548" width="820" height="548" role="img" aria-label="A VPC 10.0.0.0/16 across two Availability Zones. Each zone has a public subnet with a NAT gateway, a private application subnet and a private data subnet. The public route table sends 0.0.0.0/0 to the internet gateway. The application route table sends 0.0.0.0/0 to the NAT gateway in the same zone. The data subnets have only the local route.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="548" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="250" y="18" width="320" height="34" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="410" y="40" text-anchor="middle" class="h">INTERNET</text>
+  <line x1="410" y1="52" x2="410" y2="84" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <rect x="335" y="84" width="150" height="30" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="410" y="103" text-anchor="middle" style="fill:#8fdcd7">Internet gateway</text>
+  <rect x="20" y="130" width="780" height="408" rx="10" fill="none" stroke="#3d86e0" stroke-width="1"/>
+  <text x="784" y="152" text-anchor="end" class="h" style="fill:#3d86e0">VPC  10.0.0.0/16</text>
+  <rect x="40" y="166" width="350" height="300" rx="8" fill="none" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="376" y="184" text-anchor="end" class="s">AVAILABILITY ZONE A</text>
+  <rect x="54" y="194" width="322" height="70" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="66" y="212" class="b" style="fill:#8fdcd7">public subnet</text>
+  <text x="364" y="212" text-anchor="end" class="s">10.0.0.0/24</text>
+  <rect x="70" y="224" width="120" height="30" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="130.0" y="243.0" text-anchor="middle" style="fill:#8fdcd7">load balancer</text>
+  <rect x="230" y="224" width="124" height="30" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="292.0" y="243.0" text-anchor="middle" style="fill:#8fdcd7">NAT gateway</text>
+  <rect x="54" y="276" width="322" height="76" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="66" y="294" class="b" style="fill:#a9c8f0">app subnet</text>
+  <text x="364" y="294" text-anchor="end" class="s">10.0.10.0/24</text>
+  <rect x="70" y="306" width="120" height="30" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="130.0" y="325.0" text-anchor="middle" style="fill:#a9c8f0">EC2 / ECS</text>
+  <rect x="230" y="306" width="124" height="30" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="292.0" y="325.0" text-anchor="middle" style="fill:#a9c8f0">Lambda (VPC)</text>
+  <rect x="54" y="364" width="322" height="86" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="66" y="382" class="b">data subnet</text>
+  <text x="364" y="382" text-anchor="end" class="s">10.0.20.0/24</text>
+  <rect x="70" y="396" width="120" height="30" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="130.0" y="415.0" text-anchor="middle" style="fill:#e6e6e6">RDS</text>
+  <text x="230" y="408" class="s">no route out</text>
+  <text x="230" y="422" class="s">local only</text>
+  <line x1="255" y1="306" x2="255" y2="254" stroke="#38b2ac" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="170" y1="254" x2="170" y2="306" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="170" y1="336" x2="170" y2="396" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="430" y="166" width="350" height="300" rx="8" fill="none" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="766" y="184" text-anchor="end" class="s">AVAILABILITY ZONE B</text>
+  <rect x="444" y="194" width="322" height="70" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="456" y="212" class="b" style="fill:#8fdcd7">public subnet</text>
+  <text x="754" y="212" text-anchor="end" class="s">10.0.1.0/24</text>
+  <rect x="460" y="224" width="120" height="30" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="520.0" y="243.0" text-anchor="middle" style="fill:#8fdcd7">load balancer</text>
+  <rect x="620" y="224" width="124" height="30" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="682.0" y="243.0" text-anchor="middle" style="fill:#8fdcd7">NAT gateway</text>
+  <rect x="444" y="276" width="322" height="76" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="456" y="294" class="b" style="fill:#a9c8f0">app subnet</text>
+  <text x="754" y="294" text-anchor="end" class="s">10.0.11.0/24</text>
+  <rect x="460" y="306" width="120" height="30" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="520.0" y="325.0" text-anchor="middle" style="fill:#a9c8f0">EC2 / ECS</text>
+  <rect x="620" y="306" width="124" height="30" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="682.0" y="325.0" text-anchor="middle" style="fill:#a9c8f0">Lambda (VPC)</text>
+  <rect x="444" y="364" width="322" height="86" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="456" y="382" class="b">data subnet</text>
+  <text x="754" y="382" text-anchor="end" class="s">10.0.21.0/24</text>
+  <rect x="460" y="396" width="120" height="30" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="520.0" y="415.0" text-anchor="middle" style="fill:#e6e6e6">RDS</text>
+  <text x="620" y="408" class="s">no route out</text>
+  <text x="620" y="422" class="s">local only</text>
+  <line x1="645" y1="306" x2="645" y2="254" stroke="#38b2ac" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="560" y1="254" x2="560" y2="306" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="560" y1="336" x2="560" y2="396" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <path d="M410 114 V122 H170 V224" fill="none" stroke="#38b2ac" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <path d="M410 114 V122 H560 V224" fill="none" stroke="#38b2ac" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <text x="36" y="492" class="h" style="fill:#f5c542">ROUTE TABLES</text>
+  <text x="36" y="512" class="s">public subnets:  0.0.0.0/0 to the internet gateway</text>
+  <text x="36" y="528" class="s">app subnets:     0.0.0.0/0 to the NAT gateway in the same AZ</text>
+  <text x="470" y="512" class="s">data subnets:    local route only</text>
+  <text x="470" y="528" class="s">every table also has 10.0.0.0/16 to local</text>
+</svg>

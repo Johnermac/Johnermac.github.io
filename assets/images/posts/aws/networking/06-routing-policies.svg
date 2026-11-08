@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 430" width="820" height="430" role="img" aria-label="Eight Route 53 routing policies grouped by what they decide. Simple and weighted decide how much. Latency, geolocation, geoproximity and IP-based decide where the user is. Failover and multivalue answer decide what is healthy.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="430" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="185" height="165" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="34" y="48" class="h" style="fill:#e6e6e6">Simple</text>
+  <text x="34" y="78">one record</text>
+  <text x="34" y="98">all values returned,</text>
+  <text x="34" y="118">random order</text>
+  <text x="34" y="158" class="s">no health checks</text>
+  <rect x="218" y="20" width="185" height="165" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="232" y="48" class="h" style="fill:#e6e6e6">Weighted</text>
+  <text x="232" y="78">split by weight</text>
+  <text x="232" y="98">canary, blue/green</text>
+  <text x="232" y="118">tests</text>
+  <text x="232" y="158" class="s">health checks: yes</text>
+  <rect x="416" y="20" width="185" height="165" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="430" y="48" class="h" style="fill:#8fdcd7">Latency</text>
+  <text x="430" y="78">lowest-latency Region</text>
+  <text x="430" y="98">for multi-Region</text>
+  <text x="430" y="118">apps</text>
+  <text x="430" y="158" class="s">health checks: yes</text>
+  <rect x="614" y="20" width="185" height="165" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="628" y="48" class="h" style="fill:#8fdcd7">Geolocation</text>
+  <text x="628" y="78">by user country or</text>
+  <text x="628" y="98">continent</text>
+  <text x="628" y="118">set a default record</text>
+  <text x="628" y="158" class="s">health checks: yes</text>
+  <rect x="20" y="202" width="185" height="165" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="34" y="230" class="h" style="fill:#8fdcd7">Geoproximity</text>
+  <text x="34" y="260">by distance to your</text>
+  <text x="34" y="280">resources, bias moves</text>
+  <text x="34" y="300">the boundary</text>
+  <text x="34" y="340" class="s">health checks: yes</text>
+  <rect x="218" y="202" width="185" height="165" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="232" y="230" class="h" style="fill:#8fdcd7">IP-based</text>
+  <text x="232" y="260">by client CIDR block</text>
+  <text x="232" y="280">known ISPs or</text>
+  <text x="232" y="300">networks</text>
+  <text x="232" y="340" class="s">health checks: yes</text>
+  <rect x="416" y="202" width="185" height="165" rx="6" fill="#4cc38a" fill-opacity="0.14" stroke="#4cc38a" stroke-width="1"/>
+  <text x="430" y="230" class="h" style="fill:#9be0bf">Failover</text>
+  <text x="430" y="260">primary, then</text>
+  <text x="430" y="280">secondary when the</text>
+  <text x="430" y="300">health check fails</text>
+  <text x="430" y="340" class="s">health check on primary</text>
+  <rect x="614" y="202" width="185" height="165" rx="6" fill="#4cc38a" fill-opacity="0.14" stroke="#4cc38a" stroke-width="1"/>
+  <text x="628" y="230" class="h" style="fill:#9be0bf">Multivalue</text>
+  <text x="628" y="260">up to 8 healthy</text>
+  <text x="628" y="280">records, random order</text>
+  <text x="628" y="300">client-side balancing</text>
+  <text x="628" y="340" class="s">health checks: yes</text>
+  <rect x="20" y="394" width="14" height="14" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="42" y="405" class="s">how much</text>
+  <rect x="130" y="394" width="14" height="14" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="152" y="405" class="s">where is the user</text>
+  <rect x="290" y="394" width="14" height="14" rx="6" fill="#4cc38a" fill-opacity="0.14" stroke="#4cc38a" stroke-width="1"/>
+  <text x="312" y="405" class="s">what is healthy</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 430" width="820" height="430" role="img" aria-label="Top, CloudFront: the viewer reaches an edge location that serves cached content, a miss goes to the regional edge cache and then to the origin. Bottom, Global Accelerator: the viewer enters the AWS network at the nearest edge through static anycast IPs and is carried over the backbone to a healthy regional endpoint, with no caching.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="430" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="780" height="190" rx="10" fill="none" stroke="#f5c542" stroke-width="1"/>
+  <text x="36" y="44" class="h" style="fill:#f5c542">CLOUDFRONT</text>
+  <text x="784" y="44" text-anchor="end" class="s">HTTP and HTTPS, caches content</text>
+  <rect x="40" y="96" width="90" height="44" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="85.0" y="122.0" text-anchor="middle" style="fill:#e6e6e6">viewer</text>
+  <rect x="190" y="96" width="130" height="44" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="255.0" y="122.0" text-anchor="middle" style="fill:#8fdcd7">edge location</text>
+  <rect x="380" y="96" width="150" height="44" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="455.0" y="122.0" text-anchor="middle" style="fill:#8fdcd7">regional edge cache</text>
+  <rect x="600" y="96" width="180" height="44" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="690.0" y="122.0" text-anchor="middle" style="fill:#a9c8f0">origin: S3, ALB, ...</text>
+  <line x1="130" y1="118" x2="190" y2="118" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="320" y1="118" x2="380" y2="118" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="530" y1="118" x2="600" y2="118" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="255" y="158" text-anchor="middle" class="s" style="fill:#9be0bf">hit: answered here</text>
+  <text x="455" y="158" text-anchor="middle" class="s">miss: asks the next tier</text>
+  <text x="40" y="192" class="s">cache by URL, TTLs, invalidation, signed URLs, WAF at the edge</text>
+  <rect x="20" y="224" width="780" height="190" rx="10" fill="none" stroke="#38b2ac" stroke-width="1"/>
+  <text x="36" y="248" class="h" style="fill:#38b2ac">GLOBAL ACCELERATOR</text>
+  <text x="784" y="248" text-anchor="end" class="s">TCP and UDP, no caching</text>
+  <rect x="40" y="300" width="90" height="44" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="85.0" y="326.0" text-anchor="middle" style="fill:#e6e6e6">client</text>
+  <rect x="190" y="300" width="130" height="44" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="255.0" y="319.0" text-anchor="middle" style="fill:#8fdcd7">nearest edge</text>
+  <text x="255.0" y="335.0" text-anchor="middle" class="s">2 anycast IPs</text>
+  <rect x="380" y="300" width="150" height="44" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="455" y="326" text-anchor="middle" style="fill:#8fdcd7">AWS backbone</text>
+  <rect x="600" y="300" width="180" height="44" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="690.0" y="326.0" text-anchor="middle" style="fill:#a9c8f0">ALB, NLB, EC2, EIP</text>
+  <line x1="130" y1="322" x2="190" y2="322" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="320" y1="322" x2="380" y2="322" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="530" y1="322" x2="600" y2="322" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="600" y="364" class="s">nearest healthy endpoint</text>
+  <text x="40" y="396" class="s">static IPs, fast failover between Regions, client IP can be preserved</text>
+</svg>

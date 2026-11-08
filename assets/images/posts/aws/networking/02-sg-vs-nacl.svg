@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" width="820" height="340" role="img" aria-label="Traffic path into an instance. Internet, internet gateway, route table, then the subnet boundary guarded by a network ACL, then the instance guarded by a security group. The network ACL is stateless with numbered allow and deny rules. The security group is stateful with allow rules only.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="340" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="110" width="90" height="56" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="65.0" y="142.0" text-anchor="middle" style="fill:#e6e6e6">Internet</text>
+  <rect x="140" y="110" width="100" height="56" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="190.0" y="135.0" text-anchor="middle" style="fill:#8fdcd7">Internet</text>
+  <text x="190.0" y="151.0" text-anchor="middle" class="s">gateway</text>
+  <line x1="110" y1="138" x2="140" y2="138" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="190" y="186" text-anchor="middle" class="s">route table picks</text>
+  <text x="190" y="200" text-anchor="middle" class="s">the subnet</text>
+  <rect x="270" y="28" width="530" height="220" rx="10" fill="none" stroke="#f5c542" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="286" y="52" class="h" style="fill:#f5c542">NETWORK ACL</text>
+  <text x="786" y="52" text-anchor="end" class="s">guards the subnet boundary</text>
+  <text x="286" y="72" class="s">stateless: return traffic needs its own rule</text>
+  <text x="286" y="88" class="s">allow and deny, numbered, first match wins</text>
+  <line x1="240" y1="138" x2="270" y2="138" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="430" y="104" width="354" height="128" rx="8" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="446" y="128" class="h" style="fill:#3d86e0">SECURITY GROUP</text>
+  <text x="768" y="128" text-anchor="end" class="s">guards the instance</text>
+  <text x="446" y="148" class="s">stateful: replies are allowed automatically</text>
+  <text x="446" y="164" class="s">allow rules only, all rules checked</text>
+  <text x="446" y="180" class="s">rules can reference other security groups</text>
+  <rect x="446" y="192" width="120" height="32" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="506.0" y="212.0" text-anchor="middle" style="fill:#a9c8f0">EC2 / ENI</text>
+  <text x="20" y="282" class="h" style="fill:#f5c542">NACL return path</text>
+  <text x="20" y="300" class="s">inbound 443 allowed, replies leave on ephemeral ports 1024-65535: add an outbound rule for them</text>
+  <text x="20" y="322" class="h" style="fill:#3d86e0">Security group return path</text>
+  <text x="240" y="322" class="s">none needed, connection tracking allows the reply</text>
+</svg>

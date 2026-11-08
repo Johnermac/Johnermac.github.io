@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" width="820" height="420" role="img" aria-label="Two ways to connect an on-premises network to AWS. Site-to-Site VPN uses two IPsec tunnels over the public internet, up to 1.25 Gbps each. Direct Connect uses a dedicated private fiber link through a Direct Connect location. Both end at a virtual private gateway or a Transit Gateway in front of your VPCs.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="420" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="180" height="340" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="36" y="44" class="h">ON-PREMISES</text>
+  <rect x="40" y="150" width="140" height="80" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="110.0" y="187.0" text-anchor="middle" style="fill:#e6e6e6">customer router</text>
+  <text x="110.0" y="203.0" text-anchor="middle" class="s">BGP or static</text>
+  <rect x="620" y="20" width="180" height="340" rx="10" fill="none" stroke="#38b2ac" stroke-width="1"/>
+  <text x="636" y="44" class="h" style="fill:#38b2ac">AWS</text>
+  <rect x="640" y="150" width="140" height="80" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="710.0" y="187.0" text-anchor="middle" style="fill:#8fdcd7">VGW or</text>
+  <text x="710.0" y="203.0" text-anchor="middle" class="s">Transit Gateway</text>
+  <rect x="640" y="270" width="140" height="36" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="710.0" y="292.0" text-anchor="middle" style="fill:#a9c8f0">VPC</text>
+  <line x1="710" y1="230" x2="710" y2="270" stroke="#3d86e0" stroke-width="1.5"/>
+  <rect x="260" y="70" width="300" height="70" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="410" y="100" text-anchor="middle">public internet</text>
+  <text x="410" y="118" text-anchor="middle" class="s">two IPsec tunnels, encrypted</text>
+  <path d="M180 175 H220 V95 H260" fill="none" stroke="#8b949e" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M180 190 H235 V115 H260" fill="none" stroke="#8b949e" stroke-width="1.8" stroke-linejoin="round"/>
+  <line x1="560" y1="92" x2="640" y2="170" stroke="#38b2ac" stroke-width="1.8"/>
+  <line x1="560" y1="118" x2="640" y2="186" stroke="#38b2ac" stroke-width="1.8"/>
+  <text x="260" y="160" class="s">minutes to set up, 1.25 Gbps per tunnel</text>
+  <text x="260" y="176" class="s">latency depends on the internet path</text>
+  <rect x="260" y="250" width="300" height="70" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="410" y="280" text-anchor="middle" style="fill:#f5c542">Direct Connect location</text>
+  <text x="410" y="298" text-anchor="middle" class="s">private fiber, no encryption by default</text>
+  <path d="M180 215 H220 V275 H260" fill="none" stroke="#8b949e" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M560 285 H600 V206 H640" fill="none" stroke="#f5c542" stroke-width="2.2" stroke-linejoin="round"/>
+  <text x="260" y="342" class="s">weeks to provision, 1 to 400 Gbps dedicated</text>
+  <text x="260" y="358" class="s">partner hosted: 50 Mbps to 25 Gbps</text>
+  <text x="20" y="392" class="s">Common pattern: Direct Connect as the main path, VPN as the backup path.</text>
+</svg>
