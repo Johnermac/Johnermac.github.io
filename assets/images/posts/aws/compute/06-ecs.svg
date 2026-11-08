@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" width="820" height="340" role="img" aria-label="ECR stores the container image. A task definition describes how to run it. An ECS service keeps the desired number of tasks running on a cluster, on Fargate or on EC2 instances, and registers them with a load balancer.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="340" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="130" width="110" height="64" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="75.0" y="159.0" text-anchor="middle" style="fill:#8fdcd7">ECR</text>
+  <text x="75.0" y="175.0" text-anchor="middle" class="s">image</text>
+  <line x1="130" y1="162" x2="165" y2="162" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="165" y="130" width="120" height="64" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="225.0" y="159.0" text-anchor="middle" style="fill:#a9c8f0">Task definition</text>
+  <text x="225.0" y="175.0" text-anchor="middle" class="s">image, CPU, roles</text>
+  <line x1="285" y1="162" x2="320" y2="162" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="320" y="100" width="130" height="124" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="385" y="130" text-anchor="middle" class="b" style="fill:#a9c8f0">Service</text>
+  <text x="385" y="152" text-anchor="middle" class="s">desired count 3</text>
+  <text x="385" y="170" text-anchor="middle" class="s">replaces failed</text>
+  <text x="385" y="188" text-anchor="middle" class="s">rolling updates</text>
+  <rect x="320" y="276" width="130" height="44" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="385.0" y="302.0" text-anchor="middle" style="fill:#e6e6e6">Load balancer</text>
+  <line x1="385" y1="224" x2="385" y2="276" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <text x="395" y="255" class="s">registers tasks</text>
+  <line x1="450" y1="162" x2="490" y2="162" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="490" y="24" width="310" height="296" rx="10" fill="none" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="506" y="46" class="h">CLUSTER</text>
+  <rect x="506" y="62" width="278" height="112" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="520" y="84" style="fill:#8fdcd7">Fargate: AWS runs the servers</text>
+  <rect x="520" y="104" width="76" height="50" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="558.0" y="133.0" text-anchor="middle" style="fill:#a9c8f0">task</text>
+  <rect x="604" y="104" width="76" height="50" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="642.0" y="133.0" text-anchor="middle" style="fill:#a9c8f0">task</text>
+  <rect x="688" y="104" width="76" height="50" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="726.0" y="133.0" text-anchor="middle" style="fill:#a9c8f0">task</text>
+  <rect x="506" y="190" width="278" height="116" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="520" y="212" style="fill:#8fdcd7">EC2: you run the instances</text>
+  <rect x="520" y="226" width="120" height="68" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="580" y="244" text-anchor="middle" class="s">instance</text>
+  <rect x="530" y="252" width="48" height="32" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="554.0" y="272.0" text-anchor="middle" style="fill:#a9c8f0">task</text>
+  <rect x="582" y="252" width="48" height="32" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="606.0" y="272.0" text-anchor="middle" style="fill:#a9c8f0">task</text>
+  <rect x="648" y="226" width="120" height="68" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="708" y="244" text-anchor="middle" class="s">instance</text>
+  <rect x="658" y="252" width="48" height="32" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="682.0" y="272.0" text-anchor="middle" style="fill:#a9c8f0">task</text>
+  <rect x="710" y="252" width="48" height="32" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="734.0" y="272.0" text-anchor="middle" style="fill:#a9c8f0">task</text>
+</svg>

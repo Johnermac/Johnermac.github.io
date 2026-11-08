@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" width="820" height="340" role="img" aria-label="An Application Load Balancer has a node in each enabled AZ and a listener whose rules send requests to target groups by host name or path. Each target group has targets in several AZs and its own health check.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="340" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="140" width="100" height="56" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="70.0" y="172.0" text-anchor="middle" style="fill:#e6e6e6">Clients</text>
+  <line x1="120" y1="168" x2="160" y2="168" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="160" y="24" width="240" height="292" rx="10" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="176" y="46" class="h" style="fill:#8fdcd7">APPLICATION LOAD BALANCER</text>
+  <rect x="176" y="66" width="208" height="40" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="280.0" y="83.0" text-anchor="middle" style="fill:#8fdcd7">Listener HTTPS :443</text>
+  <text x="280.0" y="99.0" text-anchor="middle" class="s">TLS certificate from ACM</text>
+  <rect x="176" y="124" width="208" height="40" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="280.0" y="148.0" text-anchor="middle" style="fill:#e6e6e6">Node in AZ a</text>
+  <rect x="176" y="172" width="208" height="40" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="280.0" y="196.0" text-anchor="middle" style="fill:#e6e6e6">Node in AZ b</text>
+  <text x="176" y="244" class="s">Rules, checked by priority:</text>
+  <text x="176" y="262" class="s">1  host api.example.com</text>
+  <text x="176" y="280" class="s">2  path /images/*</text>
+  <text x="176" y="298" class="s">3  default</text>
+  <rect x="560" y="46" width="240" height="76" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="574" y="66" style="fill:#a9c8f0">Target group api, rule 1</text>
+  <text x="574" y="82" class="s">health check on each target</text>
+  <rect x="574" y="90" width="100" height="24" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="624.0" y="106.0" text-anchor="middle" style="fill:#e6e6e6">target AZ a</text>
+  <rect x="682" y="90" width="100" height="24" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="732.0" y="106.0" text-anchor="middle" style="fill:#e6e6e6">target AZ b</text>
+  <rect x="560" y="136" width="240" height="76" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="574" y="156" style="fill:#a9c8f0">Target group static, rule 2</text>
+  <text x="574" y="172" class="s">health check on each target</text>
+  <rect x="574" y="180" width="100" height="24" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="624.0" y="196.0" text-anchor="middle" style="fill:#e6e6e6">target AZ a</text>
+  <rect x="682" y="180" width="100" height="24" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="732.0" y="196.0" text-anchor="middle" style="fill:#e6e6e6">target AZ b</text>
+  <rect x="560" y="226" width="240" height="76" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="574" y="246" style="fill:#a9c8f0">Target group web, default</text>
+  <text x="574" y="262" class="s">health check on each target</text>
+  <rect x="574" y="270" width="100" height="24" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="624.0" y="286.0" text-anchor="middle" style="fill:#e6e6e6">target AZ a</text>
+  <rect x="682" y="270" width="100" height="24" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="732.0" y="286.0" text-anchor="middle" style="fill:#e6e6e6">target AZ b</text>
+  <line x1="400" y1="168" x2="560" y2="84" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="400" y1="168" x2="560" y2="174" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="400" y1="168" x2="560" y2="264" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+</svg>

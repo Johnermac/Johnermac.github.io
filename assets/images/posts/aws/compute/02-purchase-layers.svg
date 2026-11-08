@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 310" width="820" height="310" role="img" aria-label="Instance usage over time as three layers. A Savings Plan covers the steady baseline at the bottom, On-Demand covers the peaks above it, and Spot covers interruptible batch work on top.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="310" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <path d="M60,250 L110,250 L160,250 L210,250 L260,250 L310,250 L360,250 L410,250 L460,250 L510,250 L560,250 L560,200 L510,200 L460,200 L410,200 L360,200 L310,200 L260,200 L210,200 L160,200 L110,200 L60,200 Z" fill="#4cc38a" fill-opacity="0.30" stroke="#4cc38a" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M60,200 L110,200 L160,200 L210,200 L260,200 L310,200 L360,200 L410,200 L460,200 L510,200 L560,200 L560,175 L510,160 L460,120 L410,150 L360,170 L310,130 L260,110 L210,150 L160,120 L110,140 L60,160 Z" fill="#3d86e0" fill-opacity="0.30" stroke="#3d86e0" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M60,160 L110,140 L160,120 L210,150 L260,110 L310,130 L360,170 L410,150 L460,120 L510,160 L560,175 L560,175 L510,130 L460,80 L410,150 L360,170 L310,80 L260,75 L210,150 L160,75 L110,110 L60,160 Z" fill="#f5c542" fill-opacity="0.30" stroke="#f5c542" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="60" y1="30" x2="60" y2="250" stroke="#8b949e" stroke-width="1.5"/>
+  <line x1="60" y1="250" x2="570" y2="250" stroke="#8b949e" stroke-width="1.5"/>
+  <text x="66" y="38" class="s">instances running</text>
+  <text x="570" y="270" text-anchor="end" class="s">time</text>
+  <text x="80" y="232" style="fill:#9be0bf">Savings Plan: flat commitment</text>
+  <rect x="600" y="40" width="14" height="14" rx="6" fill="#4cc38a" fill-opacity="0.14" stroke="#4cc38a" stroke-width="1"/>
+  <text x="624" y="52" style="fill:#9be0bf">Savings Plan</text>
+  <text x="600" y="72" class="s">sized to the minimum</text>
+  <text x="600" y="88" class="s">steady usage</text>
+  <rect x="600" y="120" width="14" height="14" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="624" y="132" style="fill:#a9c8f0">On-Demand</text>
+  <text x="600" y="152" class="s">peaks, new workloads</text>
+  <rect x="600" y="190" width="14" height="14" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="624" y="202" style="fill:#f5c542">Spot</text>
+  <text x="600" y="222" class="s">interruptible batch work</text>
+  <text x="600" y="238" class="s">2 minutes' warning</text>
+</svg>

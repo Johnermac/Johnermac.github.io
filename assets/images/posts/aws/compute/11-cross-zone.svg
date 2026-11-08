@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 320" width="820" height="320" role="img" aria-label="Cross-zone load balancing. With two targets in AZ a and eight in AZ b, each balancer node gets half the traffic. Off: each AZ a target gets 25 percent and each AZ b target 6.25 percent. On: every target gets 10 percent.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="320" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="385" height="280" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="36" y="46" class="h" style="fill:#f5c542">CROSS-ZONE OFF</text>
+  <rect x="35" y="60" width="100" height="36" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="85.0" y="75.0" text-anchor="middle" style="fill:#8fdcd7">node AZ a</text>
+  <text x="85.0" y="91.0" text-anchor="middle" class="s">50% of traffic</text>
+  <rect x="225" y="60" width="100" height="36" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="275.0" y="75.0" text-anchor="middle" style="fill:#8fdcd7">node AZ b</text>
+  <text x="275.0" y="91.0" text-anchor="middle" class="s">50% of traffic</text>
+  <rect x="30" y="160" width="110" height="56" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <rect x="150" y="160" width="250" height="56" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="34" y="154" class="s">AZ a</text>
+  <text x="154" y="154" class="s">AZ b</text>
+  <rect x="44" y="176" width="40" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="92" y="176" width="40" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="160" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="190" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="220" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="250" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="280" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="310" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="340" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="370" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <line x1="85" y1="96" x2="85" y2="160" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="275" y1="96" x2="275" y2="160" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="415" y="20" width="385" height="280" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="431" y="46" class="h" style="fill:#4cc38a">CROSS-ZONE ON</text>
+  <rect x="430" y="60" width="100" height="36" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="480.0" y="75.0" text-anchor="middle" style="fill:#8fdcd7">node AZ a</text>
+  <text x="480.0" y="91.0" text-anchor="middle" class="s">50% of traffic</text>
+  <rect x="620" y="60" width="100" height="36" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="670.0" y="75.0" text-anchor="middle" style="fill:#8fdcd7">node AZ b</text>
+  <text x="670.0" y="91.0" text-anchor="middle" class="s">50% of traffic</text>
+  <rect x="425" y="160" width="110" height="56" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <rect x="545" y="160" width="250" height="56" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="429" y="154" class="s">AZ a</text>
+  <text x="549" y="154" class="s">AZ b</text>
+  <rect x="439" y="176" width="40" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="487" y="176" width="40" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="555" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="585" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="615" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="645" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="675" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="705" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="735" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="765" y="176" width="26" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <line x1="480" y1="96" x2="480" y2="160" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="670" y1="96" x2="670" y2="160" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="480" y1="96" x2="670" y2="160" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#ar)"/>
+  <line x1="670" y1="96" x2="480" y2="160" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#ar)"/>
+  <text x="40" y="240" style="fill:#f4a0a5">AZ a targets: 25% each</text>
+  <text x="40" y="260" style="fill:#f4a0a5">AZ b targets: 6.25% each</text>
+  <text x="40" y="284" class="s">each node sends only to its own AZ</text>
+  <text x="435" y="240" style="fill:#9be0bf">every target: 10% each</text>
+  <text x="435" y="284" class="s">cross-AZ hops can add data transfer charges</text>
+</svg>

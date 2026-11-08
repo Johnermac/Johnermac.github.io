@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 400" width="820" height="400" role="img" aria-label="Top, IMDSv1: an SSRF bug lets an attacker make the application send a plain GET to the metadata service and read the role credentials. Bottom, IMDSv2: the metadata service needs a PUT to create a token first, so the forwarded GET fails with 401 while the SDK, which sends the PUT, still works.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="400" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="780" height="180" rx="10" fill="none" stroke="#f0545c" stroke-width="1"/>
+  <text x="36" y="46" class="h" style="fill:#f0545c">IMDSv1 (plain GET)</text>
+  <rect x="40" y="80" width="130" height="56" rx="6" fill="#f0545c" fill-opacity="0.14" stroke="#f0545c" stroke-width="1"/>
+  <text x="105.0" y="112.0" text-anchor="middle" style="fill:#f4a0a5">Attacker</text>
+  <rect x="330" y="80" width="150" height="56" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="405.0" y="112.0" text-anchor="middle" style="fill:#a9c8f0">App with SSRF bug</text>
+  <rect x="650" y="80" width="130" height="56" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="715.0" y="105.0" text-anchor="middle" style="fill:#8fdcd7">IMDS</text>
+  <text x="715.0" y="121.0" text-anchor="middle" class="s">169.254.169.254</text>
+  <line x1="170" y1="100" x2="330" y2="100" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="250" y="92" text-anchor="middle" class="s">url=...</text>
+  <line x1="480" y1="100" x2="650" y2="100" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="565" y="92" text-anchor="middle" class="s">GET credentials URL</text>
+  <line x1="650" y1="118" x2="480" y2="118" stroke="#f0545c" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="565" y="134" text-anchor="middle" class="s" style="fill:#f4a0a5">role credentials returned</text>
+  <line x1="330" y1="118" x2="170" y2="118" stroke="#f0545c" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="40" y="172" class="s">The attacker receives the credentials through the vulnerable app</text>
+  <rect x="20" y="210" width="780" height="180" rx="10" fill="none" stroke="#4cc38a" stroke-width="1"/>
+  <text x="36" y="236" class="h" style="fill:#4cc38a">IMDSv2 (token required)</text>
+  <rect x="40" y="270" width="130" height="56" rx="6" fill="#f0545c" fill-opacity="0.14" stroke="#f0545c" stroke-width="1"/>
+  <text x="105.0" y="302.0" text-anchor="middle" style="fill:#f4a0a5">Attacker</text>
+  <rect x="330" y="270" width="150" height="56" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="405.0" y="302.0" text-anchor="middle" style="fill:#a9c8f0">App with SSRF bug</text>
+  <rect x="650" y="270" width="130" height="56" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="715.0" y="295.0" text-anchor="middle" style="fill:#8fdcd7">IMDS</text>
+  <text x="715.0" y="311.0" text-anchor="middle" class="s">169.254.169.254</text>
+  <line x1="170" y1="290" x2="330" y2="290" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="250" y="282" text-anchor="middle" class="s">url=...</text>
+  <line x1="480" y1="290" x2="650" y2="290" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="565" y="282" text-anchor="middle" class="s">GET without token</text>
+  <line x1="650" y1="308" x2="480" y2="308" stroke="#4cc38a" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="565" y="324" text-anchor="middle" class="s" style="fill:#9be0bf">401 Unauthorized</text>
+  <line x1="330" y1="308" x2="170" y2="308" stroke="#4cc38a" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="40" y="362" class="s">Legitimate SDK: PUT /latest/api/token, then GET with the token header, hop limit 1</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" width="820" height="340" role="img" aria-label="An EC2 instance runs in one Availability Zone. It boots from an AMI, has a root EBS volume that survives a stop, optional instance store that does not, a network interface in a subnet, and an IAM role through an instance profile.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="340" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="185" y="24" width="620" height="296" rx="10" fill="none" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="201" y="46" class="h">AVAILABILITY ZONE</text>
+  <rect x="20" y="135" width="130" height="64" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="85.0" y="164.0" text-anchor="middle" style="fill:#8fdcd7">AMI</text>
+  <text x="85.0" y="180.0" text-anchor="middle" class="s">OS + software</text>
+  <line x1="150" y1="167" x2="225" y2="167" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="225" y="60" width="300" height="244" rx="10" fill="none" stroke="#3d86e0" stroke-width="1"/>
+  <text x="241" y="82" class="h" style="fill:#a9c8f0">EC2 INSTANCE  m7g.xlarge</text>
+  <rect x="245" y="98" width="260" height="44" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="375.0" y="117.0" text-anchor="middle" style="fill:#e6e6e6">vCPU + memory</text>
+  <text x="375.0" y="133.0" text-anchor="middle" class="s">Nitro hypervisor</text>
+  <rect x="245" y="150" width="260" height="44" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="375.0" y="169.0" text-anchor="middle" style="fill:#f5c542">Instance store</text>
+  <text x="375.0" y="185.0" text-anchor="middle" class="s">local disk, lost on stop</text>
+  <rect x="245" y="202" width="260" height="44" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="375.0" y="221.0" text-anchor="middle" style="fill:#f5c542">IAM role</text>
+  <text x="375.0" y="237.0" text-anchor="middle" class="s">via instance profile</text>
+  <rect x="245" y="254" width="260" height="40" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="375.0" y="278.0" text-anchor="middle" style="fill:#e6e6e6">Metadata service 169.254.169.254</text>
+  <rect x="590" y="98" width="190" height="64" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="685.0" y="127.0" text-anchor="middle" style="fill:#8fdcd7">EBS root volume</text>
+  <text x="685.0" y="143.0" text-anchor="middle" class="s">survives stop</text>
+  <rect x="590" y="190" width="190" height="64" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="685.0" y="219.0" text-anchor="middle" style="fill:#8fdcd7">Network interface</text>
+  <text x="685.0" y="235.0" text-anchor="middle" class="s">private IP, security groups</text>
+  <line x1="525" y1="146" x2="590" y2="146" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <line x1="525" y1="214" x2="590" y2="214" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <text x="590" y="280" class="s">ENI lives in one subnet</text>
+</svg>

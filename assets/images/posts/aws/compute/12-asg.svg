@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 350" width="820" height="350" role="img" aria-label="An Auto Scaling group launches instances from a launch template, spreads them across AZs between a minimum and maximum, and changes the desired count when a scaling policy reacts to a CloudWatch metric.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="350" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="40" width="200" height="70" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="120.0" y="72.0" text-anchor="middle" style="fill:#8fdcd7">Launch template</text>
+  <text x="120.0" y="88.0" text-anchor="middle" class="s">AMI, type, SG, role, user data</text>
+  <line x1="220" y1="75" x2="250" y2="75" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="250" y="24" width="550" height="302" rx="10" fill="none" stroke="#3d86e0" stroke-width="1"/>
+  <text x="266" y="46" class="h" style="fill:#a9c8f0">AUTO SCALING GROUP   min 2   desired 6   max 8</text>
+  <rect x="270" y="66" width="160" height="190" rx="6" fill="none" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="282" y="86" class="s">AZ a</text>
+  <rect x="285" y="100" width="130" height="40" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="350.0" y="124.0" text-anchor="middle" style="fill:#a9c8f0">instance</text>
+  <rect x="285" y="150" width="130" height="40" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="350.0" y="174.0" text-anchor="middle" style="fill:#a9c8f0">instance</text>
+  <text x="350" y="224" text-anchor="middle" class="s">kept even</text>
+  <rect x="446" y="66" width="160" height="190" rx="6" fill="none" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="458" y="86" class="s">AZ b</text>
+  <rect x="461" y="100" width="130" height="40" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="526.0" y="124.0" text-anchor="middle" style="fill:#a9c8f0">instance</text>
+  <rect x="461" y="150" width="130" height="40" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="526.0" y="174.0" text-anchor="middle" style="fill:#a9c8f0">instance</text>
+  <text x="526" y="224" text-anchor="middle" class="s">kept even</text>
+  <rect x="622" y="66" width="160" height="190" rx="6" fill="none" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="634" y="86" class="s">AZ c</text>
+  <rect x="637" y="100" width="130" height="40" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="702.0" y="124.0" text-anchor="middle" style="fill:#a9c8f0">instance</text>
+  <rect x="637" y="150" width="130" height="40" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="702.0" y="174.0" text-anchor="middle" style="fill:#a9c8f0">instance</text>
+  <text x="702" y="224" text-anchor="middle" class="s">kept even</text>
+  <text x="266" y="276" class="s">Unhealthy instances are terminated and replaced.</text>
+  <text x="266" y="294" class="s">New instances register with the load balancer target group.</text>
+  <text x="266" y="312" class="s">Scaling stays between min and max.</text>
+  <rect x="20" y="220" width="200" height="70" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="120.0" y="252.0" text-anchor="middle" style="fill:#8fdcd7">CloudWatch metric</text>
+  <text x="120.0" y="268.0" text-anchor="middle" class="s">requests per target</text>
+  <line x1="220" y1="255" x2="250" y2="255" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="20" y="316" class="s">target tracking policy sets desired</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 250" width="820" height="250" role="img" aria-label="What reboot, stop and start, and terminate do to the host, the public IPv4 address, instance store data and the root EBS volume of an instance.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="250" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <text x="40" y="34" class="h"></text>
+  <text x="170" y="34" class="h">HOST</text>
+  <text x="320" y="34" class="h">PUBLIC IPV4</text>
+  <text x="500" y="34" class="h">INSTANCE STORE</text>
+  <text x="655" y="34" class="h">ROOT VOLUME</text>
+  <rect x="20" y="48" width="780" height="44" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="40" y="75" class="b">Reboot</text>
+  <text x="170" y="75" style="fill:#9be0bf">Same host</text>
+  <text x="320" y="75" style="fill:#9be0bf">Kept</text>
+  <text x="500" y="75" style="fill:#9be0bf">Kept</text>
+  <text x="655" y="75" style="fill:#9be0bf">Kept</text>
+  <rect x="20" y="100" width="780" height="44" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="40" y="127" class="b">Stop and start</text>
+  <text x="170" y="127" style="fill:#f5c542">New host*</text>
+  <text x="320" y="127" style="fill:#f5c542">New, unless Elastic IP</text>
+  <text x="500" y="127" style="fill:#f4a0a5">Erased</text>
+  <text x="655" y="127" style="fill:#9be0bf">Kept</text>
+  <rect x="20" y="152" width="780" height="44" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="40" y="179" class="b">Terminate</text>
+  <text x="170" y="179" style="fill:#f4a0a5">None</text>
+  <text x="320" y="179" style="fill:#f4a0a5">None</text>
+  <text x="500" y="179" style="fill:#f4a0a5">Erased</text>
+  <text x="655" y="179" style="fill:#f5c542">Deleted by default</text>
+  <text x="40" y="224" class="s">* In some cases the instance stays on the current host. Private IPv4 and IPv6 addresses are kept on stop and start.</text>
+</svg>

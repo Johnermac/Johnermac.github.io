@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" width="820" height="340" role="img" aria-label="A Fargate task in a private subnet has its own network interface with a private IP and security group. A load balancer reaches it with an IP target. Outbound image pulls go through a NAT gateway or an ECR interface endpoint, and EFS provides persistent storage.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="340" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="780" height="305" rx="10" fill="none" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="36" y="42" class="h">VPC</text>
+  <rect x="40" y="56" width="330" height="96" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="50" y="72" class="s">public subnet</text>
+  <rect x="56" y="84" width="120" height="50" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="116.0" y="113.0" text-anchor="middle" style="fill:#8fdcd7">Load balancer</text>
+  <rect x="216" y="84" width="140" height="50" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="286.0" y="113.0" text-anchor="middle" style="fill:#8fdcd7">NAT gateway</text>
+  <rect x="40" y="168" width="330" height="142" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="50" y="184" class="s">private subnet</text>
+  <rect x="56" y="196" width="298" height="104" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="70" y="216" class="h" style="fill:#a9c8f0">FARGATE TASK</text>
+  <rect x="70" y="230" width="130" height="56" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="135.0" y="255.0" text-anchor="middle" style="fill:#e6e6e6">task ENI</text>
+  <text x="135.0" y="271.0" text-anchor="middle" class="s">private IP, SG</text>
+  <rect x="210" y="230" width="130" height="56" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="275.0" y="255.0" text-anchor="middle" style="fill:#e6e6e6">ephemeral disk</text>
+  <text x="275.0" y="271.0" text-anchor="middle" class="s">20 GiB, lost on stop</text>
+  <line x1="116" y1="134" x2="116" y2="230" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="124" y="164" class="s">target type ip</text>
+  <line x1="300" y1="196" x2="300" y2="134" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="308" y="164" class="s">image pull out</text>
+  <rect x="600" y="62" width="180" height="50" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="690.0" y="84.0" text-anchor="middle" style="fill:#e6e6e6">Internet, ECR</text>
+  <text x="690.0" y="100.0" text-anchor="middle" class="s">public endpoints</text>
+  <line x1="356" y1="109" x2="600" y2="87" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="430" y="190" width="180" height="50" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="520.0" y="212.0" text-anchor="middle" style="fill:#8fdcd7">ECR interface endpoint</text>
+  <text x="520.0" y="228.0" text-anchor="middle" class="s">private image pull</text>
+  <line x1="354" y1="232" x2="430" y2="218" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="640" y="256" width="140" height="48" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="710.0" y="277.0" text-anchor="middle" style="fill:#8fdcd7">EFS</text>
+  <text x="710.0" y="293.0" text-anchor="middle" class="s">persistent files</text>
+  <line x1="354" y1="284" x2="640" y2="280" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 300" width="820" height="300" role="img" aria-label="ALB compared with NLB. The ALB ends the client connection and opens a second connection to the target, so the target sees the balancer address and the client IP arrives in a header. The NLB forwards the flow to a target without reading HTTP, and instance targets see the client IP.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="300" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="380" height="260" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="36" y="46" class="h" style="fill:#38b2ac">APPLICATION LOAD BALANCER</text>
+  <rect x="36" y="90" width="84" height="50" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="78.0" y="119.0" text-anchor="middle" style="fill:#e6e6e6">Client</text>
+  <rect x="160" y="90" width="100" height="50" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="210.0" y="112.0" text-anchor="middle" style="fill:#8fdcd7">ALB</text>
+  <text x="210.0" y="128.0" text-anchor="middle" class="s">terminates it</text>
+  <rect x="300" y="90" width="84" height="50" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="342.0" y="119.0" text-anchor="middle" style="fill:#a9c8f0">Target</text>
+  <line x1="120" y1="115" x2="160" y2="115" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <line x1="260" y1="115" x2="300" y2="115" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <text x="140" y="84" text-anchor="middle" class="s">conn 1</text>
+  <text x="280" y="84" text-anchor="middle" class="s">conn 2</text>
+  <text x="40" y="176" class="s">Reads HTTP: host, path, header rules</text>
+  <text x="40" y="196" class="s">Target sees the ALB address</text>
+  <text x="40" y="216" class="s">Client IP is in X-Forwarded-For</text>
+  <text x="40" y="236" class="s">TLS terminated with an ACM certificate</text>
+  <text x="40" y="256" class="s">Targets: instance, IP, Lambda</text>
+  <rect x="420" y="20" width="380" height="260" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="436" y="46" class="h" style="fill:#38b2ac">NETWORK LOAD BALANCER</text>
+  <line x1="520" y1="99" x2="700" y2="99" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <rect x="436" y="90" width="84" height="50" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="478.0" y="119.0" text-anchor="middle" style="fill:#e6e6e6">Client</text>
+  <rect x="560" y="90" width="100" height="50" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="610.0" y="112.0" text-anchor="middle" style="fill:#8fdcd7">NLB</text>
+  <text x="610.0" y="128.0" text-anchor="middle" class="s">passes it on</text>
+  <rect x="700" y="90" width="84" height="50" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="742.0" y="119.0" text-anchor="middle" style="fill:#a9c8f0">Target</text>
+  <text x="610" y="82" text-anchor="middle" class="s">one flow, not terminated</text>
+  <text x="440" y="176" class="s">Layer 4: TCP, UDP, TLS, no HTTP rules</text>
+  <text x="440" y="196" class="s">Flow hash picks the target</text>
+  <text x="440" y="216" class="s">Instance targets see the client IP</text>
+  <text x="440" y="236" class="s">One static IP per AZ, Elastic IP optional</text>
+  <text x="440" y="256" class="s">Targets: instance, IP, another ALB</text>
+</svg>
