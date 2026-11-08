@@ -25,9 +25,10 @@ This series covers how to design systems on AWS. It started from my study notes 
 | 1 | Foundations & Identity | Global infrastructure, shared responsibility, resilience, IAM, Organizations |
 | 2 | Networking | VPC, routing, DNS, content delivery, hybrid connectivity |
 | 3 | Compute & Containers | EC2, ECS/EKS, load balancing, auto scaling |
-| 4 | Storage & Data | S3, block and file storage, RDS, DynamoDB |
-| 5 | Serverless, IaC & Operations | Lambda, messaging, CloudFormation, logging and auditing |
-| 6 | Design Review | Putting it together: tradeoffs and reference designs |
+| 4 | Storage | EBS, EFS, S3, backup, moving data in from on-premises |
+| 5 | Databases | RDS, Aurora, DynamoDB, migration |
+| 6 | Serverless, IaC & Operations | Lambda, messaging, CloudFormation, logging and auditing |
+| 7 | Design Review | Putting it together: tradeoffs and reference designs |
 
 Every post follows the same layout. Each topic opens with what the thing is and how it works, then the design decisions it forces on you. Topics that need more depth get sub-chapters. Where cost or performance changes a decision, a short box covers it. Prices are for `us-east-1` at the time of writing (November 2026).
 
