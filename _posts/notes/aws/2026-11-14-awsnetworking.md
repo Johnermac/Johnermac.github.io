@@ -78,9 +78,11 @@ A NAT gateway lives in one AZ. If you share one across zones and its AZ fails, t
 
 Regional NAT gateways simplify this. A regional NAT gateway is created for the whole VPC, needs no public subnet, and expands to each AZ where you have workloads, so one route entry works for every subnet. Expansion into a new AZ can take up to 60 minutes, and until it finishes, traffic from the new zone crosses to another AZ. Regional gateways support up to 32 IP addresses per AZ and are not available for private NAT. A private NAT gateway has no internet path. It translates addresses for traffic to other VPCs or on-premises networks, which helps when their CIDRs overlap.
 
+A **NAT instance** is the older approach: an EC2 instance configured to do NAT, with its source/destination check turned off. You patch it, script its failover, and its bandwidth depends on its instance type. It can do port forwarding and act as a bastion, which a NAT gateway cannot. AWS recommends NAT gateways for their availability, bandwidth and lower upkeep.
+
 NAT gateways cannot be reached through VPC peering, and a VPN or Direct Connect link reaches one only through a transit gateway.
 
-Two security notes. A private subnet is not a security control by itself, since security groups still decide what can talk to what. And only load balancers and a few deliberate entry points should have public IPs.
+Two security notes. A private subnet is not a security control by itself, since security groups still decide what can talk to what. And only load balancers and a few deliberate entry points should have public IPs. To administer instances in private subnets, a bastion host (an instance with a public IP and an open SSH port) adds a machine to patch and an exposed port. Session Manager (post 3) removes both.
 
 <div class="callout-cost" markdown="1">
 - **Public IPv4 addresses:** $0.005 per hour for each address, in use or idle, so about $3.65 a month. This includes the addresses on load balancers and NAT gateways. Use IPv6 and private subnets where you can.
@@ -288,6 +290,10 @@ A health check probes an endpoint over HTTP, HTTPS or TCP from checkers on the p
 
 The checkers are outside your network, so they cannot probe private resources. For those, create a CloudWatch alarm on a metric of the resource and a health check that follows the alarm.
 
+## DNSSEC
+
+DNSSEC signing lets resolvers check that a DNS answer really came from Route 53 and was not altered on the way. It works for public hosted zones only. Each key-signing key (KSK) is backed by an asymmetric customer managed key in AWS KMS that you own and rotate, and Route 53 manages the zone-signing key. The chain of trust is completed by adding a DS record at the parent zone, usually through your registrar. Route 53 limits record TTLs to one week in a signed zone, and a broken DNSSEC setup can make the whole zone unresolvable, so set a CloudWatch alarm on its errors before enabling it.
+
 ## DNS inside the VPC and in hybrid setups
 
 Every VPC has a built-in resolver at the base of the VPC range plus two (for example `10.0.0.2`). It answers for public names, for AWS-provided names such as instance hostnames, and for private hosted zones associated with the VPC. Private hosted zones require both DNS options (`enableDnsSupport` and `enableDnsHostnames`) on the VPC. Each network interface can send up to 1,024 packets per second to the resolver, a limit that cannot be raised, and it can matter for DNS-heavy workloads.
@@ -376,6 +382,7 @@ Official AWS documentation, grouped by section of this post.
 - [NAT gateways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)
 - [NAT gateway basics](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-basics.html)
 - [Regional NAT gateways](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html)
+- [Compare NAT gateways and NAT instances](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-comparison.html)
 - [Egress-only internet gateways](https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html)
 - [VPC Block Public Access](https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html)
 
@@ -423,6 +430,7 @@ Official AWS documentation, grouped by section of this post.
 - [Private hosted zones](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-private.html)
 - [Route 53 VPC Resolver](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html)
 - [Getting started with Resolver endpoints](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-getting-started.html)
+- [Configuring DNSSEC signing](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html)
 - [Route 53 DNS Firewall](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dns-firewall.html)
 
 ## Content Delivery
