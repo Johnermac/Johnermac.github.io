@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 300" width="820" height="300" role="img" aria-label="Three storage types. Block storage (EBS) is a disk in one AZ attached to one instance. File storage (EFS) is a shared NFS file system that instances in several AZs mount. Object storage (S3) is a Regional store of objects reached through an HTTPS API.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="300" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="250" height="260" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="36" y="46" class="h" style="fill:#38b2ac">BLOCK: EBS</text>
+  <rect x="35" y="62" width="220" height="110" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="43" y="78" class="s">one AZ</text>
+  <rect x="50" y="100" width="80" height="44" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="90.0" y="126.0" text-anchor="middle" style="fill:#a9c8f0">Instance</text>
+  <rect x="155" y="100" width="85" height="44" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="197.5" y="126.0" text-anchor="middle" style="fill:#8fdcd7">EBS volume</text>
+  <line x1="130" y1="122" x2="155" y2="122" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <text x="36" y="206" class="s">A raw disk you format</text>
+  <text x="36" y="224" class="s">Usually one instance at a time</text>
+  <text x="36" y="242" class="s">Lives in a single AZ</text>
+  <text x="36" y="260" class="s">Boot disks and databases</text>
+  <rect x="285" y="20" width="250" height="260" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="301" y="46" class="h" style="fill:#38b2ac">FILE: EFS</text>
+  <rect x="297" y="70" width="108" height="36" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="351.0" y="92.0" text-anchor="middle" style="fill:#a9c8f0">AZ a instance</text>
+  <rect x="412" y="70" width="108" height="36" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="466.0" y="92.0" text-anchor="middle" style="fill:#a9c8f0">AZ b instance</text>
+  <rect x="300" y="140" width="215" height="46" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="407.5" y="160.0" text-anchor="middle" style="fill:#8fdcd7">EFS file system</text>
+  <text x="407.5" y="176.0" text-anchor="middle" class="s">mount target in each AZ</text>
+  <line x1="351" y1="106" x2="351" y2="138" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="466" y1="106" x2="466" y2="138" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="301" y="206" class="s">Shared folders over NFS</text>
+  <text x="301" y="224" class="s">Many instances at once</text>
+  <text x="301" y="242" class="s">Spans the AZs of a Region</text>
+  <text x="301" y="260" class="s">Shared content, Linux workloads</text>
+  <rect x="550" y="20" width="250" height="260" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="566" y="46" class="h" style="fill:#38b2ac">OBJECT: S3</text>
+  <rect x="565" y="62" width="220" height="110" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="573" y="78" class="s">Region</text>
+  <rect x="580" y="100" width="80" height="44" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="620.0" y="126.0" text-anchor="middle" style="fill:#a9c8f0">App</text>
+  <rect x="695" y="100" width="80" height="44" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="735.0" y="126.0" text-anchor="middle" style="fill:#8fdcd7">Bucket</text>
+  <line x1="660" y1="122" x2="695" y2="122" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <text x="678" y="114" text-anchor="middle" class="s">HTTPS</text>
+  <text x="566" y="206" class="s">Objects addressed by key</text>
+  <text x="566" y="224" class="s">No disk, no file system</text>
+  <text x="566" y="242" class="s">Scales on its own</text>
+  <text x="566" y="260" class="s">Backups, media, data lakes</text>
+</svg>

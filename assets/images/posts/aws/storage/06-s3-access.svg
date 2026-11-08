@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 330" width="820" height="330" role="img" aria-label="S3 access checks. Block Public Access is applied first. Within one account, an allow in either the IAM policy or the bucket policy is enough. Across accounts, both the requester's IAM policy and the bucket policy must allow. An explicit deny always wins.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="330" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="40" width="130" height="50" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="85.0" y="69.0" text-anchor="middle" style="fill:#e6e6e6">Request</text>
+  <line x1="150" y1="65" x2="200" y2="65" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="200" y="40" width="250" height="50" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="325.0" y="62.0" text-anchor="middle" style="fill:#f5c542">Block Public Access</text>
+  <text x="325.0" y="78.0" text-anchor="middle" class="s">can override any policy or ACL</text>
+  <line x1="450" y1="65" x2="500" y2="65" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="500" y="40" width="300" height="50" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="650.0" y="62.0" text-anchor="middle" style="fill:#e6e6e6">Policy evaluation</text>
+  <text x="650.0" y="78.0" text-anchor="middle" class="s">an explicit deny anywhere wins</text>
+  <rect x="20" y="120" width="385" height="160" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="36" y="146" class="h" style="fill:#4cc38a">SAME ACCOUNT</text>
+  <rect x="40" y="170" width="150" height="56" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="115.0" y="202.0" text-anchor="middle" style="fill:#a9c8f0">IAM policy</text>
+  <text x="215" y="203" text-anchor="middle" class="b">OR</text>
+  <rect x="240" y="170" width="150" height="56" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="315.0" y="202.0" text-anchor="middle" style="fill:#8fdcd7">Bucket policy</text>
+  <text x="40" y="258" class="s">one allow is enough</text>
+  <rect x="415" y="120" width="385" height="160" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="431" y="146" class="h" style="fill:#f5c542">CROSS ACCOUNT</text>
+  <rect x="435" y="170" width="150" height="56" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="510.0" y="195.0" text-anchor="middle" style="fill:#a9c8f0">Requester IAM</text>
+  <text x="510.0" y="211.0" text-anchor="middle" class="s">policy</text>
+  <text x="610" y="203" text-anchor="middle" class="b">AND</text>
+  <rect x="635" y="170" width="150" height="56" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="710.0" y="195.0" text-anchor="middle" style="fill:#8fdcd7">Bucket policy</text>
+  <text x="710.0" y="211.0" text-anchor="middle" class="s">in the bucket account</text>
+  <text x="435" y="258" class="s">both sides must allow</text>
+  <text x="20" y="312" class="s">New buckets default to Block Public Access on and ACLs disabled (bucket owner enforced).</text>
+</svg>

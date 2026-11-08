@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 330" width="820" height="330" role="img" aria-label="An AWS Backup plan selects resources by tag and runs on a schedule, storing recovery points in a backup vault. Copies go to a vault in another Region and a vault in another account. Vault Lock makes a vault write once, read many.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="330" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="270" height="290" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="36" y="44" class="h" style="fill:#f5c542">BACKUP PLAN</text>
+  <rect x="40" y="64" width="230" height="50" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="155.0" y="86.0" text-anchor="middle" style="fill:#f5c542">Schedule</text>
+  <text x="155.0" y="102.0" text-anchor="middle" class="s">daily, weekly, custom</text>
+  <rect x="40" y="126" width="230" height="50" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="155.0" y="148.0" text-anchor="middle" style="fill:#f5c542">Retention</text>
+  <text x="155.0" y="164.0" text-anchor="middle" class="s">delete after N days</text>
+  <rect x="40" y="188" width="230" height="50" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="155.0" y="210.0" text-anchor="middle" style="fill:#f5c542">Cold storage</text>
+  <text x="155.0" y="226.0" text-anchor="middle" class="s">some resource types</text>
+  <rect x="40" y="250" width="230" height="46" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="155.0" y="270.0" text-anchor="middle" style="fill:#a9c8f0">Resources by tag</text>
+  <text x="155.0" y="286.0" text-anchor="middle" class="s">EBS, EFS, RDS, S3, DynamoDB</text>
+  <rect x="340" y="20" width="220" height="130" rx="10" fill="none" stroke="#38b2ac" stroke-width="1"/>
+  <text x="356" y="44" class="h" style="fill:#38b2ac">BACKUP VAULT</text>
+  <rect x="356" y="64" width="188" height="40" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="450.0" y="88.0" text-anchor="middle" style="fill:#8fdcd7">Recovery points</text>
+  <text x="356" y="128" class="s">encrypted, own access policy</text>
+  <line x1="290" y1="90" x2="340" y2="90" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="610" y="20" width="190" height="130" rx="10" fill="none" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="626" y="44" class="h">OTHER REGION</text>
+  <rect x="626" y="70" width="158" height="52" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="705.0" y="93.0" text-anchor="middle" style="fill:#8fdcd7">Vault copy</text>
+  <text x="705.0" y="109.0" text-anchor="middle" class="s">cross-Region</text>
+  <line x1="560" y1="85" x2="610" y2="85" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="610" y="180" width="190" height="130" rx="10" fill="none" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="626" y="204" class="h">OTHER ACCOUNT</text>
+  <rect x="626" y="230" width="158" height="52" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="705.0" y="253.0" text-anchor="middle" style="fill:#8fdcd7">Vault copy</text>
+  <text x="705.0" y="269.0" text-anchor="middle" class="s">cross-account</text>
+  <line x1="560" y1="130" x2="610" y2="230" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="340" y="180" width="220" height="130" rx="10" fill="none" stroke="#f5c542" stroke-width="1"/>
+  <text x="356" y="204" class="h" style="fill:#f5c542">PROTECTION</text>
+  <text x="356" y="232" class="s">Vault Lock: write once,</text>
+  <text x="356" y="250" class="s">read many (WORM)</text>
+  <text x="356" y="276" class="s">Air-gapped vault: locked,</text>
+  <text x="356" y="294" class="s">can be shared for recovery</text>
+</svg>

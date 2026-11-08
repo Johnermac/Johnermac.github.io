@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" width="820" height="340" role="img" aria-label="A presigned URL flow. The client asks the application for a file, the application signs a URL with its own credentials and an expiry, returns it, and the client fetches the object from S3 directly until the URL expires.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="340" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="55" y="20" width="130" height="40" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="120.0" y="44.0" text-anchor="middle" style="fill:#e6e6e6">Client</text>
+  <line x1="120" y1="60" x2="120" y2="320" stroke="#353b45" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <rect x="345" y="20" width="130" height="40" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="410.0" y="44.0" text-anchor="middle" style="fill:#a9c8f0">Application</text>
+  <line x1="410" y1="60" x2="410" y2="320" stroke="#353b45" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <rect x="635" y="20" width="130" height="40" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="700.0" y="44.0" text-anchor="middle" style="fill:#8fdcd7">S3</text>
+  <line x1="700" y1="60" x2="700" y2="320" stroke="#353b45" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <line x1="120" y1="100" x2="410" y2="100" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="265.0" y="92" text-anchor="middle" class="s">1  asks for the file</text>
+  <rect x="300" y="125" width="220" height="44" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="410" y="143" text-anchor="middle" class="s">2  signs the URL locally</text>
+  <text x="410" y="159" text-anchor="middle" class="s">its permissions, expiry set</text>
+  <line x1="410" y1="210" x2="120" y2="210" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="265.0" y="202" text-anchor="middle" class="s">3  returns the presigned URL</text>
+  <line x1="120" y1="250" x2="700" y2="250" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="410.0" y="242" text-anchor="middle" class="s">4  GET with the signed URL</text>
+  <line x1="700" y1="295" x2="120" y2="295" stroke="#4cc38a" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="410.0" y="287" text-anchor="middle" class="s">5  object returned, until expiry</text>
+</svg>

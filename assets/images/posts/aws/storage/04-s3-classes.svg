@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 310" width="820" height="310" role="img" aria-label="Five S3 storage classes from Standard to Deep Archive. Storage price falls and minimum stay and retrieval time grow. Lifecycle rules move objects only toward colder classes. Intelligent-Tiering and One Zone-IA are the two other options.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="310" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <line x1="30" y1="34" x2="790" y2="34" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="30" y="26" class="s">HOT</text>
+  <text x="790" y="26" text-anchor="end" class="s">COLD</text>
+  <text x="410" y="26" text-anchor="middle" class="s">lifecycle rules move objects this way only</text>
+  <rect x="30" y="50" width="140" height="46" rx="6" fill="#4cc38a" fill-opacity="0.14" stroke="#4cc38a" stroke-width="1"/>
+  <text x="100.0" y="77.0" text-anchor="middle" style="fill:#9be0bf">Standard</text>
+  <text x="34" y="120" class="s">$0.023 per GB-month</text>
+  <text x="34" y="138" class="s">no minimum stay</text>
+  <text x="34" y="156" class="s">no read fee</text>
+  <text x="34" y="174" class="s">milliseconds</text>
+  <rect x="182" y="50" width="140" height="46" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="252.0" y="77.0" text-anchor="middle" style="fill:#8fdcd7">Standard-IA</text>
+  <text x="186" y="120" class="s">$0.0125 per GB-month</text>
+  <text x="186" y="138" class="s">30-day minimum</text>
+  <text x="186" y="156" class="s">$0.01 per GB read</text>
+  <text x="186" y="174" class="s">milliseconds</text>
+  <rect x="334" y="50" width="140" height="46" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="404.0" y="77.0" text-anchor="middle" style="fill:#8fdcd7">Glacier Instant</text>
+  <text x="338" y="120" class="s">$0.004 per GB-month</text>
+  <text x="338" y="138" class="s">90-day minimum</text>
+  <text x="338" y="156" class="s">$0.03 per GB read</text>
+  <text x="338" y="174" class="s">milliseconds</text>
+  <rect x="486" y="50" width="140" height="46" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="556.0" y="77.0" text-anchor="middle" style="fill:#e6e6e6">Glacier Flexible</text>
+  <text x="490" y="120" class="s">$0.0036 per GB-month</text>
+  <text x="490" y="138" class="s">90-day minimum</text>
+  <text x="490" y="156" class="s">restore before reading</text>
+  <text x="490" y="174" class="s">minutes to 12 hours</text>
+  <rect x="638" y="50" width="140" height="46" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="708.0" y="77.0" text-anchor="middle" style="fill:#e6e6e6">Deep Archive</text>
+  <text x="642" y="120" class="s">lowest price</text>
+  <text x="642" y="138" class="s">180-day minimum</text>
+  <text x="642" y="156" class="s">restore before reading</text>
+  <text x="642" y="174" class="s">up to 48 hours</text>
+  <rect x="30" y="220" width="370" height="60" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="215.0" y="247.0" text-anchor="middle" style="fill:#f5c542">Intelligent-Tiering</text>
+  <text x="215.0" y="263.0" text-anchor="middle" class="s">moves objects by access pattern, no read fee</text>
+  <rect x="420" y="220" width="370" height="60" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="605.0" y="247.0" text-anchor="middle" style="fill:#f5c542">One Zone-IA</text>
+  <text x="605.0" y="263.0" text-anchor="middle" class="s">one AZ only, 20% cheaper than Standard-IA</text>
+</svg>

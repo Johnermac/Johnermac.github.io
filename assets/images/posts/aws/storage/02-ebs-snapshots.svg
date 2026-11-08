@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 320" width="820" height="320" role="img" aria-label="An EBS volume lives in one AZ. A snapshot of it is stored in S3 across the AZs of the Region, so a new volume can be restored in any AZ. Snapshots can be copied to another Region or shared with another account.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="320" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="540" height="280" rx="10" fill="none" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="36" y="44" class="h">REGION A</text>
+  <rect x="40" y="62" width="150" height="100" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="50" y="78" class="s">AZ a</text>
+  <rect x="55" y="94" width="120" height="50" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="115.0" y="116.0" text-anchor="middle" style="fill:#8fdcd7">EBS volume</text>
+  <text x="115.0" y="132.0" text-anchor="middle" class="s">in use</text>
+  <rect x="40" y="190" width="150" height="100" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="50" y="206" class="s">AZ b</text>
+  <rect x="55" y="222" width="120" height="50" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="115.0" y="244.0" text-anchor="middle" style="fill:#8fdcd7">New volume</text>
+  <text x="115.0" y="260.0" text-anchor="middle" class="s">restored</text>
+  <rect x="260" y="126" width="260" height="60" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="390.0" y="153.0" text-anchor="middle" style="fill:#f5c542">Snapshots</text>
+  <text x="390.0" y="169.0" text-anchor="middle" class="s">incremental, kept in S3</text>
+  <line x1="175" y1="119" x2="260" y2="150" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="205" y="118" class="s">snapshot</text>
+  <line x1="260" y1="170" x2="175" y2="245" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="206" y="222" class="s">restore</text>
+  <rect x="600" y="20" width="200" height="130" rx="10" fill="none" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="616" y="44" class="h">REGION B</text>
+  <rect x="615" y="70" width="170" height="56" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="700.0" y="95.0" text-anchor="middle" style="fill:#f5c542">Snapshot copy</text>
+  <text x="700.0" y="111.0" text-anchor="middle" class="s">disaster recovery</text>
+  <line x1="520" y1="150" x2="615" y2="100" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="535" y="112" class="s">copy</text>
+  <rect x="600" y="170" width="200" height="130" rx="10" fill="none" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="616" y="194" class="h">ANOTHER ACCOUNT</text>
+  <rect x="615" y="220" width="170" height="56" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="700.0" y="245.0" text-anchor="middle" style="fill:#f5c542">Shared snapshot</text>
+  <text x="700.0" y="261.0" text-anchor="middle" class="s">restore there</text>
+  <line x1="520" y1="180" x2="615" y2="240" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="535" y="224" class="s">share</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 330" width="820" height="330" role="img" aria-label="Three ways to connect on-premises data to AWS storage. DataSync copies file servers in bulk to S3, EFS or FSx. Storage Gateway presents local file shares, volumes or tapes backed by S3. Transfer Family gives partners an SFTP endpoint in front of S3 or EFS.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="330" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="200" height="290" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="36" y="44" class="h">ON-PREMISES</text>
+  <rect x="36" y="66" width="168" height="62" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="120.0" y="94.0" text-anchor="middle" style="fill:#e6e6e6">File servers</text>
+  <text x="120.0" y="110.0" text-anchor="middle" class="s">NFS, SMB, HDFS</text>
+  <rect x="36" y="142" width="168" height="62" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="120.0" y="170.0" text-anchor="middle" style="fill:#e6e6e6">Applications</text>
+  <text x="120.0" y="186.0" text-anchor="middle" class="s">files, volumes, tapes</text>
+  <rect x="36" y="218" width="168" height="62" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="120.0" y="246.0" text-anchor="middle" style="fill:#e6e6e6">Partners</text>
+  <text x="120.0" y="262.0" text-anchor="middle" class="s">send files by SFTP</text>
+  <rect x="300" y="20" width="230" height="290" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="316" y="44" class="h" style="fill:#38b2ac">AWS SERVICE</text>
+  <rect x="316" y="66" width="198" height="62" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="415.0" y="94.0" text-anchor="middle" style="fill:#8fdcd7">DataSync</text>
+  <text x="415.0" y="110.0" text-anchor="middle" class="s">bulk copy, scheduled</text>
+  <rect x="316" y="142" width="198" height="62" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="415.0" y="170.0" text-anchor="middle" style="fill:#8fdcd7">Storage Gateway</text>
+  <text x="415.0" y="186.0" text-anchor="middle" class="s">local protocols</text>
+  <rect x="316" y="218" width="198" height="62" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="415.0" y="246.0" text-anchor="middle" style="fill:#8fdcd7">Transfer Family</text>
+  <text x="415.0" y="262.0" text-anchor="middle" class="s">SFTP, FTPS, FTP, AS2</text>
+  <rect x="610" y="20" width="190" height="290" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="626" y="44" class="h" style="fill:#f5c542">STORAGE</text>
+  <rect x="626" y="66" width="158" height="62" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="705.0" y="94.0" text-anchor="middle" style="fill:#f5c542">S3, EFS, FSx</text>
+  <text x="705.0" y="110.0" text-anchor="middle" class="s">files and objects</text>
+  <rect x="626" y="142" width="158" height="62" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="705.0" y="170.0" text-anchor="middle" style="fill:#f5c542">S3 and Glacier</text>
+  <text x="705.0" y="186.0" text-anchor="middle" class="s">shares, snapshots, tapes</text>
+  <rect x="626" y="218" width="158" height="62" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="705.0" y="246.0" text-anchor="middle" style="fill:#f5c542">S3 or EFS</text>
+  <text x="705.0" y="262.0" text-anchor="middle" class="s">partner files land here</text>
+  <line x1="204" y1="97" x2="316" y2="97" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="514" y1="97" x2="626" y2="97" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="204" y1="173" x2="316" y2="173" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="514" y1="173" x2="626" y2="173" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="204" y1="249" x2="316" y2="249" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="514" y1="249" x2="626" y2="249" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+</svg>

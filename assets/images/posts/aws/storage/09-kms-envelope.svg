@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 370" width="820" height="370" role="img" aria-label="Envelope encryption. To write, the service asks KMS for a data key, receives it in plain and encrypted form, encrypts the data locally with the plain key and discards it, and stores the encrypted data with the encrypted key. To read, the service sends the encrypted key to KMS to decrypt it.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="370" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="50" y="14" width="140" height="44" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="120.0" y="33.0" text-anchor="middle" style="fill:#a9c8f0">Service</text>
+  <text x="120.0" y="49.0" text-anchor="middle" class="s">S3, EBS, EFS</text>
+  <line x1="120" y1="58" x2="120" y2="355" stroke="#353b45" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <rect x="340" y="14" width="140" height="44" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="410.0" y="33.0" text-anchor="middle" style="fill:#8fdcd7">KMS</text>
+  <text x="410.0" y="49.0" text-anchor="middle" class="s">holds the KMS key</text>
+  <line x1="410" y1="58" x2="410" y2="355" stroke="#353b45" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <rect x="630" y="14" width="140" height="44" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="700.0" y="33.0" text-anchor="middle" style="fill:#e6e6e6">Storage</text>
+  <text x="700.0" y="49.0" text-anchor="middle" class="s">disk or bucket</text>
+  <line x1="700" y1="58" x2="700" y2="355" stroke="#353b45" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="20" y="84" class="h" style="fill:#4cc38a">WRITE</text>
+  <line x1="120" y1="104" x2="410" y2="104" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="265.0" y="96" text-anchor="middle" class="s">1  asks for a data key</text>
+  <line x1="410" y1="138" x2="120" y2="138" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="265.0" y="130" text-anchor="middle" class="s">2  plain key and encrypted key</text>
+  <rect x="40" y="152" width="160" height="40" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="120" y="168" text-anchor="middle" class="s">3  encrypts data with the</text>
+  <text x="120" y="182" text-anchor="middle" class="s">plain key, then drops it</text>
+  <line x1="120" y1="222" x2="700" y2="222" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="410.0" y="214" text-anchor="middle" class="s">4  stores encrypted data with the encrypted key</text>
+  <line x1="20" y1="246" x2="800" y2="246" stroke="#353b45" stroke-width="1.5"/>
+  <text x="20" y="268" class="h" style="fill:#4cc38a">READ</text>
+  <line x1="120" y1="290" x2="410" y2="290" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="265.0" y="282" text-anchor="middle" class="s">5  sends the encrypted key to decrypt</text>
+  <line x1="410" y1="324" x2="120" y2="324" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="265.0" y="316" text-anchor="middle" class="s">6  plain key, used to decrypt the data</text>
+</svg>
