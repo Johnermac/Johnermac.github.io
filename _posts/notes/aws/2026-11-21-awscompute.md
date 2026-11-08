@@ -22,7 +22,7 @@ tags:
 
 Compute is where your code runs. This post covers virtual machines (EC2), containers (ECS, EKS and Fargate), and the two services that turn a single server into an available application: load balancers and Auto Scaling. It builds on the VPC, subnets and security groups from post 2 and the IAM roles from post 1. Prices are for `us-east-1` at the time of writing (November 2026), as in the earlier posts.
 
-Storage is in post 4: EBS volumes (the network disks most instances boot from), file and object storage, and databases. This post only covers the instance store, the local disk that belongs to the instance itself. Lambda and other serverless options are in post 5.
+Storage is in post 4: EBS volumes (the network disks most instances boot from), plus file and object storage. Databases are in post 5. This post only covers the instance store, the local disk that belongs to the instance itself. Lambda and other serverless options are in post 6.
 
 ---
 
@@ -104,7 +104,7 @@ Baking the application into an AMI makes launches fast and identical. Installing
 
 User data is a script or cloud-init directive passed to the instance at launch. On Linux it runs as root, once, on the first boot only (unless you configure it to repeat), and it is limited to 16 KB before base64 encoding. Output goes to `/var/log/cloud-init-output.log`, which is the first place to look when an instance does not come up as expected.
 
-User data is stored as an instance attribute and readable from inside the instance through the metadata service. It is not a place for secrets: put them in Secrets Manager or Parameter Store and let the script fetch them with the instance role (post 5 covers both).
+User data is stored as an instance attribute and readable from inside the instance through the metadata service. It is not a place for secrets: put them in Secrets Manager or Parameter Store and let the script fetch them with the instance role (post 6 covers both).
 
 ## Instance roles and the metadata service
 
@@ -131,7 +131,7 @@ A CloudWatch alarm on `StatusCheckFailed_System` with the recover action brings 
 
 ## Metrics and logs
 
-EC2 sends a default set of metrics to CloudWatch: CPU, network, disk activity of instance store volumes, and status checks. Data points arrive every 5 minutes. Detailed monitoring, which costs extra, makes it every minute, and status check metrics are already per minute at no charge. Memory and disk space usage are not in this set. The CloudWatch agent, installed on the instance and given permissions through the instance role, collects those operating system metrics and also ships log files to CloudWatch Logs. Metrics from the agent are billed as custom metrics. Post 5 covers CloudWatch in more detail.
+EC2 sends a default set of metrics to CloudWatch: CPU, network, disk activity of instance store volumes, and status checks. Data points arrive every 5 minutes. Detailed monitoring, which costs extra, makes it every minute, and status check metrics are already per minute at no charge. Memory and disk space usage are not in this set. The CloudWatch agent, installed on the instance and given permissions through the instance role, collects those operating system metrics and also ships log files to CloudWatch Logs. Metrics from the agent are billed as custom metrics. Post 6 covers CloudWatch in more detail.
 
 ## Network interfaces and IP addresses
 
@@ -335,7 +335,7 @@ EC2 and containers are the main choices, and a few other services cover narrower
 |---|---|---|
 | Full control of the operating system and servers | EC2 | This post |
 | Containers without managing servers | ECS or EKS on Fargate | See Containers above |
-| Short, event-driven code | Lambda | Post 5 |
+| Short, event-driven code | Lambda | Post 6 |
 | Queued, compute-heavy jobs, such as simulations or data processing | AWS Batch | Schedules containerized jobs onto EC2, Spot, Fargate or ECS Managed Instances and scales capacity to the queue |
 | Deploy a web app from code without building the stack | Elastic Beanstalk | Creates the instances, load balancer and scaling for you. No extra charge, you pay for the resources |
 | A small site or learning project with a simple console | Lightsail | Virtual servers, containers, storage and databases bundled at a fixed monthly price (Linux bundles start at $5 with 0.5 GB memory, 2 vCPUs, 20 GB SSD and 1 TB transfer), with a path to move to EC2 later |
@@ -423,4 +423,4 @@ EC2 and containers are the main choices, and a few other services cover narrower
 
 ---
 
-Next post: **Storage & Data**, starting with how S3 stores objects and how its storage classes are chosen.
+Next post: **Storage**, starting with the three kinds of storage and when each fits.

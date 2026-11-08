@@ -149,7 +149,7 @@ From cheapest and slowest to most expensive and fastest, with the ranges AWS giv
 
 Point-in-time recovery can bring the RPO of backup and restore down to minutes.
 
-Infrastructure as code (post 5) is what makes the cheaper strategies realistic, because rebuilding by hand under pressure fails.
+Infrastructure as code (post 6) is what makes the cheaper strategies realistic, because rebuilding by hand under pressure fails.
 
 ## Replication is not a backup
 
