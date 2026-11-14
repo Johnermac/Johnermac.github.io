@@ -22,7 +22,7 @@ tags:
 
 A database adds replication, failover and a query engine on top of the storage from post 4. AWS runs most of that for you, but the design choices stay yours: which kind of database, how many copies, in which AZs and Regions, and how the application connects. This post covers relational databases (RDS and Aurora), DynamoDB, caching, analytics and migration. Prices are for `us-east-1` at the time of writing (November 2026), as in the earlier posts.
 
-Lambda, Secrets Manager rotation and monitoring with CloudWatch are in post 6.
+Lambda is in post 6, and Secrets Manager rotation and monitoring with CloudWatch are in post 7.
 
 ---
 
@@ -419,4 +419,4 @@ Two have closed: QLDB (ledger) reached end of support in July 2025, and Timestre
 
 ---
 
-Next post: **Serverless, IaC and Operations**, starting with how Lambda runs code without servers.
+Next post: **Serverless and Messaging**, starting with how Lambda runs code without servers.

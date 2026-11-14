@@ -104,7 +104,7 @@ Baking the application into an AMI makes launches fast and identical. Installing
 
 User data is a script or cloud-init directive passed to the instance at launch. On Linux it runs as root, once, on the first boot only (unless you configure it to repeat), and it is limited to 16 KB before base64 encoding. Output goes to `/var/log/cloud-init-output.log`, which is the first place to look when an instance does not come up as expected.
 
-User data is stored as an instance attribute and readable from inside the instance through the metadata service. It is not a place for secrets: put them in Secrets Manager or Parameter Store and let the script fetch them with the instance role (post 6 covers both).
+User data is stored as an instance attribute and readable from inside the instance through the metadata service. It is not a place for secrets: put them in Secrets Manager or Parameter Store and let the script fetch them with the instance role (post 7 covers both).
 
 ## Instance roles and the metadata service
 

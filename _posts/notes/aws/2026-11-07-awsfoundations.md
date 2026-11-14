@@ -27,8 +27,10 @@ This series covers how to design systems on AWS. It started from my study notes 
 | 3 | Compute & Containers | EC2, ECS/EKS, load balancing, auto scaling |
 | 4 | Storage | EBS, EFS, S3, backup, moving data in from on-premises |
 | 5 | Databases | RDS, Aurora, DynamoDB, caching, analytics, migration |
-| 6 | Serverless, IaC & Operations | Lambda, messaging, CloudFormation, logging and auditing |
-| 7 | Design Review | Putting it together: tradeoffs and reference designs |
+| 6 | Serverless & Messaging | Lambda, API Gateway, Step Functions, SQS, SNS, EventBridge, Kinesis |
+| 7 | IaC & Operations | CloudFormation, secrets, monitoring, logging and auditing |
+| 8 | AI/ML | Bedrock, RAG and vector stores, guardrails and agents, SageMaker AI, AI services |
+| 9 | Design Review | Putting it together: tradeoffs and reference designs |
 
 Every post follows the same layout. Each topic opens with what the thing is and how it works, then the design decisions it forces on you. Topics that need more depth get sub-chapters. Where cost or performance changes a decision, a short box covers it. Prices are for `us-east-1` at the time of writing (November 2026).
 
@@ -150,7 +152,7 @@ From cheapest and slowest to most expensive and fastest, with the ranges AWS giv
 
 Point-in-time recovery can bring the RPO of backup and restore down to minutes.
 
-Infrastructure as code (post 6) is what makes the cheaper strategies realistic, because rebuilding by hand under pressure fails.
+Infrastructure as code (post 7) is what makes the cheaper strategies realistic, because rebuilding by hand under pressure fails.
 
 ## Replication is not a backup
 
