@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 370" width="820" height="370" role="img" aria-label="Lazy loading: the application reads the cache, on a miss reads the database and stores the result in the cache with a TTL. Write-through: the application writes the database and then the cache on every write, so the cache stays current but holds data that may never be read.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="370" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="380" height="330" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="36" y="44" class="h" style="fill:#f5c542">LAZY LOADING</text>
+  <rect x="40" y="120" width="100" height="50" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="90.0" y="149.0" text-anchor="middle" style="fill:#a9c8f0">App</text>
+  <rect x="250" y="66" width="130" height="50" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="315.0" y="88.0" text-anchor="middle" style="fill:#8fdcd7">Cache</text>
+  <text x="315.0" y="104.0" text-anchor="middle" class="s">ElastiCache</text>
+  <rect x="250" y="176" width="130" height="50" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="315.0" y="198.0" text-anchor="middle" style="fill:#8fdcd7">Database</text>
+  <text x="315.0" y="214.0" text-anchor="middle" class="s">RDS, DynamoDB</text>
+  <text x="40" y="256" class="s">1 read the cache, a hit returns</text>
+  <text x="40" y="274" class="s">2 on a miss, read the database</text>
+  <text x="40" y="292" class="s">3 store the result, with a TTL</text>
+  <text x="40" y="318" class="s" style="fill:#4cc38a">+ only data that is read gets cached</text>
+  <text x="40" y="336" class="s" style="fill:#f0545c">- first read is slow, data may be stale</text>
+  <line x1="140" y1="130" x2="250" y2="92" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <circle cx="195" cy="111" r="9" fill="#181b20" stroke="#f5c542"/>
+  <text x="195" y="115" text-anchor="middle" style="fill:#f5c542">1</text>
+  <line x1="140" y1="162" x2="250" y2="198" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <circle cx="195" cy="180" r="9" fill="#181b20" stroke="#f5c542"/>
+  <text x="195" y="184" text-anchor="middle" style="fill:#f5c542">2</text>
+  <path d="M140 146 C215 146 262 140 272 118" fill="none" stroke="#8b949e" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <circle cx="232" cy="144" r="9" fill="#181b20" stroke="#f5c542"/>
+  <text x="232" y="148" text-anchor="middle" style="fill:#f5c542">3</text>
+  <rect x="420" y="20" width="380" height="330" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="436" y="44" class="h" style="fill:#f5c542">WRITE-THROUGH</text>
+  <rect x="440" y="120" width="100" height="50" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="490.0" y="149.0" text-anchor="middle" style="fill:#a9c8f0">App</text>
+  <rect x="650" y="66" width="130" height="50" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="715.0" y="88.0" text-anchor="middle" style="fill:#8fdcd7">Cache</text>
+  <text x="715.0" y="104.0" text-anchor="middle" class="s">ElastiCache</text>
+  <rect x="650" y="176" width="130" height="50" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="715.0" y="198.0" text-anchor="middle" style="fill:#8fdcd7">Database</text>
+  <text x="715.0" y="214.0" text-anchor="middle" class="s">RDS, DynamoDB</text>
+  <text x="440" y="256" class="s">1 write the database</text>
+  <text x="440" y="274" class="s">2 write the same value to the cache</text>
+  <text x="440" y="292" class="s">reads go to the cache first</text>
+  <text x="440" y="318" class="s" style="fill:#4cc38a">+ cache stays current</text>
+  <text x="440" y="336" class="s" style="fill:#f0545c">- caches data nobody reads, use a TTL</text>
+  <line x1="540" y1="158" x2="650" y2="196" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <circle cx="595" cy="177" r="9" fill="#181b20" stroke="#f5c542"/>
+  <text x="595" y="181" text-anchor="middle" style="fill:#f5c542">1</text>
+  <line x1="540" y1="132" x2="650" y2="96" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <circle cx="595" cy="114" r="9" fill="#181b20" stroke="#f5c542"/>
+  <text x="595" y="118" text-anchor="middle" style="fill:#f5c542">2</text>
+</svg>

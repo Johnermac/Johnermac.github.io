@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 290" width="820" height="290" role="img" aria-label="DMS migration: schema conversion first, then a full load of existing data, then change data capture keeps the target in sync while the source stays in use, and finally the application is pointed at the target.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="290" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="30" width="200" height="60" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="120.0" y="57.0" text-anchor="middle" style="fill:#a9c8f0">Source database</text>
+  <text x="120.0" y="73.0" text-anchor="middle" class="s">on-premises Oracle</text>
+  <rect x="310" y="30" width="200" height="60" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="410.0" y="57.0" text-anchor="middle" style="fill:#8fdcd7">DMS</text>
+  <text x="410.0" y="73.0" text-anchor="middle" class="s">instance or Serverless</text>
+  <rect x="600" y="30" width="200" height="60" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="700.0" y="57.0" text-anchor="middle" style="fill:#8fdcd7">Target database</text>
+  <text x="700.0" y="73.0" text-anchor="middle" class="s">Aurora PostgreSQL</text>
+  <line x1="220" y1="60" x2="310" y2="60" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="510" y1="60" x2="600" y2="60" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="410" y="112" text-anchor="middle" class="s">application keeps using the source until cutover</text>
+  <rect x="20" y="140" width="185" height="100" rx="10" fill="none" stroke="#f5c542" stroke-width="1"/>
+  <circle cx="42" cy="164" r="11" fill="#181b20" stroke="#f5c542"/>
+  <text x="42" y="168" text-anchor="middle" style="fill:#f5c542">1</text>
+  <text x="62" y="168" class="b">Convert schema</text>
+  <text x="34" y="200" class="s">tables, indexes, code</text>
+  <text x="34" y="226" class="s" style="fill:#8fdcd7">Schema Conversion</text>
+  <line x1="205" y1="190" x2="217" y2="190" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="217" y="140" width="185" height="100" rx="10" fill="none" stroke="#38b2ac" stroke-width="1"/>
+  <circle cx="239" cy="164" r="11" fill="#181b20" stroke="#f5c542"/>
+  <text x="239" y="168" text-anchor="middle" style="fill:#f5c542">2</text>
+  <text x="259" y="168" class="b">Full load</text>
+  <text x="231" y="200" class="s">copy existing rows</text>
+  <text x="231" y="226" class="s" style="fill:#8fdcd7">DMS task</text>
+  <line x1="402" y1="190" x2="414" y2="190" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="414" y="140" width="185" height="100" rx="10" fill="none" stroke="#38b2ac" stroke-width="1"/>
+  <circle cx="436" cy="164" r="11" fill="#181b20" stroke="#f5c542"/>
+  <text x="436" y="168" text-anchor="middle" style="fill:#f5c542">3</text>
+  <text x="456" y="168" class="b">CDC</text>
+  <text x="428" y="200" class="s">replay ongoing changes</text>
+  <text x="428" y="226" class="s" style="fill:#8fdcd7">DMS task</text>
+  <line x1="599" y1="190" x2="611" y2="190" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="611" y="140" width="185" height="100" rx="10" fill="none" stroke="#f5c542" stroke-width="1"/>
+  <circle cx="633" cy="164" r="11" fill="#181b20" stroke="#f5c542"/>
+  <text x="633" y="168" text-anchor="middle" style="fill:#f5c542">4</text>
+  <text x="653" y="168" class="b">Cutover</text>
+  <text x="625" y="200" class="s">point the app at target</text>
+  <text x="625" y="226" class="s" style="fill:#8fdcd7">short pause</text>
+  <text x="20" y="268" class="s">Step 1 matters when engines differ. Same-engine moves can use the native tools.</text>
+</svg>

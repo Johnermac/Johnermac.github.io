@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 310" width="820" height="310" role="img" aria-label="Many Lambda functions open short connections to RDS Proxy. The proxy keeps a small pool of long-lived connections to the database, reads credentials from Secrets Manager, and holds client connections during a failover.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="310" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="200" height="270" rx="10" fill="none" stroke="#3d86e0" stroke-width="1"/>
+  <text x="36" y="44" class="h" style="fill:#3d86e0">CLIENTS</text>
+  <rect x="40" y="62" width="160" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="120.0" y="80.0" text-anchor="middle" style="fill:#a9c8f0">Lambda 1</text>
+  <line x1="200" y1="76" x2="300" y2="155" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="40" y="102" width="160" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="120.0" y="120.0" text-anchor="middle" style="fill:#a9c8f0">Lambda 2</text>
+  <line x1="200" y1="116" x2="300" y2="155" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="40" y="142" width="160" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="120.0" y="160.0" text-anchor="middle" style="fill:#a9c8f0">Lambda 3</text>
+  <line x1="200" y1="156" x2="300" y2="155" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="40" y="182" width="160" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="120.0" y="200.0" text-anchor="middle" style="fill:#a9c8f0">Lambda 4</text>
+  <line x1="200" y1="196" x2="300" y2="155" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="40" y="222" width="160" height="28" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="120.0" y="240.0" text-anchor="middle" style="fill:#a9c8f0">Lambda 5</text>
+  <line x1="200" y1="236" x2="300" y2="155" stroke="#3d86e0" stroke-width="1"/>
+  <text x="36" y="276" class="s">hundreds of short connections</text>
+  <rect x="300" y="95" width="200" height="120" rx="10" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="400" y="135" text-anchor="middle" style="fill:#8fdcd7">RDS Proxy</text>
+  <text x="400" y="158" text-anchor="middle" class="s">pools and reuses</text>
+  <text x="400" y="176" text-anchor="middle" class="s">connections</text>
+  <rect x="300" y="240" width="200" height="46" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="400.0" y="260.0" text-anchor="middle" style="fill:#f5c542">Secrets Manager</text>
+  <text x="400.0" y="276.0" text-anchor="middle" class="s">or IAM auth</text>
+  <line x1="400" y1="240" x2="400" y2="215" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="600" y="105" width="200" height="100" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="700.0" y="152.0" text-anchor="middle" style="fill:#8fdcd7">Database</text>
+  <text x="700.0" y="168.0" text-anchor="middle" class="s">RDS or Aurora</text>
+  <line x1="500" y1="140" x2="600" y2="140" stroke="#38b2ac" stroke-width="2"/>
+  <line x1="500" y1="155" x2="600" y2="155" stroke="#38b2ac" stroke-width="2"/>
+  <line x1="500" y1="170" x2="600" y2="170" stroke="#38b2ac" stroke-width="2"/>
+  <text x="550" y="128" text-anchor="middle" class="s">few</text>
+  <text x="600" y="240" class="s">On failover the proxy keeps</text>
+  <text x="600" y="258" class="s">client connections open and</text>
+  <text x="600" y="276" class="s">routes to the new writer</text>
+</svg>

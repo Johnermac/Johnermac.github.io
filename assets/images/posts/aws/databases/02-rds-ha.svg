@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 355" width="820" height="355" role="img" aria-label="Three RDS layouts. Multi-AZ DB instance: a primary and a synchronous standby that serves no reads, failover in 60 to 120 seconds. Multi-AZ DB cluster: a writer and two readable standbys in three AZs, failover usually under 35 seconds. Read replica: asynchronous copy that serves reads, can be in another Region and can be promoted.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="355" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="246" height="315" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="34" y="44" class="h" style="fill:#38b2ac">MULTI-AZ INSTANCE</text>
+  <rect x="287" y="20" width="246" height="315" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="301" y="44" class="h" style="fill:#38b2ac">MULTI-AZ CLUSTER</text>
+  <rect x="554" y="20" width="246" height="315" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="568" y="44" class="h" style="fill:#f5c542">READ REPLICA</text>
+  <rect x="40" y="70" width="206" height="52" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="143.0" y="93.0" text-anchor="middle" style="fill:#8fdcd7">Primary</text>
+  <text x="143.0" y="109.0" text-anchor="middle" class="s">AZ a, reads and writes</text>
+  <rect x="40" y="180" width="206" height="52" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="143.0" y="203.0" text-anchor="middle" style="fill:#e6e6e6">Standby</text>
+  <text x="143.0" y="219.0" text-anchor="middle" class="s">AZ b, no reads</text>
+  <line x1="143" y1="122" x2="143" y2="180" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="153" y="156" class="s">synchronous</text>
+  <text x="40" y="272" class="s">For: availability</text>
+  <text x="40" y="292" class="s">Failover: 60 to 120 s</text>
+  <text x="40" y="312" class="s">Same endpoint after</text>
+  <text x="40" y="332" class="s">failover (DNS moves)</text>
+  <rect x="307" y="70" width="206" height="52" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="410.0" y="93.0" text-anchor="middle" style="fill:#8fdcd7">Writer</text>
+  <text x="410.0" y="109.0" text-anchor="middle" class="s">AZ a</text>
+  <rect x="307" y="180" width="98" height="52" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="356.0" y="203.0" text-anchor="middle" style="fill:#8fdcd7">Reader</text>
+  <text x="356.0" y="219.0" text-anchor="middle" class="s">AZ b</text>
+  <rect x="415" y="180" width="98" height="52" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="464.0" y="203.0" text-anchor="middle" style="fill:#8fdcd7">Reader</text>
+  <text x="464.0" y="219.0" text-anchor="middle" class="s">AZ c</text>
+  <line x1="356" y1="122" x2="356" y2="180" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="464" y1="122" x2="464" y2="180" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="410" y="156" text-anchor="middle" class="s">semi-sync</text>
+  <text x="307" y="272" class="s">For: availability and reads</text>
+  <text x="307" y="292" class="s">Failover: under 35 s</text>
+  <text x="307" y="312" class="s">MySQL and PostgreSQL only</text>
+  <text x="307" y="332" class="s">Reader endpoint for reads</text>
+  <rect x="574" y="70" width="206" height="52" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="677.0" y="93.0" text-anchor="middle" style="fill:#8fdcd7">Source</text>
+  <text x="677.0" y="109.0" text-anchor="middle" class="s">reads and writes</text>
+  <rect x="574" y="180" width="206" height="52" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="677.0" y="203.0" text-anchor="middle" style="fill:#f5c542">Replica</text>
+  <text x="677.0" y="219.0" text-anchor="middle" class="s">same or other Region</text>
+  <line x1="677" y1="122" x2="677" y2="180" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="687" y="156" class="s">asynchronous</text>
+  <text x="574" y="272" class="s">For: scaling reads, DR</text>
+  <text x="574" y="292" class="s">Up to 15 per source</text>
+  <text x="574" y="312" class="s">Reads can be slightly old</text>
+  <text x="574" y="332" class="s">Promote: becomes standalone</text>
+</svg>

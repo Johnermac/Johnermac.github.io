@@ -26,7 +26,7 @@ This series covers how to design systems on AWS. It started from my study notes 
 | 2 | Networking | VPC, routing, DNS, content delivery, hybrid connectivity |
 | 3 | Compute & Containers | EC2, ECS/EKS, load balancing, auto scaling |
 | 4 | Storage | EBS, EFS, S3, backup, moving data in from on-premises |
-| 5 | Databases | RDS, Aurora, DynamoDB, migration |
+| 5 | Databases | RDS, Aurora, DynamoDB, caching, analytics, migration |
 | 6 | Serverless, IaC & Operations | Lambda, messaging, CloudFormation, logging and auditing |
 | 7 | Design Review | Putting it together: tradeoffs and reference designs |
 
