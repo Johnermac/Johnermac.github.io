@@ -49,13 +49,13 @@ In October 2026 AWS renamed standard functions to **Lambda Event Functions**, wh
 
 | Setting | Value |
 |---|---|
-| Timeout | Up to 15 minutes |
+| Timeout | Up to 15 minutes per invocation, or 90 minutes on Managed Instances for asynchronous and event source mapping invocations |
 | Memory | 128 MB to 10,240 MB. CPU grows with memory: 1,769 MB gives one vCPU |
 | `/tmp` storage | 512 MB by default, up to 10,240 MB, lost when the environment ends |
 | Payload | 6 MB synchronous, 1 MB asynchronous |
 | Package | 50 MB zipped upload, 250 MB unzipped with layers, 10 GB container image |
 
-Work longer than 15 minutes belongs in Step Functions, ECS (post 3) or AWS Batch. A CPU-bound function runs faster with more memory, and since you pay per GB-second, the faster run often costs about the same.
+Longer work can run as a durable function or a Step Functions workflow, both covered below, or on ECS (post 3) or AWS Batch. A CPU-bound function runs faster with more memory, and since you pay per GB-second, the faster run often costs about the same.
 
 ## How a function is invoked
 
