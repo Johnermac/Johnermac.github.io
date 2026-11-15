@@ -94,7 +94,7 @@ By default a function runs in an AWS-owned network with internet access. Attach 
 
 Two policies control a function. The **execution role** is what the function may do, such as write to a DynamoDB table. The **resource-based policy** is who may invoke it, such as S3 from a given bucket or another account. Give each function its own role with only what it needs.
 
-Two recent options change the model. **Lambda Managed Instances** run functions on EC2 instances in your own account, priced as EC2 plus a management fee, for steady high-volume work where Savings Plans help. **Durable functions** let one function run a multi-step workflow for up to a year, saving progress at checkpoints and replaying after a failure.
+Three recent options change the model. **Lambda Managed Instances** run functions on EC2 instances in your own account, priced as EC2 plus a management fee, for steady high-volume work where Savings Plans help. **Durable functions** let one function run a multi-step workflow for up to a year, saving progress at checkpoints and replaying after a failure. **Lambda MicroVMs** are isolated environments with a full operating system, started from a snapshot and running up to 8 hours, that suspend when idle with memory and disk kept. They are built for sandboxes that run user or AI-generated code, interactive development environments and multi-tenant CI jobs.
 
 <div class="callout-cost" markdown="1">
 - **Requests and duration:** $0.20 per million requests plus $0.0000166667 per GB-second on x86. One million requests a month at 512 MB and 200 ms is 100,000 GB-seconds, about $1.67 plus $0.20. Arm (Graviton) costs 20% less per GB-second.
@@ -345,6 +345,7 @@ API Gateway validates user pool tokens with a Cognito authorizer (REST) or a JWT
 - [Lambda permissions](https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html)
 - [Lambda Managed Instances](https://docs.aws.amazon.com/lambda/latest/dg/lambda-managed-instances.html)
 - [Durable functions](https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html)
+- [Lambda MicroVMs](https://docs.aws.amazon.com/lambda/latest/dg/microvms.html)
 
 ## API Gateway
 
