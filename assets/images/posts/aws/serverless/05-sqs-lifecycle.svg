@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" width="820" height="360" role="img" aria-label="SQS message lifecycle. A producer sends a message. A consumer receives it, and the message stays in the queue but hidden for the visibility timeout. The consumer deletes it after processing. If the consumer fails, the message becomes visible again and is received again, and after the maximum receive count it moves to a dead-letter queue.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="360" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="110" width="120" height="56" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="80.0" y="142.0" text-anchor="middle" style="fill:#a9c8f0">Producer</text>
+  <rect x="200" y="50" width="260" height="180" rx="10" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="220" y="76" class="h" style="fill:#f5c542">QUEUE</text>
+  <rect x="222" y="100" width="44" height="34" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <rect x="278" y="100" width="44" height="34" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <rect x="334" y="100" width="44" height="34" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <rect x="390" y="100" width="44" height="34" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <rect x="222" y="160" width="100" height="44" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="272" y="180" text-anchor="middle" class="s">in flight</text>
+  <text x="272" y="195" text-anchor="middle" class="s">hidden</text>
+  <text x="340" y="180" class="s">visibility</text>
+  <text x="340" y="195" class="s">timeout</text>
+  <rect x="560" y="110" width="140" height="56" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="630.0" y="142.0" text-anchor="middle" style="fill:#a9c8f0">Consumer</text>
+  <rect x="230" y="280" width="200" height="56" rx="6" fill="#f0545c" fill-opacity="0.14" stroke="#f0545c" stroke-width="1"/>
+  <text x="330.0" y="305.0" text-anchor="middle" style="fill:#f4a0a5">Dead-letter queue</text>
+  <text x="330.0" y="321.0" text-anchor="middle" class="s">after maxReceiveCount</text>
+  <line x1="140" y1="138" x2="200" y2="138" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <circle cx="170" cy="124" r="9" fill="#181b20" stroke="#f5c542"/>
+  <text x="170" y="128" text-anchor="middle" style="fill:#f5c542">1</text>
+  <path d="M460 117 L560 117" fill="none" stroke="#8b949e" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <circle cx="510" cy="103" r="9" fill="#181b20" stroke="#f5c542"/>
+  <text x="510" y="107" text-anchor="middle" style="fill:#f5c542">2</text>
+  <path d="M560 150 L470 150" fill="none" stroke="#4cc38a" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <circle cx="510" cy="164" r="9" fill="#181b20" stroke="#f5c542"/>
+  <text x="510" y="168" text-anchor="middle" style="fill:#f5c542">3</text>
+  <path d="M272 230 L272 280" fill="none" stroke="#f0545c" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <circle cx="290" cy="255" r="9" fill="#181b20" stroke="#f5c542"/>
+  <text x="290" y="259" text-anchor="middle" style="fill:#f5c542">4</text>
+  <text x="720" y="120" class="s">1 send</text>
+  <text x="720" y="138" class="s">2 receive</text>
+  <text x="720" y="156" class="s">3 delete</text>
+  <text x="470" y="290" class="s">No delete before the timeout:</text>
+  <text x="470" y="308" class="s">the message is visible again</text>
+  <text x="470" y="326" class="s">and another consumer gets it.</text>
+</svg>

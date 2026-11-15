@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 370" width="820" height="370" role="img" aria-label="Cognito. The app signs the user in against a user pool and receives JWT tokens. It calls API Gateway with the access token, and an authorizer checks it before the backend runs. To reach AWS services directly, the app exchanges the token at an identity pool for temporary AWS credentials from STS, scoped by an IAM role, and calls S3 with them.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="370" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="140" width="120" height="60" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="80.0" y="167.0" text-anchor="middle" style="fill:#a9c8f0">App</text>
+  <text x="80.0" y="183.0" text-anchor="middle" class="s">web, mobile</text>
+  <rect x="210" y="30" width="170" height="60" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="295.0" y="57.0" text-anchor="middle" style="fill:#8fdcd7">User pool</text>
+  <text x="295.0" y="73.0" text-anchor="middle" class="s">sign-in, MFA, IdPs</text>
+  <rect x="470" y="30" width="150" height="60" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="545.0" y="57.0" text-anchor="middle" style="fill:#8fdcd7">API Gateway</text>
+  <text x="545.0" y="73.0" text-anchor="middle" class="s">JWT authorizer</text>
+  <rect x="680" y="30" width="120" height="60" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="740.0" y="57.0" text-anchor="middle" style="fill:#a9c8f0">Backend</text>
+  <text x="740.0" y="73.0" text-anchor="middle" class="s">Lambda</text>
+  <rect x="210" y="250" width="170" height="60" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="295.0" y="277.0" text-anchor="middle" style="fill:#8fdcd7">Identity pool</text>
+  <text x="295.0" y="293.0" text-anchor="middle" class="s">token for creds</text>
+  <rect x="470" y="250" width="150" height="60" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="545.0" y="277.0" text-anchor="middle" style="fill:#f5c542">STS</text>
+  <text x="545.0" y="293.0" text-anchor="middle" class="s">temporary keys</text>
+  <rect x="680" y="250" width="120" height="60" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="740.0" y="277.0" text-anchor="middle" style="fill:#8fdcd7">S3</text>
+  <text x="740.0" y="293.0" text-anchor="middle" class="s">user's prefix</text>
+  <line x1="140" y1="150" x2="210" y2="75" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <circle cx="175" cy="112" r="9" fill="#181b20" stroke="#f5c542"/>
+  <text x="175" y="116" text-anchor="middle" style="fill:#f5c542">1</text>
+  <line x1="140" y1="165" x2="470" y2="80" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <circle cx="300" cy="124" r="9" fill="#181b20" stroke="#f5c542"/>
+  <text x="300" y="128" text-anchor="middle" style="fill:#f5c542">2</text>
+  <line x1="620" y1="60" x2="680" y2="60" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="140" y1="190" x2="210" y2="270" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <circle cx="175" cy="230" r="9" fill="#181b20" stroke="#f5c542"/>
+  <text x="175" y="234" text-anchor="middle" style="fill:#f5c542">3</text>
+  <line x1="380" y1="280" x2="470" y2="280" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <text x="425" y="272" text-anchor="middle" class="s">role</text>
+  <path d="M80 200 L80 340 L740 340 L740 310" fill="none" stroke="#8b949e" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#ar)"/>
+  <circle cx="410" cy="340" r="9" fill="#181b20" stroke="#f5c542"/>
+  <text x="410" y="344" text-anchor="middle" style="fill:#f5c542">4</text>
+  <text x="430" y="150" class="s">1 sign in, get ID, access and refresh tokens</text>
+  <text x="430" y="170" class="s">2 call the API with the access token</text>
+  <text x="430" y="190" class="s">3 exchange the token for AWS credentials</text>
+  <text x="430" y="210" class="s">4 call S3 with the credentials</text>
+</svg>

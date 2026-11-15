@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 370" width="820" height="370" role="img" aria-label="Three ways Lambda is invoked. Synchronous: API Gateway, a load balancer or an SDK call waits for the response and handles errors. Asynchronous: S3, SNS or EventBridge hand the event to an internal queue and get an answer at once, Lambda retries twice and then sends the event to an on-failure destination. Event source mapping: Lambda polls SQS, Kinesis or DynamoDB Streams, builds batches and invokes the function with them.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="370" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <text x="20" y="36" class="h" style="fill:#f5c542">SYNCHRONOUS</text>
+  <text x="20" y="151" class="h" style="fill:#f5c542">ASYNCHRONOUS</text>
+  <text x="20" y="266" class="h" style="fill:#f5c542">EVENT SOURCE MAPPING</text>
+  <rect x="20" y="50" width="190" height="54" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="115.0" y="74.0" text-anchor="middle" style="fill:#8fdcd7">API Gateway, ALB</text>
+  <text x="115.0" y="90.0" text-anchor="middle" class="s">SDK, function URL</text>
+  <rect x="450" y="50" width="130" height="54" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="515.0" y="81.0" text-anchor="middle" style="fill:#a9c8f0">Function</text>
+  <line x1="210" y1="77" x2="450" y2="77" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <text x="330" y="70" text-anchor="middle" class="s">caller waits</text>
+  <text x="610" y="72" class="s">errors go back to</text>
+  <text x="610" y="88" class="s">the caller, which retries</text>
+  <rect x="20" y="165" width="190" height="54" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="115.0" y="189.0" text-anchor="middle" style="fill:#8fdcd7">S3, SNS</text>
+  <text x="115.0" y="205.0" text-anchor="middle" class="s">EventBridge</text>
+  <rect x="250" y="165" width="160" height="54" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="330.0" y="189.0" text-anchor="middle" style="fill:#8fdcd7">Internal queue</text>
+  <text x="330.0" y="205.0" text-anchor="middle" class="s">caller gets 202</text>
+  <rect x="450" y="165" width="130" height="54" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="515.0" y="196.0" text-anchor="middle" style="fill:#a9c8f0">Function</text>
+  <rect x="620" y="165" width="180" height="54" rx="6" fill="#f0545c" fill-opacity="0.14" stroke="#f0545c" stroke-width="1"/>
+  <text x="710.0" y="189.0" text-anchor="middle" style="fill:#f4a0a5">On-failure dest.</text>
+  <text x="710.0" y="205.0" text-anchor="middle" class="s">SQS, SNS, EventBridge</text>
+  <line x1="210" y1="192" x2="250" y2="192" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="410" y1="192" x2="450" y2="192" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="580" y1="192" x2="620" y2="192" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="515" y="237" text-anchor="middle" class="s">2 retries by default</text>
+  <rect x="20" y="280" width="190" height="54" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="115.0" y="304.0" text-anchor="middle" style="fill:#8fdcd7">SQS, Kinesis</text>
+  <text x="115.0" y="320.0" text-anchor="middle" class="s">DynamoDB Streams, Kafka</text>
+  <rect x="250" y="280" width="160" height="54" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="330.0" y="304.0" text-anchor="middle" style="fill:#8fdcd7">Poller</text>
+  <text x="330.0" y="320.0" text-anchor="middle" class="s">Lambda, in the mapping</text>
+  <rect x="450" y="280" width="130" height="54" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="515.0" y="311.0" text-anchor="middle" style="fill:#a9c8f0">Function</text>
+  <line x1="250" y1="307" x2="210" y2="307" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="230" y="300" text-anchor="middle" class="s">poll</text>
+  <line x1="410" y1="307" x2="450" y2="307" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="430" y="300" text-anchor="middle" class="s">batch</text>
+  <text x="610" y="302" class="s">failed batch: retry, split,</text>
+  <text x="610" y="318" class="s">or report failed items</text>
+</svg>

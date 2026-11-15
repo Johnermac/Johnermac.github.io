@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="EventBridge: AWS services, your applications and SaaS partners send events to an event bus. Each rule or subscriber holds a pattern that filters events and sends matches to a target: a Lambda function, a Step Functions workflow, an SQS queue or a bus in another account. Events can be kept and replayed.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="380" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="50" width="170" height="56" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="105.0" y="75.0" text-anchor="middle" style="fill:#8fdcd7">AWS services</text>
+  <text x="105.0" y="91.0" text-anchor="middle" class="s">EC2, S3, CodePipeline</text>
+  <line x1="190" y1="78" x2="240" y2="78" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="20" y="140" width="170" height="56" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="105.0" y="165.0" text-anchor="middle" style="fill:#a9c8f0">Your apps</text>
+  <text x="105.0" y="181.0" text-anchor="middle" class="s">PutEvents</text>
+  <line x1="190" y1="168" x2="240" y2="168" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="20" y="230" width="170" height="56" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="105.0" y="255.0" text-anchor="middle" style="fill:#e6e6e6">SaaS partners</text>
+  <text x="105.0" y="271.0" text-anchor="middle" class="s">partner bus</text>
+  <line x1="190" y1="258" x2="240" y2="258" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="240" y="30" width="300" height="270" rx="10" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="260" y="56" class="h" style="fill:#8fdcd7">EVENT BUS</text>
+  <rect x="260" y="74" width="260" height="40" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="270" y="90" class="s">pattern</text>
+  <text x="270" y="106" style="fill:#f5c542">state = "stopped"</text>
+  <rect x="600" y="30" width="200" height="54" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="700.0" y="54.0" text-anchor="middle" style="fill:#a9c8f0">Lambda function</text>
+  <text x="700.0" y="70.0" text-anchor="middle" class="s">stop alert</text>
+  <line x1="520" y1="94" x2="600" y2="57" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="260" y="128" width="260" height="40" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="270" y="144" class="s">pattern</text>
+  <text x="270" y="160" style="fill:#f5c542">type = "OrderPlaced"</text>
+  <rect x="600" y="100" width="200" height="54" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="700.0" y="124.0" text-anchor="middle" style="fill:#a9c8f0">Step Functions</text>
+  <text x="700.0" y="140.0" text-anchor="middle" class="s">order workflow</text>
+  <line x1="520" y1="148" x2="600" y2="127" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="260" y="182" width="260" height="40" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="270" y="198" class="s">pattern</text>
+  <text x="270" y="214" style="fill:#f5c542">total &gt; 100</text>
+  <rect x="600" y="170" width="200" height="54" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="700.0" y="194.0" text-anchor="middle" style="fill:#a9c8f0">SQS queue</text>
+  <text x="700.0" y="210.0" text-anchor="middle" class="s">buffer for a slow API</text>
+  <line x1="520" y1="202" x2="600" y2="197" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="260" y="236" width="260" height="40" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="270" y="252" class="s">pattern</text>
+  <text x="270" y="268" style="fill:#f5c542">any event</text>
+  <rect x="600" y="240" width="200" height="54" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="700.0" y="264.0" text-anchor="middle" style="fill:#e6e6e6">Other account</text>
+  <text x="700.0" y="280.0" text-anchor="middle" class="s">central bus</text>
+  <line x1="520" y1="256" x2="600" y2="267" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="240" y="316" width="300" height="44" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="390" y="343" text-anchor="middle" class="s">retention or archive: replay events</text>
+</svg>

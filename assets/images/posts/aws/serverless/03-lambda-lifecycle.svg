@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 300" width="820" height="300" role="img" aria-label="Lambda execution environments over time. Request A arrives with no environment, so environment 1 runs Init (a cold start) and then the handler. Request B arrives while environment 1 is busy, so environment 2 is created with its own Init. Request C reuses environment 1 without Init (a warm start). Idle environments are shut down later.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="300" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <text x="20" y="36" class="h" style="fill:#f5c542">EXECUTION ENVIRONMENTS OVER TIME</text>
+  <line x1="170" y1="230" x2="800" y2="230" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="800" y="250" text-anchor="end" class="s">time</text>
+  <text x="20" y="96">Environment 1</text>
+  <text x="20" y="176">Environment 2</text>
+  <rect x="170" y="70" width="130" height="40" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="235.0" y="95" text-anchor="middle" style="fill:#f5c542">Init</text>
+  <rect x="300" y="70" width="110" height="40" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="355.0" y="95" text-anchor="middle" style="fill:#a9c8f0">Invoke A</text>
+  <line x1="410" y1="90" x2="500" y2="90" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="455" y="84" text-anchor="middle" class="s">idle</text>
+  <rect x="500" y="70" width="110" height="40" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="555.0" y="95" text-anchor="middle" style="fill:#a9c8f0">Invoke C</text>
+  <line x1="610" y1="90" x2="730" y2="90" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <rect x="730" y="70" width="70" height="40" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="765.0" y="95" text-anchor="middle" style="fill:#e6e6e6">Shutdown</text>
+  <rect x="240" y="150" width="130" height="40" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="305.0" y="175" text-anchor="middle" style="fill:#f5c542">Init</text>
+  <rect x="370" y="150" width="110" height="40" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="425.0" y="175" text-anchor="middle" style="fill:#a9c8f0">Invoke B</text>
+  <line x1="480" y1="170" x2="590" y2="170" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="235" y="132" text-anchor="middle" class="s">cold start</text>
+  <text x="555" y="132" text-anchor="middle" class="s">warm start: no Init</text>
+  <text x="305" y="212" text-anchor="middle" class="s">Init runs extensions, the runtime and code outside the handler</text>
+  <text x="20" y="280" class="s">Concurrency = environments busy at once. Here it reaches 2 while A and B overlap.</text>
+</svg>

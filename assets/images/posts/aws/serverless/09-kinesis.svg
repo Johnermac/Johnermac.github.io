@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 350" width="820" height="350" role="img" aria-label="Kinesis Data Streams: producers write records with a partition key, and a hash of the key picks one of the shards. Records stay in order within a shard and are kept for the retention period. Several consumers, such as a Lambda function, a Flink application and Firehose, each read every shard at their own position.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="350" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="40" width="130" height="54" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="85.0" y="64.0" text-anchor="middle" style="fill:#a9c8f0">Apps</text>
+  <text x="85.0" y="80.0" text-anchor="middle" class="s">clickstream</text>
+  <line x1="150" y1="67" x2="190" y2="67" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="20" y="124" width="130" height="54" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="85.0" y="148.0" text-anchor="middle" style="fill:#a9c8f0">Devices</text>
+  <text x="85.0" y="164.0" text-anchor="middle" class="s">sensor data</text>
+  <line x1="150" y1="151" x2="190" y2="151" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="20" y="208" width="130" height="54" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="85.0" y="232.0" text-anchor="middle" style="fill:#a9c8f0">Logs</text>
+  <text x="85.0" y="248.0" text-anchor="middle" class="s">agents</text>
+  <line x1="150" y1="235" x2="190" y2="235" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="190" y="20" width="390" height="250" rx="10" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="210" y="46" class="h" style="fill:#8fdcd7">STREAM</text>
+  <text x="560" y="46" text-anchor="end" class="s">partition key hash picks the shard</text>
+  <text x="210" y="90" class="s">shard 1</text>
+  <rect x="280" y="70" width="38" height="32" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <rect x="326" y="70" width="38" height="32" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <rect x="372" y="70" width="38" height="32" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <rect x="418" y="70" width="38" height="32" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <rect x="464" y="70" width="38" height="32" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <rect x="510" y="70" width="38" height="32" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <line x1="280" y1="112" x2="556" y2="112" stroke="#353b45" stroke-width="1.5"/>
+  <text x="210" y="154" class="s">shard 2</text>
+  <rect x="280" y="134" width="38" height="32" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <rect x="326" y="134" width="38" height="32" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <rect x="372" y="134" width="38" height="32" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <rect x="418" y="134" width="38" height="32" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <rect x="464" y="134" width="38" height="32" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <rect x="510" y="134" width="38" height="32" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <line x1="280" y1="176" x2="556" y2="176" stroke="#353b45" stroke-width="1.5"/>
+  <text x="210" y="218" class="s">shard 3</text>
+  <rect x="280" y="198" width="38" height="32" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <rect x="326" y="198" width="38" height="32" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <rect x="372" y="198" width="38" height="32" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <rect x="418" y="198" width="38" height="32" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <rect x="464" y="198" width="38" height="32" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <rect x="510" y="198" width="38" height="32" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <line x1="280" y1="240" x2="556" y2="240" stroke="#353b45" stroke-width="1.5"/>
+  <text x="385" y="260" text-anchor="middle" class="s">oldest</text>
+  <text x="540" y="260" text-anchor="middle" class="s">newest</text>
+  <rect x="640" y="40" width="160" height="54" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="720.0" y="64.0" text-anchor="middle" style="fill:#a9c8f0">Lambda</text>
+  <text x="720.0" y="80.0" text-anchor="middle" class="s">per shard batches</text>
+  <line x1="580" y1="67" x2="640" y2="67" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="640" y="124" width="160" height="54" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="720.0" y="148.0" text-anchor="middle" style="fill:#a9c8f0">Flink app</text>
+  <text x="720.0" y="164.0" text-anchor="middle" class="s">real-time analytics</text>
+  <line x1="580" y1="151" x2="640" y2="151" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="640" y="208" width="160" height="54" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="720.0" y="232.0" text-anchor="middle" style="fill:#8fdcd7">Firehose</text>
+  <text x="720.0" y="248.0" text-anchor="middle" class="s">to S3, Redshift</text>
+  <line x1="580" y1="235" x2="640" y2="235" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="20" y="304" class="s">Records stay in the stream for 24 hours by default, up to 365 days, and are not deleted when read.</text>
+  <text x="20" y="324" class="s">Each consumer tracks its own position, so it can fall behind or replay without affecting the others.</text>
+</svg>

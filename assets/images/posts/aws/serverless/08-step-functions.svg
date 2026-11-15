@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 350" width="820" height="350" role="img" aria-label="An order workflow in Step Functions. Validate order runs a Lambda function. A Choice state checks stock. If in stock, a Parallel state charges the payment, with retries, and reserves stock at the same time, then the workflow waits for a shipping callback and succeeds. If out of stock it notifies the customer and fails. An error in the Parallel state is caught and cancels the order.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="350" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <circle cx="34" cy="120" r="12" fill="#4cc38a" fill-opacity="0.3" stroke="#4cc38a"/>
+  <rect x="64" y="94" width="120" height="52" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="124.0" y="117.0" text-anchor="middle" style="fill:#a9c8f0">Validate</text>
+  <text x="124.0" y="133.0" text-anchor="middle" class="s">Task: Lambda</text>
+  <line x1="46" y1="120" x2="64" y2="120" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <polygon points="250,90 290,120 250,150 210,120" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542"/>
+  <text x="250" y="124" text-anchor="middle" class="s">Stock?</text>
+  <line x1="184" y1="120" x2="210" y2="120" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="320" y="34" width="200" height="172" rx="10" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="336" y="56" class="h" style="fill:#f5c542">PARALLEL</text>
+  <rect x="340" y="70" width="160" height="50" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="420.0" y="92.0" text-anchor="middle" style="fill:#a9c8f0">Charge payment</text>
+  <text x="420.0" y="108.0" text-anchor="middle" class="s">Retry 3x, backoff</text>
+  <rect x="340" y="136" width="160" height="50" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="420.0" y="158.0" text-anchor="middle" style="fill:#a9c8f0">Reserve stock</text>
+  <text x="420.0" y="174.0" text-anchor="middle" class="s">Task: DynamoDB</text>
+  <line x1="290" y1="120" x2="320" y2="120" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="304" y="112" text-anchor="middle" class="s">yes</text>
+  <rect x="550" y="94" width="130" height="52" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="615.0" y="117.0" text-anchor="middle" style="fill:#8fdcd7">Wait shipping</text>
+  <text x="615.0" y="133.0" text-anchor="middle" class="s">task token</text>
+  <line x1="520" y1="120" x2="550" y2="120" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="710" y="94" width="90" height="52" rx="6" fill="#4cc38a" fill-opacity="0.14" stroke="#4cc38a" stroke-width="1"/>
+  <text x="755.0" y="124.0" text-anchor="middle" style="fill:#9be0bf">Succeed</text>
+  <line x1="680" y1="120" x2="710" y2="120" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="180" y="260" width="140" height="52" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="250.0" y="283.0" text-anchor="middle" style="fill:#a9c8f0">Notify customer</text>
+  <text x="250.0" y="299.0" text-anchor="middle" class="s">Task: SNS</text>
+  <line x1="250" y1="150" x2="250" y2="260" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="262" y="210" class="s">no</text>
+  <rect x="370" y="260" width="150" height="52" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="445.0" y="283.0" text-anchor="middle" style="fill:#a9c8f0">Cancel order</text>
+  <text x="445.0" y="299.0" text-anchor="middle" class="s">Task: Lambda</text>
+  <line x1="445" y1="206" x2="445" y2="260" stroke="#f0545c" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="455" y="238" class="s" style="fill:#f0545c">Catch</text>
+  <rect x="600" y="260" width="110" height="52" rx="6" fill="#f0545c" fill-opacity="0.14" stroke="#f0545c" stroke-width="1"/>
+  <text x="655.0" y="290.0" text-anchor="middle" style="fill:#f4a0a5">Fail</text>
+  <line x1="520" y1="286" x2="600" y2="286" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <path d="M250 312 L250 330 L655 330 L655 312" fill="none" stroke="#8b949e" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#ar)"/>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 330" width="820" height="330" role="img" aria-label="Direct calls: the client waits while the order service calls payment and email in turn, so one slow or failed service fails the request. Through a queue: the order service stores the order, puts a message on a queue and answers at once, and workers process the queue at their own pace.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="330" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="20" width="380" height="290" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="36" y="44" class="h" style="fill:#f5c542">DIRECT CALLS</text>
+  <rect x="40" y="110" width="80" height="50" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="80.0" y="139.0" text-anchor="middle" style="fill:#a9c8f0">Client</text>
+  <rect x="150" y="110" width="90" height="50" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="195.0" y="139.0" text-anchor="middle" style="fill:#a9c8f0">Orders</text>
+  <rect x="270" y="70" width="110" height="50" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="325.0" y="99.0" text-anchor="middle" style="fill:#a9c8f0">Payment</text>
+  <rect x="270" y="150" width="110" height="50" rx="6" fill="#f0545c" fill-opacity="0.14" stroke="#f0545c" stroke-width="1"/>
+  <text x="325.0" y="172.0" text-anchor="middle" style="fill:#f4a0a5">Email</text>
+  <text x="325.0" y="188.0" text-anchor="middle" class="s">slow or down</text>
+  <line x1="120" y1="135" x2="150" y2="135" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <line x1="240" y1="125" x2="270" y2="100" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <line x1="240" y1="145" x2="270" y2="170" stroke="#f0545c" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <text x="40" y="240" class="s" style="fill:#f0545c">- client waits for every step</text>
+  <text x="40" y="260" class="s" style="fill:#f0545c">- one failure fails the request</text>
+  <text x="40" y="280" class="s" style="fill:#f0545c">- every service sized for the peak</text>
+  <rect x="420" y="20" width="380" height="290" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="436" y="44" class="h" style="fill:#f5c542">THROUGH A QUEUE</text>
+  <rect x="440" y="70" width="80" height="50" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="480.0" y="99.0" text-anchor="middle" style="fill:#a9c8f0">Client</text>
+  <rect x="550" y="70" width="90" height="50" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="595.0" y="99.0" text-anchor="middle" style="fill:#a9c8f0">Orders</text>
+  <rect x="550" y="150" width="90" height="50" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="595" y="180" text-anchor="middle" style="fill:#f5c542">Queue</text>
+  <rect x="682" y="152" width="100" height="44" rx="6" fill="#22324a" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="676" y="146" width="100" height="44" rx="6" fill="#22324a" stroke="#3d86e0" stroke-width="1"/>
+  <rect x="670" y="140" width="100" height="44" rx="6" fill="#22324a" stroke="#3d86e0" stroke-width="1"/>
+  <text x="720" y="166" text-anchor="middle" style="fill:#a9c8f0">Workers</text>
+  <text x="726" y="208" text-anchor="middle" class="s">scale apart</text>
+  <line x1="520" y1="95" x2="550" y2="95" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#al)"/>
+  <line x1="595" y1="120" x2="595" y2="150" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="640" y1="175" x2="670" y2="168" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="440" y="240" class="s" style="fill:#4cc38a">+ client gets an answer at once</text>
+  <text x="440" y="260" class="s" style="fill:#4cc38a">+ spikes wait in the queue</text>
+  <text x="440" y="280" class="s" style="fill:#4cc38a">+ workers retry and scale alone</text>
+</svg>
