@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" width="820" height="340" role="img" aria-label="A CloudWatch alarm on CPU utilization with a threshold of 80 percent, a 1-minute period and 3 out of 3 datapoints. The alarm moves from OK to ALARM after three breaching datapoints in a row and back to OK when values drop, and each state change can notify SNS, scale an Auto Scaling group or act on an EC2 instance.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="340" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <line x1="60" y1="240" x2="560" y2="240" stroke="#8b949e" stroke-width="1.5"/>
+  <line x1="60" y1="40" x2="60" y2="240" stroke="#8b949e" stroke-width="1.5"/>
+  <text x="52" y="44" text-anchor="end" class="s">100</text>
+  <text x="52" y="244" text-anchor="end" class="s">0</text>
+  <text x="60" y="262" class="s">CPU %, one datapoint per minute</text>
+  <line x1="60" y1="80.0" x2="560" y2="80.0" stroke="#f5c542" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="556" y="74.0" text-anchor="end" class="s">threshold 80</text>
+  <path d="M80 160.0 L126 140.0 L172 150.0 L218 120.0 L264 70.0 L310 60.0 L356 50.0 L402 56.0 L448 100.0 L494 130.0 L540 140.0" fill="none" stroke="#3d86e0" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="80" cy="160.0" r="4" fill="#3d86e0"/>
+  <circle cx="126" cy="140.0" r="4" fill="#3d86e0"/>
+  <circle cx="172" cy="150.0" r="4" fill="#3d86e0"/>
+  <circle cx="218" cy="120.0" r="4" fill="#3d86e0"/>
+  <circle cx="264" cy="70.0" r="4" fill="#f0545c"/>
+  <circle cx="310" cy="60.0" r="4" fill="#f0545c"/>
+  <circle cx="356" cy="50.0" r="4" fill="#f0545c"/>
+  <circle cx="402" cy="56.0" r="4" fill="#f0545c"/>
+  <circle cx="448" cy="100.0" r="4" fill="#3d86e0"/>
+  <circle cx="494" cy="130.0" r="4" fill="#3d86e0"/>
+  <circle cx="540" cy="140.0" r="4" fill="#3d86e0"/>
+  <rect x="252" y="274" width="116" height="30" rx="6" fill="#f0545c" fill-opacity="0.14" stroke="#f0545c" stroke-width="1"/>
+  <text x="310" y="294" text-anchor="middle" class="s">3 of 3: ALARM</text>
+  <text x="448" y="294" text-anchor="middle" class="s">back to OK</text>
+  <text x="600" y="56" class="h" style="fill:#f5c542">ALARM ACTIONS</text>
+  <rect x="600" y="70" width="200" height="56" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="700.0" y="95.0" text-anchor="middle" style="fill:#8fdcd7">SNS topic</text>
+  <text x="700.0" y="111.0" text-anchor="middle" class="s">email, chat, pager</text>
+  <rect x="600" y="142" width="200" height="56" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="700.0" y="167.0" text-anchor="middle" style="fill:#a9c8f0">Auto Scaling</text>
+  <text x="700.0" y="183.0" text-anchor="middle" class="s">add instances</text>
+  <rect x="600" y="214" width="200" height="56" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="700.0" y="239.0" text-anchor="middle" style="fill:#8fdcd7">EC2 action</text>
+  <text x="700.0" y="255.0" text-anchor="middle" class="s">reboot, recover</text>
+</svg>

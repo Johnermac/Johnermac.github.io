@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 350" width="820" height="350" role="img" aria-label="StackSets: from an administrator account, one stack set deploys the same template as stack instances to every account in the target organizational units and in each chosen Region. New accounts that join a target OU get the stack automatically.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="350" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="120" width="170" height="64" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="105.0" y="149.0" text-anchor="middle" style="fill:#8fdcd7">Stack set</text>
+  <text x="105.0" y="165.0" text-anchor="middle" class="s">admin account</text>
+  <text x="20" y="216" class="s">template + parameters</text>
+  <text x="20" y="234" class="s">target OUs and Regions</text>
+  <rect x="240" y="30" width="560" height="176" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="256" y="52" class="h" style="fill:#f5c542">OU: Workloads</text>
+  <text x="256" y="94">Account A</text>
+  <rect x="380" y="64" width="126" height="52" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="443.0" y="87.0" text-anchor="middle" style="fill:#a9c8f0">Stack instance</text>
+  <text x="443.0" y="103.0" text-anchor="middle" class="s">us-east-1</text>
+  <rect x="520" y="64" width="126" height="52" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="583.0" y="87.0" text-anchor="middle" style="fill:#a9c8f0">Stack instance</text>
+  <text x="583.0" y="103.0" text-anchor="middle" class="s">eu-west-1</text>
+  <rect x="660" y="64" width="126" height="52" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="723.0" y="87.0" text-anchor="middle" style="fill:#a9c8f0">Stack instance</text>
+  <text x="723.0" y="103.0" text-anchor="middle" class="s">sa-east-1</text>
+  <text x="256" y="164">Account B</text>
+  <rect x="380" y="134" width="126" height="52" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="443.0" y="157.0" text-anchor="middle" style="fill:#a9c8f0">Stack instance</text>
+  <text x="443.0" y="173.0" text-anchor="middle" class="s">us-east-1</text>
+  <rect x="520" y="134" width="126" height="52" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="583.0" y="157.0" text-anchor="middle" style="fill:#a9c8f0">Stack instance</text>
+  <text x="583.0" y="173.0" text-anchor="middle" class="s">eu-west-1</text>
+  <rect x="660" y="134" width="126" height="52" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="723.0" y="157.0" text-anchor="middle" style="fill:#a9c8f0">Stack instance</text>
+  <text x="723.0" y="173.0" text-anchor="middle" class="s">sa-east-1</text>
+  <line x1="190" y1="152" x2="240" y2="118.0" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="240" y="222" width="560" height="106" rx="10" fill="none" stroke="#8b949e" stroke-width="1"/>
+  <text x="256" y="244" class="h" style="fill:#f5c542">OU: Sandbox</text>
+  <text x="256" y="286">Account C</text>
+  <rect x="380" y="256" width="126" height="52" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="443.0" y="279.0" text-anchor="middle" style="fill:#a9c8f0">Stack instance</text>
+  <text x="443.0" y="295.0" text-anchor="middle" class="s">us-east-1</text>
+  <rect x="520" y="256" width="126" height="52" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="583.0" y="279.0" text-anchor="middle" style="fill:#a9c8f0">Stack instance</text>
+  <text x="583.0" y="295.0" text-anchor="middle" class="s">eu-west-1</text>
+  <rect x="660" y="256" width="126" height="52" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="723.0" y="279.0" text-anchor="middle" style="fill:#a9c8f0">Stack instance</text>
+  <text x="723.0" y="295.0" text-anchor="middle" class="s">sa-east-1</text>
+  <line x1="190" y1="152" x2="240" y2="275.0" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+</svg>

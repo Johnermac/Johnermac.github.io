@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" width="820" height="360" role="img" aria-label="CloudTrail records API calls from the console, CLI, SDKs and AWS services. Event history keeps 90 days of management events in each Region. An organization trail delivers all accounts' events to an S3 bucket in a log archive account, with digest files for integrity checks, and optionally to CloudWatch Logs. Management events also reach EventBridge, where a rule can alert on actions such as a root sign-in.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="360" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="140" width="160" height="64" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="100.0" y="169.0" text-anchor="middle" style="fill:#a9c8f0">API calls</text>
+  <text x="100.0" y="185.0" text-anchor="middle" class="s">console, CLI, SDK</text>
+  <rect x="240" y="140" width="150" height="64" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="315.0" y="176.0" text-anchor="middle" style="fill:#8fdcd7">CloudTrail</text>
+  <line x1="180" y1="172" x2="240" y2="172" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="450" y="20" width="180" height="60" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="540.0" y="47.0" text-anchor="middle" style="fill:#e6e6e6">Event history</text>
+  <text x="540.0" y="63.0" text-anchor="middle" class="s">90 days, free</text>
+  <line x1="390" y1="172" x2="450" y2="50" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="450" y="100" width="180" height="60" rx="6" fill="#f5c542" fill-opacity="0.14" stroke="#f5c542" stroke-width="1"/>
+  <text x="540.0" y="127.0" text-anchor="middle" style="fill:#f5c542">Trail to S3</text>
+  <text x="540.0" y="143.0" text-anchor="middle" class="s">log archive account</text>
+  <line x1="390" y1="172" x2="450" y2="130" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="450" y="180" width="180" height="60" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="540.0" y="207.0" text-anchor="middle" style="fill:#8fdcd7">CloudWatch Logs</text>
+  <text x="540.0" y="223.0" text-anchor="middle" class="s">metric filters, alarms</text>
+  <line x1="390" y1="172" x2="450" y2="210" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="450" y="260" width="180" height="60" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="540.0" y="287.0" text-anchor="middle" style="fill:#8fdcd7">EventBridge</text>
+  <text x="540.0" y="303.0" text-anchor="middle" class="s">rule: root sign-in</text>
+  <line x1="390" y1="172" x2="450" y2="290" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="680" y="100" width="120" height="60" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="740.0" y="127.0" text-anchor="middle" style="fill:#e6e6e6">Digest files</text>
+  <text x="740.0" y="143.0" text-anchor="middle" class="s">hourly hashes</text>
+  <line x1="630" y1="130" x2="680" y2="130" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="680" y="260" width="120" height="60" rx="6" fill="#f0545c" fill-opacity="0.14" stroke="#f0545c" stroke-width="1"/>
+  <text x="740.0" y="287.0" text-anchor="middle" style="fill:#f4a0a5">SNS alert</text>
+  <text x="740.0" y="303.0" text-anchor="middle" class="s">security team</text>
+  <line x1="630" y1="290" x2="680" y2="290" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+</svg>

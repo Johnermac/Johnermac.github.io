@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 300" width="820" height="300" role="img" aria-label="A template in YAML or JSON is submitted to CloudFormation, which creates a stack. Each logical resource in the template, such as WebBucket or AppTable, becomes a physical resource with a real name or ID in the account, and the stack tracks the mapping.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="300" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="30" width="220" height="240" rx="10" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="36" y="54" class="h" style="fill:#a9c8f0">TEMPLATE</text>
+  <text x="36" y="72" class="s">in Git, reviewed</text>
+  <rect x="36" y="88" width="188" height="46" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="48" y="107" style="fill:#e6e6e6">WebBucket</text>
+  <text x="48" y="124" class="s">AWS::S3::Bucket</text>
+  <rect x="36" y="146" width="188" height="46" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="48" y="165" style="fill:#e6e6e6">AppTable</text>
+  <text x="48" y="182" class="s">AWS::DynamoDB::Table</text>
+  <rect x="36" y="204" width="188" height="46" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="48" y="223" style="fill:#e6e6e6">AppRole</text>
+  <text x="48" y="240" class="s">AWS::IAM::Role</text>
+  <rect x="290" y="120" width="150" height="60" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="365.0" y="147.0" text-anchor="middle" style="fill:#8fdcd7">CloudFormation</text>
+  <text x="365.0" y="163.0" text-anchor="middle" class="s">create, update, delete</text>
+  <line x1="240" y1="150" x2="290" y2="150" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="490" y="30" width="310" height="240" rx="10" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="506" y="54" class="h" style="fill:#8fdcd7">STACK</text>
+  <text x="506" y="72" class="s">logical ID to physical resource</text>
+  <rect x="506" y="88" width="278" height="46" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="518" y="107" style="fill:#8fdcd7">WebBucket</text>
+  <text x="518" y="124" class="s">web-stack-webbucket-1x2y3z</text>
+  <rect x="506" y="146" width="278" height="46" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="518" y="165" style="fill:#8fdcd7">AppTable</text>
+  <text x="518" y="182" class="s">web-stack-AppTable-ABC123</text>
+  <rect x="506" y="204" width="278" height="46" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="518" y="223" style="fill:#8fdcd7">AppRole</text>
+  <text x="518" y="240" class="s">web-stack-AppRole-9QW8E7</text>
+  <line x1="440" y1="150" x2="490" y2="150" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+</svg>

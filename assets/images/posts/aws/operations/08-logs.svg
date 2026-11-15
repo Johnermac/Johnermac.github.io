@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" width="820" height="360" role="img" aria-label="CloudWatch Logs: Lambda, the CloudWatch agent on EC2, VPC Flow Logs and CloudTrail send log events into log groups with a retention period. From a log group, a metric filter turns matching lines into a metric for an alarm, a subscription filter streams events to Firehose or Lambda, Logs Insights runs queries, and an export task copies data to S3.">
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;fill:#e6e6e6;font-size:12px}
+    .s{font-size:11px;fill:#8b949e}
+    .h{font-size:12px;font-weight:700;letter-spacing:1.5px}
+    .b{font-weight:700}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8b949e"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M10 0 L0 5 L10 10 z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="820" height="360" rx="12" fill="#1e2128" stroke="#353b45"/>
+  <rect x="20" y="40" width="160" height="56" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="100.0" y="65.0" text-anchor="middle" style="fill:#a9c8f0">Lambda, ECS</text>
+  <text x="100.0" y="81.0" text-anchor="middle" class="s">stdout, built in</text>
+  <line x1="180" y1="68" x2="240" y2="168" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="20" y="130" width="160" height="56" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="100.0" y="155.0" text-anchor="middle" style="fill:#a9c8f0">EC2, on-prem</text>
+  <text x="100.0" y="171.0" text-anchor="middle" class="s">CloudWatch agent</text>
+  <line x1="180" y1="158" x2="240" y2="168" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="20" y="220" width="160" height="56" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="100.0" y="245.0" text-anchor="middle" style="fill:#8fdcd7">AWS services</text>
+  <text x="100.0" y="261.0" text-anchor="middle" class="s">Flow Logs, CloudTrail</text>
+  <line x1="180" y1="248" x2="240" y2="168" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="240" y="100" width="200" height="140" rx="10" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="256" y="124" class="h" style="fill:#8fdcd7">LOG GROUP</text>
+  <rect x="256" y="136" width="168" height="26" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="266" y="154" class="s">stream: instance-1</text>
+  <rect x="256" y="168" width="168" height="26" rx="6" fill="#8b949e" fill-opacity="0.1" stroke="#8b949e" stroke-width="1"/>
+  <text x="266" y="186" class="s">stream: instance-2</text>
+  <text x="256" y="222" class="s" style="fill:#f5c542">retention: 30 days</text>
+  <rect x="560" y="30" width="240" height="56" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="680.0" y="55.0" text-anchor="middle" style="fill:#a9c8f0">Metric filter</text>
+  <text x="680.0" y="71.0" text-anchor="middle" class="s">ERROR count, alarm</text>
+  <line x1="440" y1="170" x2="560" y2="58" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="560" y="108" width="240" height="56" rx="6" fill="#38b2ac" fill-opacity="0.14" stroke="#38b2ac" stroke-width="1"/>
+  <text x="680.0" y="133.0" text-anchor="middle" style="fill:#8fdcd7">Subscription filter</text>
+  <text x="680.0" y="149.0" text-anchor="middle" class="s">to Firehose, Lambda</text>
+  <line x1="440" y1="170" x2="560" y2="136" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="560" y="186" width="240" height="56" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="680.0" y="211.0" text-anchor="middle" style="fill:#a9c8f0">Logs Insights</text>
+  <text x="680.0" y="227.0" text-anchor="middle" class="s">queries</text>
+  <line x1="440" y1="170" x2="560" y2="214" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <rect x="560" y="264" width="240" height="56" rx="6" fill="#3d86e0" fill-opacity="0.16" stroke="#3d86e0" stroke-width="1"/>
+  <text x="680.0" y="289.0" text-anchor="middle" style="fill:#a9c8f0">Export task</text>
+  <text x="680.0" y="305.0" text-anchor="middle" class="s">copy to S3</text>
+  <line x1="440" y1="170" x2="560" y2="292" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="20" y="330" class="s" style="fill:#f0545c">Default retention is never expire: set it on every log group.</text>
+</svg>
